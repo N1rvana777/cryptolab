@@ -1,0 +1,13 @@
+.env
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+runs/
+data/cache/
+*.parquet
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

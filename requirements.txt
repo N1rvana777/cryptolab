@@ -1,0 +1,7 @@
+hyperliquid-python-sdk>=0.4.0
+pandas>=2.1.0
+numpy>=1.26.0
+pyarrow>=14.0.0
+eth-account>=0.10.0
+python-dotenv>=1.0.0
+requests>=2.31.0
