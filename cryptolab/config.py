@@ -15,6 +15,19 @@ class Config:
     atr_period: int = 14
     atr_sl_mult: float = 2.0  # stop-loss = ATR * mult
 
+    # --- Strategy: Donchian MTF ---
+    mtf_lookbacks: List[int] = field(default_factory=lambda: [24, 72, 168])
+    mtf_weights: List[float] = field(default_factory=lambda: [0.33, 0.34, 0.33])
+    mtf_signal_deadzone: float = 0.05
+    mtf_vol_target: float = 0.15
+    mtf_vol_scalar_bounds: List[float] = field(default_factory=lambda: [0.5, 2.0])
+    mtf_dd_max: float = 0.30
+    mtf_dd_floor: float = 0.25
+    mtf_rebalance_pct: float = 0.05
+    mtf_use_trailing_stop: bool = False
+    mtf_pyramid_max_units: int = 4        # max units including initial entry
+    mtf_pyramid_spacing_atr: float = 0.5  # ATR multiple between pyramid adds
+
     # --- Risk ---
     risk_per_trade: float = 0.02  # fraction of equity risked per trade
     max_portfolio_heat: float = 0.06  # max total risk across all positions

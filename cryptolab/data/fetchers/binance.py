@@ -1,4 +1,7 @@
-"""Binance Vision spot klines fetcher (cross-validation source)."""
+"""Binance USDT-M perpetual klines fetcher (cross-validation source).
+
+Tries Futures API (fapi) first; falls back to spot (api) if geo-restricted.
+"""
 
 import time
 import logging
@@ -10,15 +13,38 @@ from cryptolab.data.types import BINANCE_SYMBOL_MAP, BINANCE_INTERVAL_MAP, valid
 
 logger = logging.getLogger(__name__)
 
-BINANCE_VISION_URL = "https://data-api.binance.vision"
+# Preferred: USDT-M Futures. Fallback: spot (for geo-restricted regions).
+BINANCE_FUTURES_URL = "https://fapi.binance.com"
+BINANCE_SPOT_URL = "https://data-api.binance.vision"
 MAX_CANDLES_PER_REQUEST = 1000
 
 
 class BinanceFetcher(BaseFetcher):
     source_name = "binance"
 
-    def __init__(self, base_url: str = BINANCE_VISION_URL):
-        self.base_url = base_url
+    def __init__(self):
+        self.base_url = None  # auto-detect on first call
+        self.endpoint = None
+
+    def _detect_endpoint(self, bn_symbol: str, bn_interval: str) -> None:
+        """Try futures first, fall back to spot if 451/403."""
+        params = {"symbol": bn_symbol, "interval": bn_interval, "limit": 1}
+        try:
+            resp = requests.get(
+                f"{BINANCE_FUTURES_URL}/fapi/v1/klines",
+                params=params, timeout=10,
+            )
+            if resp.status_code == 200:
+                self.base_url = BINANCE_FUTURES_URL
+                self.endpoint = "/fapi/v1/klines"
+                logger.info("Binance: using Futures API (perp data)")
+                return
+        except Exception:
+            pass
+
+        self.base_url = BINANCE_SPOT_URL
+        self.endpoint = "/api/v3/klines"
+        logger.warning("Binance Futures API blocked (geo-restricted). Falling back to spot data.")
 
     def fetch_ohlcv(
         self,
@@ -34,6 +60,9 @@ class BinanceFetcher(BaseFetcher):
         if not bn_interval:
             raise ValueError(f"Unknown interval for Binance: {interval}")
 
+        if self.base_url is None:
+            self._detect_endpoint(bn_symbol, bn_interval)
+
         all_rows = []
         cursor = start_ms
 
@@ -47,7 +76,7 @@ class BinanceFetcher(BaseFetcher):
             }
             try:
                 resp = requests.get(
-                    f"{self.base_url}/api/v3/klines",
+                    f"{self.base_url}{self.endpoint}",
                     params=params,
                     timeout=15,
                 )

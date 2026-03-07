@@ -25,9 +25,19 @@ OKX_SYMBOL_MAP: Dict[str, str] = {
     "LINK": "LINK-USDT-SWAP",
     "ARB": "ARB-USDT-SWAP",
     "SUI": "SUI-USDT-SWAP",
+    "XRP": "XRP-USDT-SWAP",
+    "ADA": "ADA-USDT-SWAP",
+    "DOT": "DOT-USDT-SWAP",
+    "NEAR": "NEAR-USDT-SWAP",
+    "MATIC": "MATIC-USDT-SWAP",
+    "PEPE": "PEPE-USDT-SWAP",
+    "OP": "OP-USDT-SWAP",
+    "FIL": "FIL-USDT-SWAP",
+    "APT": "APT-USDT-SWAP",
+    "ATOM": "ATOM-USDT-SWAP",
 }
 
-# Binance spot pairs (Vision API)
+# Binance USDT-M perpetual pairs (Futures API)
 BINANCE_SYMBOL_MAP: Dict[str, str] = {
     "BTC": "BTCUSDT",
     "ETH": "ETHUSDT",
@@ -37,6 +47,16 @@ BINANCE_SYMBOL_MAP: Dict[str, str] = {
     "LINK": "LINKUSDT",
     "ARB": "ARBUSDT",
     "SUI": "SUIUSDT",
+    "XRP": "XRPUSDT",
+    "ADA": "ADAUSDT",
+    "DOT": "DOTUSDT",
+    "NEAR": "NEARUSDT",
+    "MATIC": "MATICUSDT",
+    "PEPE": "PEPEUSDT",
+    "OP": "OPUSDT",
+    "FIL": "FILUSDT",
+    "APT": "APTUSDT",
+    "ATOM": "ATOMUSDT",
 }
 
 # Hyperliquid — uses plain coin name
