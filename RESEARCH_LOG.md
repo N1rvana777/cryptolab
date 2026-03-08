@@ -2930,3 +2930,417 @@ Params: combo=['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'], lookbacks=['18/48/168', 
 - Trades: 136 | Win rate: 16.2% | Profit factor: 1.08
 - Fees: $96.32 | Slippage: $412.82 | Time in market: 22.5%
 - Initial: $10,000 | Final: $10,361.34
+
+## 2026-03-07 21:18 UTC — Backtest: DonchianMTF on BTC
+
+- Period: 2021-01-01 to 2023-12-30
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +60.06% | Max DD: 12.86% | Sharpe: 1.23 | Sortino: 1.09 | Calmar: 1.32
+- Trades: 154 | Win rate: 20.1% | Profit factor: 2.01
+- Fees: $193.86 | Slippage: $830.81 | Time in market: 30.7%
+- Initial: $10,000 | Final: $16,006.48
+
+## 2026-03-07 21:22 UTC — Backtest: DonchianMTF on SOL
+
+- Period: 2021-01-22 to 2023-12-30
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +61.33% | Max DD: 11.14% | Sharpe: 1.26 | Sortino: 1.14 | Calmar: 1.59
+- Trades: 184 | Win rate: 21.2% | Profit factor: 2.07
+- Fees: $122.00 | Slippage: $519.61 | Time in market: 34.1%
+- Initial: $10,000 | Final: $16,133.33
+
+## 2026-03-07 21:26 UTC — Backtest: DonchianMTF on ADA
+
+- Period: 2021-01-01 to 2023-12-30
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +29.33% | Max DD: 18.54% | Sharpe: 0.78 | Sortino: 0.66 | Calmar: 0.48
+- Trades: 188 | Win rate: 16.0% | Profit factor: 1.53
+- Fees: $136.65 | Slippage: $585.62 | Time in market: 29.2%
+- Initial: $10,000 | Final: $12,933.44
+
+## 2026-03-07 21:30 UTC — Backtest: DonchianMTF on XRP
+
+- Period: 2021-01-01 to 2023-12-30
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +12.87% | Max DD: 8.63% | Sharpe: 0.47 | Sortino: 0.25 | Calmar: 0.48
+- Trades: 84 | Win rate: 17.9% | Profit factor: 1.53
+- Fees: $64.90 | Slippage: $278.15 | Time in market: 10.1%
+- Initial: $10,000 | Final: $11,286.55
+
+## 2026-03-07 21:34 UTC — Backtest: DonchianMTF on BTC
+
+- Period: 2021-01-01 to 2023-12-30
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +50.89% | Max DD: 13.80% | Sharpe: 1.14 | Sortino: 1.35 | Calmar: 1.07
+- Trades: 303 | Win rate: 20.1% | Profit factor: 1.66
+- Fees: $318.20 | Slippage: $1360.79 | Time in market: 61.5%
+- Initial: $10,000 | Final: $15,089.00
+
+## 2026-03-07 21:38 UTC — Backtest: DonchianMTF on SOL
+
+- Period: 2021-01-22 to 2023-12-30
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +71.40% | Max DD: 9.91% | Sharpe: 1.52 | Sortino: 1.77 | Calmar: 2.03
+- Trades: 321 | Win rate: 21.5% | Profit factor: 1.83
+- Fees: $177.61 | Slippage: $758.38 | Time in market: 63.3%
+- Initial: $10,000 | Final: $17,139.96
+
+## 2026-03-07 21:42 UTC — Backtest: DonchianMTF on ADA
+
+- Period: 2021-01-01 to 2023-12-30
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +21.46% | Max DD: 12.65% | Sharpe: 0.63 | Sortino: 0.68 | Calmar: 0.53
+- Trades: 339 | Win rate: 18.3% | Profit factor: 1.30
+- Fees: $199.24 | Slippage: $853.91 | Time in market: 58.4%
+- Initial: $10,000 | Final: $12,146.08
+
+## 2026-03-07 21:46 UTC — Backtest: DonchianMTF on XRP
+
+- Period: 2021-01-01 to 2023-12-30
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +16.96% | Max DD: 14.70% | Sharpe: 0.56 | Sortino: 0.57 | Calmar: 0.37
+- Trades: 256 | Win rate: 18.4% | Profit factor: 1.28
+- Fees: $152.65 | Slippage: $654.20 | Time in market: 47.2%
+- Initial: $10,000 | Final: $11,695.78
+
+## 2026-03-07 21:50 UTC — Backtest: DonchianMTF on BTC
+
+- Period: 2021-01-01 to 2023-12-30
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +40.55% | Max DD: 12.60% | Sharpe: 1.08 | Sortino: 1.25 | Calmar: 0.95
+- Trades: 301 | Win rate: 20.6% | Profit factor: 1.60
+- Fees: $280.72 | Slippage: $1200.55 | Time in market: 61.6%
+- Initial: $10,000 | Final: $14,054.73
+
+## 2026-03-07 21:54 UTC — Backtest: DonchianMTF on SOL
+
+- Period: 2021-01-22 to 2023-12-30
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +70.32% | Max DD: 8.53% | Sharpe: 1.63 | Sortino: 1.91 | Calmar: 2.33
+- Trades: 323 | Win rate: 21.7% | Profit factor: 1.92
+- Fees: $160.68 | Slippage: $686.26 | Time in market: 63.6%
+- Initial: $10,000 | Final: $17,031.53
+
+## 2026-03-07 21:58 UTC — Backtest: DonchianMTF on ADA
+
+- Period: 2021-01-01 to 2023-12-30
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +24.51% | Max DD: 11.21% | Sharpe: 0.76 | Sortino: 0.83 | Calmar: 0.68
+- Trades: 343 | Win rate: 18.1% | Profit factor: 1.37
+- Fees: $185.56 | Slippage: $795.25 | Time in market: 58.3%
+- Initial: $10,000 | Final: $12,451.08
+
+## 2026-03-07 22:02 UTC — Backtest: DonchianMTF on XRP
+
+- Period: 2021-01-01 to 2023-12-30
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +14.69% | Max DD: 13.52% | Sharpe: 0.55 | Sortino: 0.55 | Calmar: 0.35
+- Trades: 256 | Win rate: 18.8% | Profit factor: 1.26
+- Fees: $137.15 | Slippage: $587.79 | Time in market: 47.3%
+- Initial: $10,000 | Final: $11,468.92
+
+## 2026-03-07 22:06 UTC — Backtest: DonchianMTF on BTC
+
+- Period: 2021-01-01 to 2023-12-30
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +31.61% | Max DD: 10.15% | Sharpe: 1.01 | Sortino: 1.16 | Calmar: 0.95
+- Trades: 319 | Win rate: 20.7% | Profit factor: 1.55
+- Fees: $248.19 | Slippage: $1061.54 | Time in market: 64.6%
+- Initial: $10,000 | Final: $13,160.89
+
+## 2026-03-07 22:10 UTC — Backtest: DonchianMTF on SOL
+
+- Period: 2021-01-22 to 2023-12-30
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +68.94% | Max DD: 6.36% | Sharpe: 1.74 | Sortino: 2.05 | Calmar: 3.07
+- Trades: 335 | Win rate: 21.2% | Profit factor: 2.03
+- Fees: $142.18 | Slippage: $607.40 | Time in market: 64.5%
+- Initial: $10,000 | Final: $16,893.54
+
+## 2026-03-07 22:14 UTC — Backtest: DonchianMTF on ADA
+
+- Period: 2021-01-01 to 2023-12-30
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +26.62% | Max DD: 9.80% | Sharpe: 0.89 | Sortino: 0.98 | Calmar: 0.84
+- Trades: 355 | Win rate: 18.0% | Profit factor: 1.43
+- Fees: $167.37 | Slippage: $717.32 | Time in market: 60.7%
+- Initial: $10,000 | Final: $12,661.92
+
+## 2026-03-07 22:18 UTC — Backtest: DonchianMTF on XRP
+
+- Period: 2021-01-01 to 2023-12-30
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +10.01% | Max DD: 14.73% | Sharpe: 0.46 | Sortino: 0.45 | Calmar: 0.22
+- Trades: 278 | Win rate: 18.7% | Profit factor: 1.20
+- Fees: $120.37 | Slippage: $515.88 | Time in market: 52.2%
+- Initial: $10,000 | Final: $11,000.83
+
+## 2026-03-07 22:23 UTC — Backtest: DonchianMTF on BTC
+
+- Period: 2021-01-01 to 2023-12-30
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +18.56% | Max DD: 8.66% | Sharpe: 0.75 | Sortino: 0.81 | Calmar: 0.68
+- Trades: 319 | Win rate: 20.4% | Profit factor: 1.37
+- Fees: $219.02 | Slippage: $936.91 | Time in market: 63.8%
+- Initial: $10,000 | Final: $11,856.20
+
+## 2026-03-07 22:27 UTC — Backtest: DonchianMTF on SOL
+
+- Period: 2021-01-22 to 2023-12-30
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +64.45% | Max DD: 5.95% | Sharpe: 1.76 | Sortino: 2.07 | Calmar: 3.10
+- Trades: 321 | Win rate: 22.1% | Profit factor: 2.08
+- Fees: $128.94 | Slippage: $551.15 | Time in market: 62.8%
+- Initial: $10,000 | Final: $16,444.91
+
+## 2026-03-07 22:31 UTC — Backtest: DonchianMTF on ADA
+
+- Period: 2021-01-01 to 2023-12-30
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +27.54% | Max DD: 10.09% | Sharpe: 0.97 | Sortino: 1.07 | Calmar: 0.84
+- Trades: 339 | Win rate: 18.3% | Profit factor: 1.47
+- Fees: $153.51 | Slippage: $657.92 | Time in market: 58.9%
+- Initial: $10,000 | Final: $12,754.34
+
+## 2026-03-07 22:35 UTC — Backtest: DonchianMTF on XRP
+
+- Period: 2021-01-01 to 2023-12-30
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +6.96% | Max DD: 13.85% | Sharpe: 0.36 | Sortino: 0.35 | Calmar: 0.16
+- Trades: 280 | Win rate: 19.6% | Profit factor: 1.15
+- Fees: $110.13 | Slippage: $471.97 | Time in market: 52.8%
+- Initial: $10,000 | Final: $10,695.88
+
+## 2026-03-07 22:39 UTC — Backtest: DonchianMTF on BTC
+
+- Period: 2021-01-01 to 2023-12-30
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +6.61% | Max DD: 9.41% | Sharpe: 0.35 | Sortino: 0.35 | Calmar: 0.23
+- Trades: 311 | Win rate: 20.3% | Profit factor: 1.16
+- Fees: $186.75 | Slippage: $799.02 | Time in market: 62.4%
+- Initial: $10,000 | Final: $10,660.99
+
+## 2026-03-07 22:43 UTC — Backtest: DonchianMTF on SOL
+
+- Period: 2021-01-22 to 2023-12-30
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +59.67% | Max DD: 6.33% | Sharpe: 1.74 | Sortino: 2.00 | Calmar: 2.72
+- Trades: 313 | Win rate: 22.4% | Profit factor: 2.12
+- Fees: $116.91 | Slippage: $500.04 | Time in market: 61.0%
+- Initial: $10,000 | Final: $15,966.74
+
+## 2026-03-07 22:47 UTC — Backtest: DonchianMTF on ADA
+
+- Period: 2021-01-01 to 2023-12-30
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +27.55% | Max DD: 10.79% | Sharpe: 1.00 | Sortino: 1.07 | Calmar: 0.78
+- Trades: 329 | Win rate: 18.2% | Profit factor: 1.51
+- Fees: $137.87 | Slippage: $590.87 | Time in market: 57.8%
+- Initial: $10,000 | Final: $12,754.77
+
+## 2026-03-07 22:51 UTC — Backtest: DonchianMTF on XRP
+
+- Period: 2021-01-01 to 2023-12-30
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +2.93% | Max DD: 14.44% | Sharpe: 0.18 | Sortino: 0.16 | Calmar: 0.07
+- Trades: 280 | Win rate: 19.6% | Profit factor: 1.07
+- Fees: $100.13 | Slippage: $429.14 | Time in market: 52.8%
+- Initial: $10,000 | Final: $10,293.19
+
+## 2026-03-07 22:51 UTC — Parameter Sweep: DonchianMTF (ADA, BTC, SOL, XRP)
+
+Params: mom_weight=['0.0', '0.2', '0.4', '0.6', '0.8', '1.0']
+
+| Mom_weight | Symbol | Return | MaxDD | Sharpe | Sortino | Calmar | Trades | WinRate | PF |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 0.8 | SOL | +64.45% | 5.95% | 1.76 | 2.07 | 3.10 | 321 | 22.1% | 2.08 |
+| 1 | SOL | +59.67% | 6.33% | 1.74 | 2.00 | 2.72 | 313 | 22.4% | 2.12 |
+| 0.6 | SOL | +68.94% | 6.36% | 1.74 | 2.05 | 3.07 | 335 | 21.2% | 2.03 |
+| 0.4 | SOL | +70.32% | 8.53% | 1.63 | 1.91 | 2.33 | 323 | 21.7% | 1.92 |
+| 0.2 | SOL | +71.40% | 9.91% | 1.52 | 1.77 | 2.03 | 321 | 21.5% | 1.83 |
+| 0 | SOL | +61.33% | 11.14% | 1.26 | 1.14 | 1.59 | 184 | 21.2% | 2.07 |
+| 0 | BTC | +60.06% | 12.86% | 1.23 | 1.09 | 1.32 | 154 | 20.1% | 2.01 |
+| 0.2 | BTC | +50.89% | 13.80% | 1.14 | 1.35 | 1.07 | 303 | 20.1% | 1.66 |
+| 0.4 | BTC | +40.55% | 12.60% | 1.08 | 1.25 | 0.95 | 301 | 20.6% | 1.60 |
+| 0.6 | BTC | +31.61% | 10.15% | 1.01 | 1.16 | 0.95 | 319 | 20.7% | 1.55 |
+| 1 | ADA | +27.55% | 10.79% | 1.00 | 1.07 | 0.78 | 329 | 18.2% | 1.51 |
+| 0.8 | ADA | +27.54% | 10.09% | 0.97 | 1.07 | 0.84 | 339 | 18.3% | 1.47 |
+| 0.6 | ADA | +26.62% | 9.80% | 0.89 | 0.98 | 0.84 | 355 | 18.0% | 1.43 |
+| 0 | ADA | +29.33% | 18.54% | 0.78 | 0.66 | 0.48 | 188 | 16.0% | 1.53 |
+| 0.4 | ADA | +24.51% | 11.21% | 0.76 | 0.83 | 0.68 | 343 | 18.1% | 1.37 |
+| 0.8 | BTC | +18.56% | 8.66% | 0.75 | 0.81 | 0.68 | 319 | 20.4% | 1.37 |
+| 0.2 | ADA | +21.46% | 12.65% | 0.63 | 0.68 | 0.53 | 339 | 18.3% | 1.30 |
+| 0.2 | XRP | +16.96% | 14.70% | 0.56 | 0.57 | 0.37 | 256 | 18.4% | 1.28 |
+| 0.4 | XRP | +14.69% | 13.52% | 0.55 | 0.55 | 0.35 | 256 | 18.8% | 1.26 |
+| 0 | XRP | +12.87% | 8.63% | 0.47 | 0.25 | 0.48 | 84 | 17.9% | 1.53 |
+| 0.6 | XRP | +10.01% | 14.73% | 0.46 | 0.45 | 0.22 | 278 | 18.7% | 1.20 |
+| 0.8 | XRP | +6.96% | 13.85% | 0.36 | 0.35 | 0.16 | 280 | 19.6% | 1.15 |
+| 1 | BTC | +6.61% | 9.41% | 0.35 | 0.35 | 0.23 | 311 | 20.3% | 1.16 |
+| 1 | XRP | +2.93% | 14.44% | 0.18 | 0.16 | 0.07 | 280 | 19.6% | 1.07 |
+
+## 2026-03-07 22:54 UTC — Backtest: DonchianMTF on BTC
+
+- Period: 2024-01-01 to 2026-03-04
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +6.74% | Max DD: 16.70% | Sharpe: 0.37 | Sortino: 0.25 | Calmar: 0.18
+- Trades: 141 | Win rate: 17.0% | Profit factor: 1.17
+- Fees: $155.70 | Slippage: $667.30 | Time in market: 29.5%
+- Initial: $10,000 | Final: $10,673.86
+
+## 2026-03-07 22:56 UTC — Backtest: DonchianMTF on SOL
+
+- Period: 2024-01-01 to 2026-03-04
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +6.88% | Max DD: 9.64% | Sharpe: 0.35 | Sortino: 0.27 | Calmar: 0.32
+- Trades: 127 | Win rate: 20.5% | Profit factor: 1.24
+- Fees: $90.80 | Slippage: $389.15 | Time in market: 28.8%
+- Initial: $10,000 | Final: $10,687.59
+
+## 2026-03-07 22:58 UTC — Backtest: DonchianMTF on ADA
+
+- Period: 2024-01-01 to 2026-03-04
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +12.27% | Max DD: 8.88% | Sharpe: 0.54 | Sortino: 0.41 | Calmar: 0.62
+- Trades: 128 | Win rate: 25.0% | Profit factor: 1.42
+- Fees: $86.02 | Slippage: $368.64 | Time in market: 28.9%
+- Initial: $10,000 | Final: $11,226.72
+
+## 2026-03-07 23:00 UTC — Backtest: DonchianMTF on XRP
+
+- Period: 2024-01-01 to 2026-03-04
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +25.68% | Max DD: 8.82% | Sharpe: 1.18 | Sortino: 0.61 | Calmar: 1.26
+- Trades: 58 | Win rate: 15.5% | Profit factor: 2.58
+- Fees: $44.91 | Slippage: $192.48 | Time in market: 9.1%
+- Initial: $10,000 | Final: $12,567.65
+
+## 2026-03-07 23:03 UTC — Backtest: DonchianMTF on BTC
+
+- Period: 2024-01-01 to 2026-03-04
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: -1.63% | Max DD: 21.22% | Sharpe: -0.06 | Sortino: -0.05 | Calmar: -0.04
+- Trades: 249 | Win rate: 16.5% | Profit factor: 0.96
+- Fees: $157.98 | Slippage: $677.06 | Time in market: 54.8%
+- Initial: $10,000 | Final: $9,836.61
+
+## 2026-03-07 23:05 UTC — Backtest: DonchianMTF on SOL
+
+- Period: 2024-01-01 to 2026-03-04
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: -7.61% | Max DD: 12.25% | Sharpe: -0.40 | Sortino: -0.43 | Calmar: -0.29
+- Trades: 273 | Win rate: 15.8% | Profit factor: 0.84
+- Fees: $111.66 | Slippage: $476.86 | Time in market: 60.9%
+- Initial: $10,000 | Final: $9,238.67
+
+## 2026-03-07 23:07 UTC — Backtest: DonchianMTF on ADA
+
+- Period: 2024-01-01 to 2026-03-04
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +11.24% | Max DD: 11.53% | Sharpe: 0.55 | Sortino: 0.55 | Calmar: 0.44
+- Trades: 228 | Win rate: 21.5% | Profit factor: 1.29
+- Fees: $99.52 | Slippage: $426.54 | Time in market: 53.9%
+- Initial: $10,000 | Final: $11,123.71
+
+## 2026-03-07 23:09 UTC — Backtest: DonchianMTF on XRP
+
+- Period: 2024-01-01 to 2026-03-04
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +0.71% | Max DD: 17.00% | Sharpe: 0.08 | Sortino: 0.07 | Calmar: 0.02
+- Trades: 178 | Win rate: 18.0% | Profit factor: 1.02
+- Fees: $79.76 | Slippage: $341.83 | Time in market: 35.6%
+- Initial: $10,000 | Final: $10,071.01
+
+## 2026-03-07 23:11 UTC — Backtest: DonchianMTF on BTC
+
+- Period: 2024-01-01 to 2026-03-04
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +0.95% | Max DD: 18.15% | Sharpe: 0.10 | Sortino: 0.09 | Calmar: 0.02
+- Trades: 261 | Win rate: 16.9% | Profit factor: 1.02
+- Fees: $152.76 | Slippage: $654.69 | Time in market: 56.4%
+- Initial: $10,000 | Final: $10,095.23
+
+## 2026-03-07 23:13 UTC — Backtest: DonchianMTF on SOL
+
+- Period: 2024-01-01 to 2026-03-04
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: -4.38% | Max DD: 10.04% | Sharpe: -0.23 | Sortino: -0.25 | Calmar: -0.20
+- Trades: 275 | Win rate: 16.4% | Profit factor: 0.90
+- Fees: $102.45 | Slippage: $436.97 | Time in market: 60.6%
+- Initial: $10,000 | Final: $9,561.50
+
+## 2026-03-07 23:16 UTC — Backtest: DonchianMTF on ADA
+
+- Period: 2024-01-01 to 2026-03-04
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +6.54% | Max DD: 10.83% | Sharpe: 0.40 | Sortino: 0.38 | Calmar: 0.27
+- Trades: 236 | Win rate: 22.0% | Profit factor: 1.19
+- Fees: $80.75 | Slippage: $346.09 | Time in market: 55.2%
+- Initial: $10,000 | Final: $10,654.21
+
+## 2026-03-07 23:18 UTC — Backtest: DonchianMTF on XRP
+
+- Period: 2024-01-01 to 2026-03-04
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +2.66% | Max DD: 15.79% | Sharpe: 0.20 | Sortino: 0.16 | Calmar: 0.08
+- Trades: 190 | Win rate: 18.4% | Profit factor: 1.07
+- Fees: $72.42 | Slippage: $310.36 | Time in market: 38.1%
+- Initial: $10,000 | Final: $10,266.47
+
+## 2026-03-07 23:20 UTC — Backtest: DonchianMTF on BTC
+
+- Period: 2024-01-01 to 2026-03-04
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +2.83% | Max DD: 15.47% | Sharpe: 0.21 | Sortino: 0.19 | Calmar: 0.08
+- Trades: 259 | Win rate: 16.6% | Profit factor: 1.07
+- Fees: $152.09 | Slippage: $651.82 | Time in market: 54.7%
+- Initial: $10,000 | Final: $10,283.31
+
+## 2026-03-07 23:22 UTC — Backtest: DonchianMTF on SOL
+
+- Period: 2024-01-01 to 2026-03-04
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: -1.64% | Max DD: 8.80% | Sharpe: -0.07 | Sortino: -0.08 | Calmar: -0.09
+- Trades: 267 | Win rate: 17.2% | Profit factor: 0.96
+- Fees: $97.03 | Slippage: $413.39 | Time in market: 59.5%
+- Initial: $10,000 | Final: $9,835.71
+
+## 2026-03-07 23:24 UTC — Backtest: DonchianMTF on ADA
+
+- Period: 2024-01-01 to 2026-03-04
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +4.43% | Max DD: 8.48% | Sharpe: 0.31 | Sortino: 0.30 | Calmar: 0.24
+- Trades: 232 | Win rate: 21.6% | Profit factor: 1.14
+- Fees: $71.73 | Slippage: $307.41 | Time in market: 53.5%
+- Initial: $10,000 | Final: $10,443.44
+
+## 2026-03-07 23:26 UTC — Backtest: DonchianMTF on XRP
+
+- Period: 2024-01-01 to 2026-03-04
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=1.5
+- Return: +3.24% | Max DD: 14.74% | Sharpe: 0.24 | Sortino: 0.20 | Calmar: 0.10
+- Trades: 190 | Win rate: 18.4% | Profit factor: 1.09
+- Fees: $68.43 | Slippage: $293.28 | Time in market: 38.3%
+- Initial: $10,000 | Final: $10,323.94
+
+## 2026-03-07 23:26 UTC — Parameter Sweep: DonchianMTF (ADA, BTC, SOL, XRP)
+
+Params: mom_weight=['0.0', '0.4', '0.6', '0.8']
+
+| Mom_weight | Symbol | Return | MaxDD | Sharpe | Sortino | Calmar | Trades | WinRate | PF |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 0 | XRP | +25.68% | 8.82% | 1.18 | 0.61 | 1.26 | 58 | 15.5% | 2.58 |
+| 0.4 | ADA | +11.24% | 11.53% | 0.55 | 0.55 | 0.44 | 228 | 21.5% | 1.29 |
+| 0 | ADA | +12.27% | 8.88% | 0.54 | 0.41 | 0.62 | 128 | 25.0% | 1.42 |
+| 0.6 | ADA | +6.54% | 10.83% | 0.40 | 0.38 | 0.27 | 236 | 22.0% | 1.19 |
+| 0 | BTC | +6.74% | 16.70% | 0.37 | 0.25 | 0.18 | 141 | 17.0% | 1.17 |
+| 0 | SOL | +6.88% | 9.64% | 0.35 | 0.27 | 0.32 | 127 | 20.5% | 1.24 |
+| 0.8 | ADA | +4.43% | 8.48% | 0.31 | 0.30 | 0.24 | 232 | 21.6% | 1.14 |
+| 0.8 | XRP | +3.24% | 14.74% | 0.24 | 0.20 | 0.10 | 190 | 18.4% | 1.09 |
+| 0.8 | BTC | +2.83% | 15.47% | 0.21 | 0.19 | 0.08 | 259 | 16.6% | 1.07 |
+| 0.6 | XRP | +2.66% | 15.79% | 0.20 | 0.16 | 0.08 | 190 | 18.4% | 1.07 |
+| 0.6 | BTC | +0.95% | 18.15% | 0.10 | 0.09 | 0.02 | 261 | 16.9% | 1.02 |
+| 0.4 | XRP | +0.71% | 17.00% | 0.08 | 0.07 | 0.02 | 178 | 18.0% | 1.02 |
+| 0.4 | BTC | -1.63% | 21.22% | -0.06 | -0.05 | -0.04 | 249 | 16.5% | 0.96 |
+| 0.8 | SOL | -1.64% | 8.80% | -0.07 | -0.08 | -0.09 | 267 | 17.2% | 0.96 |
+| 0.6 | SOL | -4.38% | 10.04% | -0.23 | -0.25 | -0.20 | 275 | 16.4% | 0.90 |
+| 0.4 | SOL | -7.61% | 12.25% | -0.40 | -0.43 | -0.29 | 273 | 15.8% | 0.84 |

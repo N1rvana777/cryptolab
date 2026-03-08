@@ -12,7 +12,7 @@ import pandas as pd
 from cryptolab.config import Config
 from cryptolab.strategy.base import BaseStrategy, StrategySignal
 from cryptolab.indicators.donchian import compute_donchian
-from cryptolab.indicators.core import compute_atr
+from cryptolab.indicators.core import compute_atr, compute_tsmom
 from cryptolab.backtest.metrics import PERIODS_PER_YEAR
 
 
@@ -115,7 +115,8 @@ class DonchianMTF(BaseStrategy):
 
         highs = df["high"].tolist()
         lows = df["low"].tolist()
-        close = df.iloc[-1]["close"]
+        closes = df["close"].tolist()
+        close = closes[-1]
         candles = [
             {"h": row["high"], "l": row["low"], "c": row["close"], "v": row["volume"]}
             for _, row in df.iterrows()
@@ -139,10 +140,19 @@ class DonchianMTF(BaseStrategy):
         # Dynamic scalars
         vol_scalar, dd_scalar, ann_vol, current_dd = self._compute_scalars(close, atr, equity, st)
 
+        # Momentum score
+        mom_score = compute_tsmom(closes, cfg.mom_lookback) if cfg.mom_weight > 0 else 0.0
+        if mom_score is None:
+            mom_score = 0.0
+
+        # Blend breakout + momentum
+        final_combined = (1 - cfg.mom_weight) * combined + cfg.mom_weight * mom_score
+
         meta = {
             "dc_upper": upper, "dc_lower": lower, "atr": atr,
             "trail_stop": st["trail_stop"],
             "combined": combined,
+            "mom_score": mom_score, "final_combined": final_combined,
             "vol_scalar": vol_scalar, "dd_scalar": dd_scalar,
             "current_dd_pct": current_dd * 100, "ann_vol": ann_vol,
             **tf_meta,
@@ -195,16 +205,21 @@ class DonchianMTF(BaseStrategy):
             base_position = (risk_usd / stop_dist_pct) * cfg.leverage
             max_position = equity * cfg.leverage
 
-            # MTF agreement: scale position by abs(combined)
-            # combined=1.0 means all TFs agree, 0.25 means only one short TF
-            agreement = abs(combined)
+            # Use blended score for agreement/sizing
+            agreement = abs(final_combined)
             if agreement < cfg.mtf_signal_deadzone:
-                agreement = 0.0  # no entry if TFs disagree
+                agreement = 0.0
 
             position_usd = base_position * agreement * vol_scalar * dd_scalar
             position_usd = min(position_usd, max_position)
 
-            if close > upper and combined > 0 and position_usd > 0:
+            # Entry triggers: breakout OR strong momentum
+            breakout_long = close > upper
+            breakout_short = close < lower
+            mom_long = cfg.mom_weight > 0 and mom_score > cfg.mom_entry_threshold
+            mom_short = cfg.mom_weight > 0 and mom_score < -cfg.mom_entry_threshold
+
+            if (breakout_long or mom_long) and final_combined > 0 and position_usd > 0:
                 st["side"] = "long"
                 st["entry_px"] = close
                 st["trail_stop"] = close - stop_dist
@@ -214,6 +229,7 @@ class DonchianMTF(BaseStrategy):
                 st["unit_size"] = position_usd
                 meta["trail_stop"] = st["trail_stop"]
                 meta["n_units"] = 1
+                meta["entry_type"] = "momentum" if mom_long and not breakout_long else "breakout"
                 return StrategySignal(
                     target_position=position_usd, signal="LONG",
                     confidence=agreement,
@@ -221,7 +237,7 @@ class DonchianMTF(BaseStrategy):
                     strategy_name=self.name, metadata=meta,
                 )
 
-            if close < lower and combined < 0 and position_usd > 0:
+            if (breakout_short or mom_short) and final_combined < 0 and position_usd > 0:
                 st["side"] = "short"
                 st["entry_px"] = close
                 st["trail_stop"] = close + stop_dist
@@ -231,6 +247,7 @@ class DonchianMTF(BaseStrategy):
                 st["unit_size"] = position_usd
                 meta["trail_stop"] = st["trail_stop"]
                 meta["n_units"] = 1
+                meta["entry_type"] = "momentum" if mom_short and not breakout_short else "breakout"
                 return StrategySignal(
                     target_position=-position_usd, signal="SHORT",
                     confidence=agreement,
@@ -254,7 +271,7 @@ class DonchianMTF(BaseStrategy):
                     if close > add_threshold:
                         # Compute add unit using current scalars
                         add_unit = self._compute_add_unit(
-                            equity, close, atr, stop_dist, combined, vol_scalar, dd_scalar)
+                            equity, close, atr, stop_dist, final_combined, vol_scalar, dd_scalar)
                         new_pos = st["base_pos"] + add_unit
                         if new_pos <= max_position:
                             st["n_units"] += 1
@@ -275,7 +292,7 @@ class DonchianMTF(BaseStrategy):
                     add_threshold = st["last_add_px"] - atr * spacing
                     if close < add_threshold:
                         add_unit = self._compute_add_unit(
-                            equity, close, atr, stop_dist, combined, vol_scalar, dd_scalar)
+                            equity, close, atr, stop_dist, final_combined, vol_scalar, dd_scalar)
                         new_pos = st["base_pos"] - add_unit
                         if abs(new_pos) <= max_position:
                             st["n_units"] += 1

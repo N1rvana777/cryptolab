@@ -329,6 +329,12 @@ def main():
                         help="Run overfitting diagnostics (bootstrap CI, regime split)")
     parser.add_argument("--pyramid-units", type=int, default=None,
                         help="Max pyramid units (1=no pyramiding, 4=full turtle)")
+    parser.add_argument("--mom-weight", type=float, default=None,
+                        help="Momentum blend weight (0=pure breakout, 1=pure momentum)")
+    parser.add_argument("--mom-lookback", type=int, default=None,
+                        help="Momentum lookback period (default 168 = 28 days at 4H)")
+    parser.add_argument("--sweep-mom-weight", type=str, default=None,
+                        help="Comma-separated momentum weights to sweep (e.g. 0.0,0.2,0.4,0.6,0.8,1.0)")
     args = parser.parse_args()
 
     cfg = Config(interval=args.interval, data_source=args.source)
@@ -344,6 +350,10 @@ def main():
         cfg.mtf_weights = [float(x) for x in args.mtf_weights.split(",")]
     if args.pyramid_units is not None:
         cfg.mtf_pyramid_max_units = args.pyramid_units
+    if args.mom_weight is not None:
+        cfg.mom_weight = args.mom_weight
+    if args.mom_lookback is not None:
+        cfg.mom_lookback = args.mom_lookback
 
     # Determine symbols to run
     if args.symbols:
@@ -354,6 +364,11 @@ def main():
     # Portfolio mode
     if args.portfolio:
         _run_portfolio(args, cfg, symbol_list)
+        return
+
+    # Momentum weight sweep mode
+    if args.sweep_mom_weight:
+        _run_mom_weight_sweep(args, cfg, symbol_list)
         return
 
     # MTF combo sweep mode
@@ -449,6 +464,76 @@ def _parse_symbol_combos(s: str) -> dict[str, str]:
         if len(parts) == 2:
             result[parts[0].upper()] = parts[1].upper()
     return result
+
+
+def _run_mom_weight_sweep(args, cfg, symbol_list):
+    """Sweep momentum blend weight while keeping other params fixed."""
+    dm = DataManager()
+    project_root = os.path.join(os.path.dirname(__file__), "..")
+    ts = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+
+    weights = [float(x.strip()) for x in args.sweep_mom_weight.split(",")]
+
+    # Parse per-symbol combo overrides
+    combo_overrides = _parse_symbol_combos(args.symbol_combos) if args.symbol_combos else {}
+
+    # Load data once
+    data_cache: dict[str, pd.DataFrame] = {}
+    for symbol in symbol_list:
+        data_cache[symbol] = load_data(symbol, args.interval, args.source, args.start, args.end, dm)
+
+    all_results: list[tuple[dict, BacktestResult]] = []
+
+    for mw in weights:
+        for symbol in symbol_list:
+            combo_letter = combo_overrides.get(symbol, "G")
+            lbs = MTF_COMBO_MAP.get(combo_letter, MTF_COMBO_MAP["G"])
+            cfg_run = replace(cfg,
+                              mtf_lookbacks=lbs,
+                              mtf_weights=[0.33, 0.34, 0.33],
+                              mom_weight=mw)
+
+            print(f"\n--- mom_weight={mw:.1f}, {symbol} (Combo {combo_letter}) ---")
+            result = run_backtest(symbol, data_cache[symbol], cfg_run, "donchian_mtf")
+            params = {"mom_weight": mw}
+            all_results.append((params, result))
+
+            print_summary(result)
+
+            run_dir = os.path.join(project_root, "runs",
+                                   f"{ts}_momw{mw:.1f}_{symbol}")
+            save_results(result, run_dir)
+            append_research_log(result, project_root)
+
+    # Sort by Sharpe
+    all_results.sort(key=lambda x: x[1].sharpe, reverse=True)
+    print_sweep_table(all_results)
+    append_sweep_log(all_results, project_root)
+
+    # Portfolio summary per weight
+    if len(symbol_list) > 1:
+        ppy = PERIODS_PER_YEAR.get(args.interval, 2190)
+        print("\n" + "=" * 70)
+        print("  PORTFOLIO SUMMARY PER MOMENTUM WEIGHT")
+        print("=" * 70)
+        print(f"  {'MomWt':>6} {'Return':>8} {'MaxDD':>8} {'Sharpe':>7} {'Sortino':>8} {'Calmar':>7}")
+        print("  " + "-" * 55)
+
+        for mw in weights:
+            wt_results = [(p, r) for p, r in all_results if p["mom_weight"] == mw]
+            symbol_curves = {}
+            for _, r in wt_results:
+                symbol_curves[r.symbol] = r.equity_curve
+            port_ec = portfolio_equity_curve(symbol_curves)
+            port_eq = port_ec["equity"]
+            total_initial = cfg.initial_capital
+            port_return = (port_eq.iloc[-1] / total_initial - 1) * 100
+            dd_usd, dd_pct = max_drawdown(port_eq)
+            p_sharpe = sharpe_ratio(port_eq, ppy)
+            p_sortino = sortino_ratio(port_eq, ppy)
+            p_calmar = calmar_ratio(port_eq, ppy)
+            print(f"  {mw:>6.1f} {port_return:>+7.2f}% {dd_pct:>7.2f}% {p_sharpe:>7.2f} {p_sortino:>8.2f} {p_calmar:>7.2f}")
+        print("=" * 70)
 
 
 def _run_portfolio(args, cfg, symbol_list):

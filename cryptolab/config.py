@@ -25,8 +25,13 @@ class Config:
     mtf_dd_floor: float = 0.25
     mtf_rebalance_pct: float = 0.05
     mtf_use_trailing_stop: bool = False
-    mtf_pyramid_max_units: int = 4        # max units including initial entry
+    mtf_pyramid_max_units: int = 1        # max units including initial entry (1 = disabled)
     mtf_pyramid_spacing_atr: float = 0.5  # ATR multiple between pyramid adds
+
+    # --- Strategy: Momentum blending ---
+    mom_lookback: int = 168               # TSMOM lookback (168 = 28 days at 4H)
+    mom_weight: float = 0.0              # 0 = pure breakout, 1 = pure momentum
+    mom_entry_threshold: float = 0.3     # momentum-only entry threshold (abs score)
 
     # --- Risk ---
     risk_per_trade: float = 0.02  # fraction of equity risked per trade

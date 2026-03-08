@@ -148,6 +148,34 @@ def compute_slope_z(closes: list, lookback: int = 20) -> Optional[float]:
     return slope / std * (lookback ** 0.5)
 
 
+def compute_tsmom(closes: list, lookback: int) -> Optional[float]:
+    """Time-series momentum: return over lookback normalized by realized vol.
+
+    Returns a score in [-1, 1]. Positive = upward momentum, negative = downward.
+    """
+    if len(closes) < lookback + 1 or lookback < 2:
+        return None
+    if closes[-lookback] <= 0:
+        return 0.0
+    ret = (closes[-1] - closes[-lookback]) / closes[-lookback]
+    # Bar-to-bar returns over the lookback window
+    start = max(1, len(closes) - lookback)
+    rets = []
+    for i in range(start, len(closes)):
+        if closes[i - 1] > 0:
+            rets.append((closes[i] - closes[i - 1]) / closes[i - 1])
+    if len(rets) < 2:
+        return 0.0
+    mean_r = sum(rets) / len(rets)
+    var = sum((r - mean_r) ** 2 for r in rets) / (len(rets) - 1)
+    vol = var ** 0.5
+    if vol <= 0:
+        return 0.0
+    # Sharpe-like score, scaled so ~2.5 sigma maps to +/-1.0
+    score = ret / (vol * lookback ** 0.5)
+    return max(-1.0, min(1.0, score / 2.5))
+
+
 def compute_volume_ratio(candles: list, lookback: int = 20) -> float:
     """Current volume / recent average volume."""
     if len(candles) < lookback + 1:
