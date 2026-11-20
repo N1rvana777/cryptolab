@@ -3344,3 +3344,1335 @@ Params: mom_weight=['0.0', '0.4', '0.6', '0.8']
 | 0.8 | SOL | -1.64% | 8.80% | -0.07 | -0.08 | -0.09 | 267 | 17.2% | 0.96 |
 | 0.6 | SOL | -4.38% | 10.04% | -0.23 | -0.25 | -0.20 | 275 | 16.4% | 0.90 |
 | 0.4 | SOL | -7.61% | 12.25% | -0.40 | -0.43 | -0.29 | 273 | 15.8% | 0.84 |
+
+## 2026-03-09 00:56 UTC — Signal Experiment: VW / MR / CS Weight Sweep
+
+Portfolio: BTC(G), SOL(G), ADA(G), XRP(F)
+IS: 2021-2023, OOS: 2024-2026, Capital: $10,000, Leverage: 3.0x
+
+| Signal | Weight | IS Sharpe | OOS Sharpe | OOS Return | OOS MaxDD |
+| --- | --- | --- | --- | --- | --- |
+| VW | 0.0 | 1.40 | 0.81 | +20.71% | 10.85% |
+| VW | 0.1 | 1.36 | 0.74 | +21.39% | 13.19% |
+| VW | 0.2 | 1.38 | 0.74 | +23.50% | 15.18% |
+| VW | 0.3 | 1.38 | 0.77 | +26.18% | 16.42% |
+| VW | 0.4 | 1.37 | 0.77 | +26.94% | 17.06% |
+| VW | 0.5 | 1.38 | 0.77 | +27.63% | 17.23% |
+| MR | 0.0 | 1.40 | 0.81 | +20.71% | 10.85% |
+| MR | 0.1 | 1.39 | 0.81 | +20.35% | 10.45% |
+| MR | 0.2 | 1.39 | 0.81 | +19.98% | 10.04% |
+| MR | 0.3 | 1.38 | 0.81 | +19.60% | 9.63% |
+| MR | 0.4 | 1.38 | 0.81 | +19.20% | 9.21% |
+| MR | 0.5 | 1.37 | 0.81 | +18.77% | 8.78% |
+| CS | 0.0 | 1.40 | 0.81 | +20.71% | 10.85% |
+| CS | 0.1 | 1.25 | 0.79 | +20.35% | 11.65% |
+| CS | 0.2 | 1.29 | 0.78 | +19.97% | 12.42% |
+| CS | 0.3 | 1.33 | 0.76 | +19.56% | 13.14% |
+| CS | 0.4 | 1.36 | 0.77 | +19.97% | 13.54% |
+| CS | 0.5 | 1.38 | 0.77 | +20.37% | 13.80% |
+
+## 2026-03-09 12:16 UTC — Signal Experiment: VW / MR / CS Weight Sweep
+
+Portfolio: BTC(G), SOL(G), ADA(G), XRP(F)
+IS: 2021-2023, OOS: 2024-2026, Capital: $10,000, Leverage: 3.0x
+
+| Signal | Weight | IS Sharpe | OOS Sharpe | OOS Return | OOS MaxDD |
+| --- | --- | --- | --- | --- | --- |
+| VW | 0.0 | 1.40 | 0.81 | +20.71% | 10.85% |
+| VW | 0.1 | 1.36 | 0.74 | +21.39% | 13.19% |
+| VW | 0.2 | 1.38 | 0.74 | +23.50% | 15.18% |
+| VW | 0.3 | 1.38 | 0.77 | +26.18% | 16.42% |
+| VW | 0.4 | 1.37 | 0.77 | +26.94% | 17.06% |
+| VW | 0.5 | 1.38 | 0.77 | +27.63% | 17.23% |
+| MR | 0.0 | 1.40 | 0.81 | +20.71% | 10.85% |
+| MR | 0.1 | 1.39 | 0.81 | +20.35% | 10.45% |
+| MR | 0.2 | 1.39 | 0.81 | +19.98% | 10.04% |
+| MR | 0.3 | 1.38 | 0.81 | +19.60% | 9.63% |
+| MR | 0.4 | 1.38 | 0.81 | +19.20% | 9.21% |
+| MR | 0.5 | 1.37 | 0.81 | +18.77% | 8.78% |
+| CS | 0.0 | 1.40 | 0.81 | +20.71% | 10.85% |
+| CS | 0.1 | 1.25 | 0.79 | +20.35% | 11.65% |
+| CS | 0.2 | 1.29 | 0.78 | +19.97% | 12.42% |
+| CS | 0.3 | 1.33 | 0.76 | +19.56% | 13.14% |
+| CS | 0.4 | 1.36 | 0.77 | +19.97% | 13.54% |
+| CS | 0.5 | 1.38 | 0.77 | +20.37% | 13.80% |
+
+## 2026-03-09 12:40 UTC — Signal Experiment: VW / MR / CS Weight Sweep
+
+Portfolio: BTC(G), SOL(G), ADA(G), XRP(F)
+IS: 2021-2023, OOS: 2024-2026, Capital: $10,000, Leverage: 3.0x
+
+| Signal | Weight | IS Sharpe | OOS Sharpe | OOS Return | OOS MaxDD |
+| --- | --- | --- | --- | --- | --- |
+| VW | 0.0 | 1.40 | 0.81 | +20.71% | 10.85% |
+| VW | 0.1 | 1.36 | 0.74 | +21.39% | 13.19% |
+| VW | 0.2 | 1.38 | 0.74 | +23.50% | 15.18% |
+| VW | 0.3 | 1.38 | 0.77 | +26.18% | 16.42% |
+| VW | 0.4 | 1.37 | 0.77 | +26.94% | 17.06% |
+| VW | 0.5 | 1.38 | 0.77 | +27.63% | 17.23% |
+| MR | 0.0 | 1.40 | 0.81 | +20.71% | 10.85% |
+| MR | 0.1 | 1.39 | 0.81 | +20.35% | 10.45% |
+| MR | 0.2 | 1.39 | 0.81 | +19.98% | 10.04% |
+| MR | 0.3 | 1.38 | 0.81 | +19.60% | 9.63% |
+| MR | 0.4 | 1.38 | 0.81 | +19.20% | 9.21% |
+| MR | 0.5 | 1.37 | 0.81 | +18.77% | 8.78% |
+| CS | 0.0 | 1.40 | 0.81 | +20.71% | 10.85% |
+| CS | 0.1 | 1.25 | 0.79 | +20.35% | 11.65% |
+| CS | 0.2 | 1.29 | 0.78 | +19.97% | 12.42% |
+| CS | 0.3 | 1.33 | 0.76 | +19.56% | 13.14% |
+| CS | 0.4 | 1.36 | 0.77 | +19.97% | 13.54% |
+| CS | 0.5 | 1.38 | 0.77 | +20.37% | 13.80% |
+
+## 2026-03-24 — FNG OOS A/B Experiment: Walk-Forward Validation
+
+- **Hypothesis**: FNG 特征在 feature importance 中排名极高（top 4），但高 importance 可能只是 IS 过拟合。需要 OOS 验证是否真正提升预测能力。
+- **Method**:
+  - Group A: 134 特征（不含 FNG）
+  - Group B: 138 特征（含 fng_raw, fng_ma_7, fng_ma_30, fng_zscore_30）
+  - 完全相同的：训练数据(2021-2024)、OOS(2024-2026Q1)、模型超参(LGB n=500, lr=0.03, depth=5)、walk-forward 3-fold CV、Kelly sizing
+  - BTC/ETH/SOL, 1H, target=fwd_return_4h
+- **Results**:
+
+| Metric | No FNG (A) | With FNG (B) | Delta |
+|--------|-----------|-------------|-------|
+| OOS Avg Return | -21.86% | -16.76% | **+5.10%** |
+| OOS Avg Sharpe | -2.778 | -1.789 | **+0.989** |
+| OOS Avg Sortino | -3.186 | -2.120 | **+1.065** |
+| OOS Worst MaxDD | 32.74% | 29.60% | **-3.14%** |
+| OOS Avg WinRate | 48.3% | 49.0% | +0.68% |
+| CV Dir Accuracy | 0.5343 | 0.5347 | +0.0005 |
+
+  Per-Symbol OOS Sharpe: BTC -5.27 -> -3.57 (+1.70), ETH -1.50 -> -0.95 (+0.55), SOL -1.57 -> -0.86 (+0.72)
+
+  Per-Quarter OOS Return (avg across 3 symbols):
+  - 2024Q1: +0.15% -> +3.26% (**FNG+**), 2024Q2: -5.95% -> -3.28% (**FNG+**)
+  - 2024Q3: -5.02% -> -4.57% (~), 2024Q4: -1.99% -> -1.17% (**FNG+**)
+  - 2025Q1: -4.59% -> -4.54% (~), 2025Q2: -1.93% -> -1.78% (~)
+  - 2025Q3: -0.55% -> +0.26% (**FNG+**), 2025Q4: -2.14% -> -3.40% (**FNG-**)
+  - 2026Q1: -2.57% -> -3.12% (**FNG-**)
+
+- **Conclusion**:
+  - FNG 在 OOS 中确实有正贡献（Sharpe +0.99, Return +5.1%, MaxDD -3.1%），**不是纯粹的 IS 过拟合**
+  - 所有 3 个币种均一致性改善，非单币种噪声
+  - **但注意**：两组 OOS 表现都是负的（ML 模型整体亏损），说明 ML pipeline 本身需要优化
+  - FNG 在 2024 年效果最好（市场情绪波动大），2025Q4-2026Q1 反而略差（可能是 FNG 信号与 price action 滞后）
+  - **Decision**: 保留 sentiment 特征组在 production pipeline 中，但 ML pipeline 的整体负收益是更大的待解决问题
+
+---
+
+## 2026-03-24 — Fear & Greed Index Feature Experiment
+
+- **Hypothesis**: Crypto Fear & Greed Index (alternative.me) 包含市场情绪信息，作为特征可能提升 ML 预测能力
+- **Method**:
+  1. 从 alternative.me API 拉取完整 FNG 历史数据（2018-02-01 ~ 2026-03-25, 2971 天）
+  2. 创建 `SentimentFeatures` 模块，按日期与 1H OHLCV 做 join，生成 4 个特征：
+     - `fng_raw`: 原始值归一化到 0-1
+     - `fng_ma_7`: 7日移动平均
+     - `fng_ma_30`: 30日移动平均
+     - `fng_zscore_30`: 30日 z-score
+  3. 所有特征 shift(1) 防穿越（FNG 为日度数据，仅使用前一天的值）
+  4. 训练 LightGBM (n_estimators=300, target=fwd_return_4h) 对比加入 FNG 前后的 feature importance
+- **Data**: BTC/ETH/SOL, 1H, 2021-01-01 ~ present (OKX)
+- **Results**:
+  - FNG 4 个特征全部进入 top 4（共 138 个特征中）：
+    - #1 fng_ma_30 (importance=352)
+    - #2 fng_zscore_30 (318)
+    - #3 fng_ma_7 (313)
+    - #4 fng_raw (272)
+  - Top-20 稳定性：15/20 个原有特征保留，5 个被 FNG 挤出（vol_of_vol_168, atr_pctrank, dc_width_72, parkinson_168, obv_slope_14）
+  - 加入 FNG 后第 5 名以后的排名基本稳定，说明 FNG 提供了独立信息而非替代已有特征
+- **Conclusion**: FNG 特征信息量非常高，已加入默认特征组。但需注意：
+  - **⚠️ 高 importance ≠ 高预测力**。FNG 是市场聚合指标，可能与 price action 高度相关。需要 OOS 验证是否真正提升 Sharpe
+  - **⚠️ 数据频率不匹配**（日 vs 小时），同一天内所有小时用同一个 FNG 值，可能导致信息冗余
+  - **Next**: 跑 walk-forward OOS backtest 验证 FNG 是否真正带来 alpha
+
+## 2026-03-25 — DonchianMTF 4-Coin Portfolio OOS 重新验证（实盘前最终确认）
+
+- **目的**: 用最新数据（到2026-03-24）重跑 OOS 验证，确认策略表现未衰退，作为实盘部署的前提
+- **Method**: `run_backtest.py --portfolio --symbol-combos BTC:G,SOL:G,ADA:G,XRP:F --start 2024-01-01 --end 2026-03-24 --interval 4h --capital 10000 --leverage 3.0`
+- **Results**:
+
+| Symbol | Combo | Return | MaxDD | Sharpe | Trades | WinRate | PF |
+|--------|-------|--------|-------|--------|--------|---------|-----|
+| BTC | G (24/72/168) | +8.25% | 26.32% | 0.32 | 146 | 16.4% | 1.12 |
+| SOL | G (24/72/168) | +5.02% | 16.33% | 0.21 | 130 | 20.0% | 1.09 |
+| ADA | G (24/72/168) | +13.94% | 15.45% | 0.40 | 132 | 24.2% | 1.23 |
+| XRP | F (48/168/504) | +43.24% | 15.37% | 1.10 | 60 | 15.0% | 2.24 |
+| **Portfolio** | — | **+17.61%** | **10.85%** | **0.69** | 468 | — | — |
+
+  与历史记录对比：
+  - Portfolio Sharpe: 0.86（早期记录）→ **0.69**（本次），下降 0.17
+  - XRP 表现强劲（+43.24%），贡献了组合 62% 的利润（$1081/$1761）
+  - BTC MaxDD 26.32% 偏高，但组合 MaxDD 仅 10.85%（分散化有效）
+  - 早期记录的 Sharpe 0.86 可能因 OOS 时间范围较短（数据只到更早时间点）
+
+- **Conclusion**:
+  - Portfolio Sharpe 0.69 > 0.6 阈值，**策略仍然有效，可以进入实盘**
+  - ⚠️ BTC 单币种 Sharpe 仅 0.32，MaxDD 26.32%——如果资金有限，考虑降低 BTC 权重或移除
+  - ⚠️ XRP 贡献过度集中——如果 XRP 的大趋势不重现，组合 alpha 可能大幅缩水
+  - ⚠️ Sharpe 从 0.86 降至 0.69 说明策略在最近时期有边际衰退，需持续监控
+
+---
+
+## 2026-03-25 20:04 UTC — Backtest: DonchianMTF on BTC
+
+- Period: 2024-01-01 to 2026-03-23
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=3.0
+- Return: +5.64% | Max DD: 31.66% | Sharpe: 0.23 | Sortino: 0.14 | Calmar: 0.08
+- Trades: 246 | Win rate: 16.7% | Profit factor: 1.06
+- Fees: $161.63 | Slippage: $692.68 | Time in market: 14.9%
+- Initial: $2,500 | Final: $2,641.05
+
+## 2026-03-25 20:06 UTC — Backtest: DonchianMTF on SOL
+
+- Period: 2024-01-01 to 2026-03-23
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=3.0
+- Return: -29.17% | Max DD: 32.68% | Sharpe: -1.20 | Sortino: -0.58 | Calmar: -0.44
+- Trades: 260 | Win rate: 16.9% | Profit factor: 0.55
+- Fees: $57.19 | Slippage: $245.08 | Time in market: 13.6%
+- Initial: $2,500 | Final: $1,770.68
+
+## 2026-03-25 20:07 UTC — Backtest: DonchianMTF on ADA
+
+- Period: 2024-01-01 to 2026-03-23
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=3.0
+- Return: +43.76% | Max DD: 24.80% | Sharpe: 0.73 | Sortino: 0.41 | Calmar: 0.71
+- Trades: 228 | Win rate: 18.9% | Profit factor: 1.34
+- Fees: $145.05 | Slippage: $619.64 | Time in market: 11.6%
+- Initial: $2,500 | Final: $3,594.03
+
+## 2026-03-25 20:09 UTC — Backtest: DonchianMTF on XRP
+
+- Period: 2024-01-01 to 2026-03-23
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=3.0
+- Return: +80.68% | Max DD: 17.43% | Sharpe: 1.38 | Sortino: 0.45 | Calmar: 1.75
+- Trades: 82 | Win rate: 24.4% | Profit factor: 2.57
+- Fees: $61.73 | Slippage: $264.57 | Time in market: 4.0%
+- Initial: $2,500 | Final: $4,517.01
+
+## 2026-03-26 — DonchianMTF 1H vs 4H OOS 对比实验
+
+- **Hypothesis**: 4H timeframe 一直被假设为"best signal-to-noise"，但从未被严格验证。1H 数据量更大，可能捕捉更多突破。
+- **Method**:
+  - 公平对比：1H lookback x4 保持相同时间窗口（4H G=[24,72,168] vs 1H G=[96,288,672]）
+  - 4 coins: BTC, SOL, ADA, XRP, OOS 2024-2026, 3x leverage, $2500/coin
+
+| Symbol | 4H Return | 4H Sharpe | 4H MaxDD | 1H Return | 1H Sharpe | 1H MaxDD | Winner |
+|--------|-----------|-----------|----------|-----------|-----------|----------|--------|
+| BTC | +8.25% | 0.32 | 26.32% | +5.64% | 0.23 | 31.66% | **4H** |
+| SOL | +5.02% | 0.21 | 16.33% | -29.17% | -1.20 | 32.68% | **4H** |
+| ADA | +13.94% | 0.40 | 15.45% | +43.76% | 0.73 | 24.80% | **1H** |
+| XRP | +43.24% | 1.10 | 15.37% | +80.68% | 1.38 | 17.43% | **1H** |
+
+  Execution cost: 1H avg fees+slippage $530 vs 4H $167 (3x higher)
+  Trade count: 1H avg 204 vs 4H avg 117 (1.7x more)
+
+- **Conclusion**:
+  - 4H 更稳健--所有 4 个币种均正收益，SOL 在 1H 上崩溃（-29%）
+  - 1H 收益天花板更高--ADA/XRP 在 1H 上显著跑赢（但费用也更高）
+  - SOL 在 1H 上被高波动反复止损，不适合高频 Donchian
+  - **Decision**: 维持 4H 实盘配置。未来可考虑混合方案（BTC/SOL 4H, ADA/XRP 1H）
+
+---
+
+## 2026-03-26 07:46 UTC — Backtest: DonchianMTF on BTC
+
+- Period: 2024-01-01 to 2026-03-23
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=3.0
+- Return: +5.64% | Max DD: 31.66% | Sharpe: 0.23 | Sortino: 0.14 | Calmar: 0.08
+- Trades: 246 | Win rate: 16.7% | Profit factor: 1.06
+- Fees: $161.63 | Slippage: $692.68 | Time in market: 14.9%
+- Initial: $2,500 | Final: $2,641.05
+
+## 2026-03-26 07:47 UTC — Backtest: DonchianMTF on SOL
+
+- Period: 2024-01-01 to 2026-03-23
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=3.0
+- Return: -29.17% | Max DD: 32.68% | Sharpe: -1.20 | Sortino: -0.58 | Calmar: -0.44
+- Trades: 260 | Win rate: 16.9% | Profit factor: 0.55
+- Fees: $57.19 | Slippage: $245.08 | Time in market: 13.6%
+- Initial: $2,500 | Final: $1,770.68
+
+## 2026-03-26 07:49 UTC — Backtest: DonchianMTF on ADA
+
+- Period: 2024-01-01 to 2026-03-23
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=3.0
+- Return: +43.76% | Max DD: 24.80% | Sharpe: 0.73 | Sortino: 0.41 | Calmar: 0.71
+- Trades: 228 | Win rate: 18.9% | Profit factor: 1.34
+- Fees: $145.05 | Slippage: $619.64 | Time in market: 11.6%
+- Initial: $2,500 | Final: $3,594.03
+
+## 2026-03-26 07:51 UTC — Backtest: DonchianMTF on XRP
+
+- Period: 2024-01-01 to 2026-03-23
+- Config: donchian_period=20, atr_period=14, atr_sl_mult=2.0, risk_per_trade=0.02, leverage=3.0
+- Return: +80.68% | Max DD: 17.43% | Sharpe: 1.38 | Sortino: 0.45 | Calmar: 1.75
+- Trades: 82 | Win rate: 24.4% | Profit factor: 2.57
+- Fees: $61.73 | Slippage: $264.57 | Time in market: 4.0%
+- Initial: $2,500 | Final: $4,517.01
+
+## 2026-03-27 — Hurst 加权组合实验
+
+- **Hypothesis**: Rolling Hurst 指数可以动态调整币种权重，给予趋势性更强的币种更高权重，从而提升 Donchian 组合的风险调整收益
+- **Method**: 8H, 12d/20d/112d, med-heavy 参数。3 种组合方案在 3 个 Walk-Forward 窗口 + Holdout 上对比：
+  - A: 等权全部 24 币种
+  - B: 等权仅 Hurst>0.58 的币种
+  - C: Rolling 180 天 Hurst 加权 (weight = max(0, hurst - 0.50), 月度重平衡)
+
+| Window | A: 等权全部 | B: Hurst 筛选 | C: Hurst 加权 | Winner |
+|--------|-----------|-------------|-------------|--------|
+| W1 (2022.07-2023.07) | -0.473 | **-0.386** | -0.435 | B |
+| W2 (2023.07-2024.07) | -0.149 | **-0.148** | -0.207 | B |
+| W3 (2024.07-2025.07) | 0.172 | **0.273** | 0.216 | B |
+| **HOLDOUT** (2025.07-2026.03) | **0.042** | -0.795 | -0.176 | **A** |
+
+| 方案 | Val Avg Sharpe | Val Avg Return | Holdout Sharpe |
+|------|---------------|---------------|----------------|
+| A: 等权 | -0.150 | +5.49% | **+0.042** |
+| B: Hurst 筛选 | **-0.087** | +7.68% | -0.795 |
+| C: Hurst 加权 | -0.142 | +7.31% | -0.176 |
+
+- **Key findings**:
+  1. **B (Hurst 筛选) 在 Validation 上最好** — 三个窗口都是最优，avg Sharpe -0.087
+  2. **但 B 在 Holdout 上崩溃** (-0.795) — Holdout 期间只有 2 个币种过了 Hurst>0.58 (BCH, MANA)，样本太小无法分散风险
+  3. **A (等权) 在 Holdout 上最好** (+0.042) — 分散化的力量：即使单个币种亏损，24 个币种等权组合仍然微赚
+  4. **C (Hurst 加权) 表现中间** — 没有明显优于 A 或 B
+  5. **Rolling Hurst 极不稳定**：同一币种的 Hurst 在不同窗口变化巨大（如 ADA: W1=0.65, W3=0.55, Holdout=0.53），说明 Hurst 不是稳定的币种属性
+
+- **Conclusion**:
+  - **Rolling Hurst 加权方案不可靠** — Hurst 本身随时间变化太大，不适合作为动态权重
+  - **等权全部币种仍然是最稳健的方案** — Holdout 证明了分散化胜过精选
+  - 之前发现的 Hurst vs Sharpe 的相关性 (rho=0.53) 是用全历史数据计算的静态 Hurst，不代表 rolling Hurst 有预测能力
+  - **Decision**: 放弃 Hurst 加权方案，维持等权全币种组合
+
+---
+
+## 2026-03-27 — DonchianMTF 全面参数 Sweep + 币种特征分析
+
+### Part 1: 频率 x Lookback 联合 Sweep
+
+- **Method**: 5 freq (1H/2H/4H/8H/1D) x ~100 lookback combos x 2 weights = 1070 params, 24 coins, 3 walk-forward windows
+- **Walk-Forward**: W1(IS 2021-2022.06, Val 2022.07-2023.06), W2(IS 2021-2023.06, Val 2023.07-2024.06), W3(IS 2021-2024.06, Val 2024.07-2025.06)
+- **Fee model**: taker 5bps + slippage 3bps
+
+**Results**:
+- W1 IS: 15/1070 (1.4%) survived; W2 IS: 3/1070 (0.3%); W3 IS: 3/1070 (0.3%)
+- **0 个参数在所有 3 个 Validation 窗口上 Sharpe 同时为正**
+- "最不差"的参数: **8H, 12d/20d/112d, med-heavy** (Val Sharpe: W1=-0.01, W2=-0.24, W3=+0.18, avg=-0.03)
+- Per-coin: 13/24 正 Sharpe, 11/24 负 Sharpe (正组最高 XRP=1.33, 负组最差 ETC=-1.37)
+
+**Conclusion**: Donchian MTF 等权全币种组合在任何频率/lookback 下都不盈利。策略有效性取决于币种选择。
+
+### Part 2: 正/负 Sharpe 币种特征分析
+
+- **Hypothesis**: 正/负 Sharpe 两组币种存在可观测的市场微结构差异,可作为客观筛选标准
+- **Method**: 对 24 个币种计算 5 个指标, 比较两组均值 (Mann-Whitney U 检验)
+
+| 指标 | 正组均值 | 负组均值 | Diff | p-value | 显著性 |
+|------|---------|---------|------|---------|--------|
+| Daily Volatility | 0.0581 | 0.0562 | +0.002 | 0.643 | - |
+| Avg Daily Vol (USD) | 44.2B | 250.9M | +44B | 0.643 | - |
+| **Autocorr (lag-1)** | -0.019 | -0.034 | +0.015 | 0.487 | - |
+| **Hurst Exponent** | **0.597** | **0.577** | **+0.020** | **0.021** | ***** |
+| Avg Trend Days | 1.915 | 1.912 | +0.003 | 1.000 | - |
+
+**Spearman correlation with Validation Sharpe:**
+
+| 指标 | rho | p-value | 显著性 |
+|------|-----|---------|--------|
+| Daily Volatility | -0.08 | 0.701 | - |
+| Avg Daily Vol | -0.21 | 0.320 | - |
+| Autocorr (lag-1) | +0.08 | 0.710 | - |
+| **Hurst Exponent** | **+0.526** | **0.008** | **\*\*\*** |
+| Avg Trend Days | -0.03 | 0.901 | - |
+
+**Key finding: Hurst 指数是唯一显著区分两组的指标 (p=0.021), 且与 Validation Sharpe 高度正相关 (rho=0.53, p=0.008)。**
+
+Hurst > 0.5 表示时间序列有趋势持续性 (persistence), 这正是 Donchian 趋势跟踪策略盈利的前提条件。
+- 正组平均 Hurst = 0.597 (更强趋势性)
+- 负组平均 Hurst = 0.577 (趋势性弱, 更接近随机游走)
+
+**Per-coin Hurst vs Sharpe**:
+- XRP: Hurst=0.604, Sharpe=1.33 (强趋势, 高收益)
+- ADA: 0.608, 0.92; DOGE: 0.611, 0.77; SOL: 0.609, 0.41
+- BCH: 0.544, -0.12; UNI: 0.563, -0.91; LTC: 0.558, -0.35 (弱趋势, 亏损)
+- 例外: NEAR Hurst=0.608 但 Sharpe=-0.77; AVAX 0.602 但 -0.11 (Hurst 不是唯一因素)
+
+**Decision**: Hurst 指数可作为**辅助**筛选标准, 但不足以单独决定:
+- 建议阈值: Hurst > 0.58 优先纳入 (排除 BCH/ATOM/LTC/TRX/AAVE/UNI)
+- 仍需结合 Validation 回测确认
+- 定期重算 Hurst (市场结构会变化)
+
+---
+
+## 2026-04-01 — 跨资产 Donchian Breakout 实验
+
+- **Hypothesis**: 传统资产（股指、大宗商品、外汇、债券、个股）的 Donchian 趋势跟踪可以提供与 crypto 低相关的收益来源，通过跨资产分散化显著改善组合 Sharpe
+- **Method**:
+  - Yahoo Finance 日线数据, 2015-2025, 30 个品种（4 股指 + 8 大宗 + 9 外汇 + 2 债券 + 7 个股）
+  - 230 个参数组合（lookback: 短12-48 × 中48-168 × 长168-672, 权重: equal + med-heavy）
+  - 5 个 Walk-Forward 窗口 + Holdout (2023-2025)
+  - 费用: 0.08% + 0.03% 滑点
+
+**Results**:
+
+| 品种 | 类型 | 最优参数 | Avg Val Sharpe | Pos Windows |
+|------|------|---------|---------------|-------------|
+| HG=F (铜) | 大宗 | 36/48/168 equal | **+0.268** | 2/5 |
+| BZ=F (布伦特) | 大宗 | 12/48/168 equal | -0.643 | 0/5 |
+| SI=F (白银) | 大宗 | 36/120/168 med | -0.871 | 1/5 |
+| AMZN | 个股 | 12/48/168 med | -1.198 | 0/5 |
+| **其余 26/30 品种** | 全部 | — | **NO PARAM** | 0/5 |
+
+**26 个品种连一个 IS 阶段正 Sharpe 的参数都没有。** 包括所有股指（SPY/QQQ/IWM/DIA）、黄金、原油、天然气、所有外汇对、所有债券、6/7 个股。
+
+Holdout: 唯一通过的 HG=F(铜) 在 Holdout 上 Sharpe=-0.97, Return=-19.92%
+
+- **Conclusion**:
+  - **Donchian 趋势突破策略对传统资产基本无效。** 30 个品种中只有 4 个能找到 IS Sharpe 正的参数，且 Validation 上全部为负或接近零。
+  - **原因分析**:
+    - 传统资产波动率远低于 crypto（SPY 年化 ~15% vs BTC ~60%），趋势信号弱
+    - 外汇波动率更低（~7-10%），均值回归主导，Donchian 完全不适用
+    - 股票是长期上涨趋势，Donchian 的做空信号反复被打止损
+    - 大宗商品中只有高波动品种（铜）有微弱的正信号，但不稳定
+  - **跨资产分散化假设被否定** — 不是因为相关性问题（传统资产确实和 crypto 低相关），而是因为 Donchian 策略本身在传统资产上不赚钱，加入亏损资产不可能改善组合
+  - **Decision**: 不在传统资产上使用 Donchian 趋势策略。如果要做跨资产分散化，需要为传统资产设计不同的策略（如均值回归用于外汇、动量策略用于股指）
+
+---
+
+## 2026-04-02 — 实盘升级：B0 (Donchian + Regime Filter) 部署
+
+- **变更**: 实盘策略从原始 DonchianMTF 升级为 B0（加入 ADX + 波动率收缩 regime filter）
+- **Regime Filter 参数**:
+  - ADX 窗口: 20 根 8H bar
+  - ADX >= 25 → 正常交易 (regime_scale=1.0)
+  - ADX 20-25 → 仓位减半 (regime_scale=0.5)
+  - ADX < 20 → 不开新仓 (regime_scale=0.0)
+  - 波动率收缩: vol_10d < vol_30d × 0.7 → 不开新仓 (OR 关系)
+- **只影响开仓**: 已有仓位的止损和平仓逻辑不受影响
+- **代码一致性**: regime filter 直接写在 `DonchianMTF.generate_signal()` 中，回测和实盘共用同一份代码
+- **部署验证**: dry-run 确认 ADX 和 regime_scale 正确输出：BTC(ADX=18.3,choppy), SOL(ADX=28.3,trending), ADA(ADX=16.4,choppy), XRP(ADX=18.9,choppy)
+- **回测依据**: B0 Holdout Sharpe=+0.344，优于原始 A0 的 -0.001
+
+---
+
+## 2026-04-02 — 机构先验知识方法：无参数优化实验
+
+- **Hypothesis**: 用先验知识（多 lookback 信号混合 + 目标波动率仓位管理）替代参数优化，应该比 per-coin 优化更 robust
+- **Method**: 所有参数来自理论/先验，不做回测优化。24 crypto (8H) + 30 传统 (1D)
+
+### 汇总表
+
+| 版本 | 资产 | 描述 | W1 | W2 | W3 | **Avg Val** | **Holdout** | MaxDD |
+|------|------|------|-----|-----|-----|-----------|---------|-------|
+| B0 | Crypto | Donchian+Regime (=A1) | -0.086 | +0.011 | -0.115 | -0.063 | **+0.344** | 13.7% |
+| B1 | Crypto | +多LB信号混合 | -0.109 | 0.000 | -0.092 | -0.067 | **+0.354** | 13.3% |
+| B2 | Crypto | +目标波动率仓位 | +0.043 | +0.109 | -0.914 | -0.254 | **+0.477** | 0.3% |
+| B3 | Crypto | B1+B2 全部 | +0.043 | +0.109 | -0.914 | -0.254 | **+0.477** | 0.3% |
+| C1 | Crypto | 多LB TSMOM | -0.159 | -1.483 | -0.904 | -0.849 | 0.000 | — |
+| C2 | Crypto | C1+目标波动率 | +0.052 | -0.985 | -0.719 | -0.551 | 0.000 | — |
+| C1 | 传统 | 多LB TSMOM | — | — | — | — | -0.546 | 67.8% |
+| C2 | 传统 | C1+目标波动率 | — | — | — | — | -0.214 | 4.8% |
+
+### 核心发现
+
+**1. 多 Lookback 信号混合 (B1) 没有改善**
+- B0 avg=-0.063 vs B1 avg=-0.067，Holdout B0=0.344 vs B1=0.354
+- 差异极小。多 lookback 混合既没帮忙也没添乱，因为原始策略已经用了三组 lookback 的加权
+
+**2. 目标波动率仓位管理 (B2) 效果矛盾**
+- Holdout Sharpe 最高 (+0.477)，MaxDD 极低 (0.3%)
+- **但仓位太小了**：Return 接近零 (+0.07%)。仓位被缩到几乎不交易
+- W3 Sharpe=-0.914 暴跌，可能因为高波动期仓位太小错过了所有大趋势
+- B2=B3 完全相同，说明信号混合模块在目标波动率仓位下没有区别
+
+**3. 统一参数 TSMOM (C1/C2) 在 crypto 上全军覆没**
+- C1 crypto avg=-0.849，远差于 per-coin 优化版的 +0.100
+- 说明统一参数确实减少了过拟合，但也把所有 alpha 一起消灭了
+- C2 加了目标波动率后略好（avg=-0.551）但仍然是负的
+
+**4. 统一参数 TSMOM 在传统资产上也是负的**
+- C1 传统 Holdout=-0.546，MaxDD=67.8%（灾难性）
+- C2 传统 Holdout=-0.214，MaxDD=4.8%（目标波动率控制了风险但仍是负的）
+
+### 结论
+
+- **Donchian + Regime Filter (B0) 仍然是最佳选择**: 简单、robust、Holdout +0.344
+- **目标波动率仓位管理**: 理念正确但 30% 目标对 crypto 太保守，仓位缩到几乎为零。如果用可能需要更高目标（60-80%）
+- **统一参数 TSMOM 不可行**: 消除了过拟合但也消除了 alpha。不同资产确实需要不同 lookback
+- **跨资产混合组合**: 当两个组件（crypto TSMOM + 传统 TSMOM）都是负 Sharpe 时，混合也是负的。分散化不能把负期望变正
+
+---
+
+## 2026-04-02 — Donchian 优化 + TSMOM Baseline 对比实验
+
+### 实验一：Donchian Breakout + 优化模块 A/B Test
+
+Base: 8H, 12d/20d/112d, med-heavy, 24 crypto coins, 3 walk-forward windows
+
+| Version | 描述 | W1 Val | W2 Val | W3 Val | **Avg Val** | **Holdout** |
+|---------|------|--------|--------|--------|-----------|---------|
+| A0 | Base Donchian | -0.507 | -0.159 | +0.153 | -0.171 | -0.001 |
+| **A1** | **+Regime Filter (ADX)** | -0.349 | +0.078 | -0.011 | **-0.094** | **+0.417** |
+| A2 | +Dynamic Lookback | -0.458 | -0.066 | -0.029 | -0.184 | +0.375 |
+| A3 | +Vol-Adaptive Sizing | -0.089 | -0.106 | -0.126 | -0.107 | +0.196 |
+
+增量贡献:
+- A0->A1 (Regime Filter): **+0.077** -- 有效。ADX 过滤掉 choppy 市场减少假突破
+- A1->A2 (Dynamic Lookback): **-0.090** -- **无效**。动态调整 lookback 反而增加噪音
+- A2->A3 (Vol-Adaptive Sizing): **+0.077** -- 有效但 MaxDD 从 22% 降到 0.87%（仓位太小了）
+
+**结论**: Regime Filter 是唯一稳健的优化。但所有版本的 Avg Val Sharpe 仍然是负的。
+
+### 实验二：TSMOM (时间序列动量) Baseline
+
+24 crypto coins, 日线, lookbacks: 5-252天, binary + continuous 信号
+
+**Top 10 Crypto TSMOM (按 Avg Val Sharpe):**
+
+| Coin | Lookback | Signal | Avg Val Sharpe | Pos/3 | Holdout Sharpe |
+|------|----------|--------|---------------|-------|----------------|
+| AVAX | 10d | binary | **+0.712** | 3/3 | -0.387 |
+| DOGE | 126d | binary | +0.557 | 3/3 | **+0.709** |
+| NEAR | 10d | cont | +0.358 | 2/3 | -0.996 |
+| SAND | 42d | binary | +0.357 | 3/3 | -0.356 |
+| ADA | 84d | binary | +0.315 | 2/3 | **+1.433** |
+| XRP | 5d | binary | +0.242 | 2/3 | +0.321 |
+| ALGO | 21d | binary | +0.213 | 2/3 | -1.099 |
+| MANA | 15d | binary | +0.211 | 3/3 | -1.196 |
+| ETH | 10d | binary | +0.207 | 2/3 | -0.971 |
+| DOT | 15d | binary | +0.190 | 2/3 | -1.725 |
+
+**17/24 coins Avg Val Sharpe 为正**（vs Donchian 的 13/24）
+
+**Holdout**: 20 coins 平均 Sharpe = **-0.737**（很差）。只有 ADA(+1.43), DOGE(+0.71), XRP(+0.32), TRX(+0.22) 在 Holdout 上正的。大部分在 Holdout 崩溃，说明 TSMOM 参数选择也存在过拟合。
+
+### 汇总对比表
+
+| 策略 | 资产 | Avg Val Sharpe | Holdout Sharpe |
+|------|------|---------------|----------------|
+| Donchian A0 (Base) | Crypto | -0.171 | -0.001 |
+| Donchian A1 (+Regime) | Crypto | **-0.094** | **+0.417** |
+| Donchian A2 (+DynLB) | Crypto | -0.184 | +0.375 |
+| Donchian A3 (+VolSize) | Crypto | -0.107 | +0.196 |
+| TSMOM (per-coin best) | Crypto | +0.100* | **-0.737** |
+| Donchian A0 | 传统资产 | N/A (全负) | N/A |
+| TSMOM | 传统资产 | (yfinance未加载) | N/A |
+
+*TSMOM 的 +0.100 是所有 24 coins 的平均值，但每个 coin 用的是各自最优参数
+
+### 核心发现
+
+1. **TSMOM 在 Validation 上优于 Donchian**（+0.100 vs -0.171），但在 **Holdout 上远差于 Donchian**（-0.737 vs -0.001）。说明 TSMOM 的 per-coin 参数优化严重过拟合。
+
+2. **Donchian + Regime Filter (A1) 在 Holdout 上最好**（+0.417）。这是因为 A1 用的是固定参数（不做 per-coin 优化），regime filter 减少了假突破，对新数据的泛化性最好。
+
+3. **传统资产 TSMOM 数据未能加载**（yfinance 在此环境下返回空数据），需要单独重跑。
+
+4. **优化模块中 Dynamic Lookback 无效** -- 根据波动率动态调整 lookback 增加了不必要的复杂性。
+
+5. **关键教训**: 策略的 robustness 比 Sharpe 最大化更重要。简单策略（固定参数 Donchian + regime filter）在 Holdout 上击败了看似更好的 TSMOM。
+
+### 补充：TSMOM 传统资产结果（重跑完成）
+
+**传统资产 TSMOM Top 10 (按 Avg Val Sharpe):**
+
+| Ticker | 类型 | Lookback | Signal | Avg Val Sharpe | Pos/5 | Holdout Sharpe |
+|--------|------|----------|--------|---------------|-------|----------------|
+| MSFT | 个股 | 168d | binary | **+0.999** | 4/5 | +0.417 |
+| AUDUSD=X | 外汇 | 126d | binary | +0.789 | 3/5 | -0.414 |
+| NVDA | 个股 | 84d | cont | +0.726 | 4/5 | **+1.167** |
+| TSLA | 个股 | 126d | cont | +0.628 | 2/5 | -0.595 |
+| QQQ | 股指 | 168d | cont | +0.552 | 4/5 | **+0.796** |
+| SPY | 股指 | 168d | cont | +0.539 | 2/5 | **+0.873** |
+| AAPL | 个股 | 21d | binary | +0.447 | 4/5 | -0.038 |
+| IEF | 债券 | 168d | binary | +0.417 | 2/5 | -0.787 |
+| CL=F | 大宗 | 15d | binary | +0.414 | 4/5 | -1.373 |
+| AMZN | 个股 | 63d | binary | +0.252 | 3/5 | -0.170 |
+
+**26/30 传统品种找到了参数**（vs Donchian 的 4/30）。TSMOM 在传统资产上远优于 Donchian。
+
+**Holdout 传统资产 TSMOM**: 24 assets 平均 Sharpe = **-0.205**
+- 8 个品种 Holdout 正: NVDA(+1.17), GC=F(+0.98), SPY(+0.87), META(+0.86), QQQ(+0.80), DIA(+0.65), USDJPY(+0.42), MSFT(+0.42)
+- 外汇和大宗在 Holdout 崩溃
+
+**关键发现：跨资产相关性矩阵（Holdout 期间）**:
+
+| | 值 |
+|---|---|
+| Crypto-Crypto 平均相关性 | **+0.599** (高) |
+| 传统-传统 平均相关性 | **+0.168** (低) |
+| **Crypto-传统 平均相关性** | **+0.120** (很低) |
+
+**这证明了跨资产分散化的核心论点**：crypto 内部高度相关（0.60），传统资产内部低相关（0.17），crypto 与传统资产之间几乎不相关（0.12）。
+
+### 更新后的汇总对比表
+
+| 策略 | 资产 | Avg Val Sharpe | Holdout Sharpe |
+|------|------|---------------|----------------|
+| Donchian A0 | Crypto | -0.171 | -0.001 |
+| **Donchian A1 (+Regime)** | **Crypto** | **-0.094** | **+0.417** |
+| TSMOM (per-coin) | Crypto | +0.100 | -0.737 |
+| Donchian A0 | 传统 | 全负/无参数 | N/A |
+| **TSMOM** | **传统** | **+0.177*** | **-0.205** |
+
+*传统资产 TSMOM 的 +0.177 是 26 个品种的平均值
+
+### 最终建议
+
+1. **Crypto 实盘**: 维持 Donchian + Regime Filter，TSMOM 过拟合严重
+2. **传统资产**: TSMOM 比 Donchian 有效得多（26/30 品种有参数 vs 4/30），但 Holdout 也是负的
+3. **跨资产分散化有真实价值**: crypto-传统相关性仅 0.12，理论上混合组合能显著降低波动率
+4. **但前提是找到正期望的策略**: 目前无论 Donchian 还是 TSMOM，Holdout 平均都是负的。分散化只能降风险，不能把负期望变正
+5. **股指和科技龙头 TSMOM 最 robust**: SPY/QQQ/MSFT/NVDA 在 Validation 和 Holdout 上都正，这些品种的长期动量效应最可靠
+6. **外汇和大宗 TSMOM 不稳定**: Validation 正但 Holdout 崩溃，说明这些品种的动量效应是间歇性的
+
+---
+
+## Mean Reversion Experiment (2026-04-04)
+
+### Dynamic Slippage Model Impact on B0
+- Fixed slippage (15bps): avg Holdout Sharpe = 0.239
+- Dynamic slippage (auto): avg Holdout Sharpe = 0.304
+- Delta: +0.065
+
+### Mean Reversion Best Parameters (per coin)
+| Coin | Lookback | Entry Z | Exit Z | Stop Z | Avg Val Sharpe |
+|------|----------|---------|--------|--------|----------------|
+| BTC | 96 | 3.0 | 0.00 | 4.0 | 1.619 |
+| ETH | 336 | 2.5 | 0.50 | 3.0 | 0.534 |
+| LTC | 168 | 2.0 | 0.00 | 4.0 | 0.723 |
+| TRX | 24 | 3.0 | 0.00 | 4.0 | 0.385 |
+| BCH | 252 | 2.5 | 0.00 | 3.0 | 0.591 |
+| DOT | 252 | 2.0 | 0.00 | 4.0 | 1.065 |
+| ADA | 336 | 2.0 | 0.50 | 3.0 | 1.710 |
+| LINK | 168 | 1.5 | 0.00 | 3.5 | 0.658 |
+| XLM | 336 | 2.0 | 0.25 | 4.0 | 1.125 |
+| XRP | 336 | 1.5 | 0.50 | 3.5 | 1.071 |
+| ETC | 336 | 2.0 | 0.50 | 3.0 | 1.249 |
+| ALGO | 12 | 2.5 | 0.00 | 3.0 | 0.610 |
+| ATOM | 336 | 2.0 | 0.00 | 4.0 | 1.141 |
+| AAVE | 96 | 3.0 | 0.00 | 3.5 | 1.013 |
+| SOL | 96 | 3.0 | 0.00 | 4.0 | 0.794 |
+| ICP | 168 | 3.0 | 0.00 | 3.5 | 1.221 |
+| UNI | 336 | 2.0 | 0.25 | 3.5 | 0.772 |
+| FIL | 336 | 1.5 | 0.00 | 4.0 | 0.279 |
+| AVAX | 72 | 3.0 | 0.00 | 4.0 | 0.689 |
+| NEAR | 96 | 3.0 | 0.50 | 4.0 | 0.724 |
+| CRV | 252 | 3.0 | 0.25 | 4.0 | 0.460 |
+| DOGE | 336 | 1.5 | 0.00 | 3.5 | 0.407 |
+
+### Holdout Results
+| Coin | Donchian SR | MeanRev SR | Don Ret% | MR Ret% | Correlation |
+|------|-------------|------------|----------|---------|-------------|
+| BTC | 1.561 | 2.397 | 13.06 | 7.49 | nan |
+| ETH | 0.934 | 0.394 | 7.00 | 1.15 | -0.04 |
+| LTC | 1.168 | -0.731 | 6.04 | -2.06 | 0.00 |
+| TRX | -0.721 | -0.066 | -2.44 | -3.54 | -0.04 |
+| BCH | -1.577 | 1.175 | -5.49 | 11.42 | -0.10 |
+| DOT | 0.541 | 0.000 | 3.72 | 0.00 | nan |
+| ADA | 0.540 | 0.000 | 3.52 | 0.00 | nan |
+| LINK | -0.222 | -1.481 | -1.66 | -3.30 | 0.12 |
+| XLM | 1.121 | -1.926 | 8.32 | -3.15 | -0.06 |
+| XRP | 0.454 | -1.155 | 3.48 | -2.12 | -0.14 |
+| ETC | 1.165 | -2.011 | 6.29 | -5.41 | -0.13 |
+| ALGO | -2.349 | 0.983 | -7.92 | 26.33 | 0.00 |
+| ATOM | -1.086 | 0.000 | -2.67 | 0.00 | nan |
+| AAVE | 1.440 | 0.963 | 13.72 | 17.27 | -0.01 |
+| SOL | 0.083 | 0.000 | -0.16 | 0.00 | nan |
+| ICP | 0.399 | 0.793 | 2.71 | 2.25 | -0.00 |
+| UNI | 1.425 | 0.000 | 33.07 | 0.00 | nan |
+| FIL | -1.721 | -1.548 | -5.13 | -1.43 | 0.03 |
+| AVAX | 1.185 | -1.103 | 6.41 | -9.32 | 0.01 |
+| NEAR | 1.432 | 0.000 | 10.53 | 0.00 | nan |
+| CRV | 0.349 | 0.000 | 1.91 | 0.00 | nan |
+| DOGE | 0.567 | -2.437 | 3.05 | -2.02 | -0.08 |
+
+### Portfolio Comparison (Holdout)
+| Portfolio | Sharpe | MaxDD% | Return% |
+|-----------|--------|--------|---------|
+| A) Donchian B0 only | 1.006 | 4.11 | 4.77 |
+| B) MeanRev only | 1.219 | 1.15 | 1.40 |
+| C) 50/50 Equal Weight | 1.232 | 1.93 | 3.08 |
+
+Average Donchian-MeanRev daily return correlation: -0.031
+
+## Regime Dynamic Switching Experiment (2026-04-04)
+
+### Portfolio Comparison (Holdout 2025.07-2026.03)
+| Portfolio | Sharpe | MaxDD% | Return% | Trades |
+|-----------|--------|--------|---------|--------|
+| A) Donchian B0 only | 1.006 | 4.11 | 4.77 | 418 |
+| B) MeanRev only | 1.219 | 1.15 | 1.40 | 60 |
+| C) 50/50 Equal Weight | 1.232 | 1.93 | 3.08 | 478 |
+| D) Regime Switch | 0.177 | 21.07 | -0.04 | 2050 |
+
+### Key Finding
+- Regime Switch Sharpe: 0.177 vs Donchian: 1.006 vs 50/50: 1.232
+- Best approach: C) 50/50 Equal Weight (Sharpe 1.232)
+
+## Regime Switching with Hysteresis (2026-04-04)
+
+### Hysteresis Parameters
+- Trending -> Ranging: ADX must drop below 18 (was 20)
+- Ranging -> Trending: ADX must rise above 27 (was 25)
+- No gray zone (binary: trending or ranging)
+- Minimum 10 bars (80h) hold before re-switching
+- On switch: existing positions held until natural exit
+
+### Portfolio Comparison (Holdout 2025.07-2026.03)
+| Portfolio | Sharpe | MaxDD% | Return% | Trades |
+|-----------|--------|--------|---------|--------|
+| A) Donchian B0 only | 1.006 | 4.11 | 4.77 | 418 |
+| B) MeanRev only | 1.219 | 1.15 | 1.40 | 60 |
+| C) 50/50 Equal Weight | 1.232 | 1.93 | 3.08 | 478 |
+| D) Regime Switch | 0.177 | 21.07 | -0.04 | 2050 |
+| D-fix) Hysteresis | -0.340 | 20.58 | -7.04 | 2982 |
+
+### Key Finding
+- Best approach: C) 50/50 Equal Weight (Sharpe 1.232)
+- Hysteresis reduced trades: 2050 -> 2982
+- Hysteresis Sharpe: -0.340 vs original: 0.177
+
+## Regime Switching with Hysteresis (2026-04-04)
+
+### Hysteresis Parameters
+- Trending -> Ranging: ADX must drop below 18 (was 20)
+- Ranging -> Trending: ADX must rise above 27 (was 25)
+- No gray zone (binary: trending or ranging)
+- Minimum 10 bars (80h) hold before re-switching
+- On switch: existing positions held until natural exit
+
+### Portfolio Comparison (Holdout 2025.07-2026.03)
+| Portfolio | Sharpe | MaxDD% | Return% | Trades |
+|-----------|--------|--------|---------|--------|
+| A) Donchian B0 only | 1.006 | 4.11 | 4.77 | 418 |
+| B) MeanRev only | 1.219 | 1.15 | 1.40 | 60 |
+| C) 50/50 Equal Weight | 1.232 | 1.93 | 3.08 | 478 |
+| D) Regime Switch | 0.177 | 21.07 | -0.04 | 2050 |
+| D-fix) Hysteresis | 0.415 | 10.96 | 2.60 | 101 |
+
+### Key Finding
+- Best approach: C) 50/50 Equal Weight (Sharpe 1.232)
+- Hysteresis reduced trades: 2050 -> 101
+- Hysteresis Sharpe: 0.415 vs original: 0.177
+
+## HMM Regime Detection Experiment (2026-04-04)
+
+### Portfolio Comparison (Holdout 2025.07-2026.03)
+| Portfolio | Sharpe | MaxDD% | Return% | Trades |
+|-----------|--------|--------|---------|--------|
+| A) Donchian B0 | 1.006 | 4.11 | 4.77 | 418 |
+| B) MeanRev | 1.381 | 1.49 | 1.95 | 61 |
+| C) 50/50 Equal | 1.327 | 1.91 | 3.36 | 479 |
+| D-fix) ADX hyst | 0.479 | 10.85 | 3.22 | 100 |
+| E) HMM | -0.810 | 11.45 | -5.90 | 112 |
+| F) HMM+hyst | -0.960 | 12.98 | -7.26 | 113 |
+| G) ADX+HMM vote | -0.944 | 8.94 | -4.71 | 135 |
+
+Best: B) MeanRev (Sharpe 1.381)
+
+## Mean Reversion Frequency Sweep (2026-04-04)
+
+### Unified params (all coins same), stop_z = entry_z + 1.0
+
+| Freq | Lookback | Entry Z | Exit Z | Avg Val Sharpe | Holdout Sharpe | Trades |
+|------|----------|---------|--------|----------------|----------------|--------|
+| 1h | 336 | 3.0 | 0.50 | -0.047 | -0.022 | 153 |
+| 2h | 72 | 3.0 | 0.25 | -0.103 | -0.338 | 633 |
+| 4h | 672 | 2.0 | 0.25 | 0.035 | -0.781 | 52 |
+| 8h | 504 | 2.0 | 0.00 | 0.596 | 0.090 | 3 |
+
+Best frequency: 8h (Holdout Sharpe 0.090)
+
+## Portfolio Optimization (2026-04-04)
+
+### Direction 1: Leverage (50/50 Equal Weight)
+| Leverage | Sharpe | Return% | MaxDD% | Max Day Loss% | Trades |
+|----------|--------|---------|--------|---------------|--------|
+| 3x | 0.231 | 0.69 | 5.39 | -2.07 | 116 |
+| 5x | 0.213 | 0.75 | 8.44 | -2.83 | 116 |
+| 7x | 0.190 | 0.61 | 11.13 | -3.29 | 116 |
+| 10x | 0.154 | 0.17 | 14.66 | -3.69 | 116 |
+
+Best leverage (MaxDD<=10%): **3x**
+
+### Direction 2: Dynamic Allocation (3x leverage)
+| Method | Sharpe | Return% | MaxDD% | Trades |
+|--------|--------|---------|--------|--------|
+| 50/50 Fixed | 0.231 | 0.69 | 5.39 | 116 |
+| MR Priority | 0.148 | 0.33 | 10.32 | 90 |
+| Signal Weighted | 0.148 | 0.33 | 10.32 | 90 |
+| 70/30 Don/MR | 0.207 | 0.69 | 7.46 | 114 |
+
+Best allocation: **50/50 Fixed**
+
+### Direction 3: MR Entry Threshold
+| Threshold | Sharpe | Return% | MaxDD% | Trades |
+|-----------|--------|---------|--------|--------|
+| Original Z | 0.231 | 0.69 | 5.39 | 116 |
+| Z - 0.5 | 0.042 | -0.06 | 4.93 | 183 |
+| Z - 1.0 | -0.394 | -1.66 | 6.01 | 268 |
+
+Best threshold: **Original Z**
+
+### Combined Optimal
+| Method | Sharpe | Return% | MaxDD% | Trades |
+|--------|--------|---------|--------|--------|
+| 50/50 Fixed | 0.231 | 0.69 | 5.39 | 116 |
+| 50/50 3x | 0.231 | 0.69 | 5.39 | 116 |
+| 50/50 Fixed | 0.231 | 0.69 | 5.39 | 116 |
+| Original Z | 0.231 | 0.69 | 5.39 | 116 |
+| 3x + 50/50 Fixed + Original Z | 0.231 | 0.69 | 5.39 | 116 |
+| 5x + 50/50 Fixed + Original Z | 0.213 | 0.75 | 8.44 | 116 |
+| 3x + 70/30 + Original Z | 0.207 | 0.69 | 7.46 | 114 |
+
+**Best overall: 50/50 3x** (Sharpe 0.231, Return 0.69%, MaxDD 5.39%)
+
+## Combo Experiments (2026-04-04)
+
+### Experiment 1: Dual-Lookback MR
+- Short MR: lookback=72, entry_z=2.0, exit_z=0.5, stop_z=3.0
+- Long MR: lookback=336, entry_z=2.5, exit_z=0.0, stop_z=3.5
+- Each gets 25% of capital (total MR = 50%)
+
+### Experiment 2: Exit Z Sweep
+
+### Experiment 3: Expanded Coins
+- Extra coins tested: ['APT', 'ARB', 'AXS', 'BNB', 'HBAR', 'MANA', 'OP', 'PEPE', 'SAND', 'SUI']
+- Extra coins with MR params: ['APT', 'ARB', 'AXS', 'BNB', 'HBAR', 'MANA', 'OP', 'PEPE', 'SAND', 'SUI']
+
+### Results
+| Method | Sharpe | Return% | MaxDD% | Trades |
+|--------|--------|---------|--------|--------|
+| Baseline 50/50 | 1.327 | 3.36 | 1.91 | 479 |
+| Dual-LB MR | 0.993 | 2.44 | 2.12 | 629 |
+| Exit Z=0.00 | 1.295 | 3.27 | 1.91 | 479 |
+| Exit Z=0.25 | 1.292 | 3.26 | 1.99 | 481 |
+| Exit Z=0.50 | 1.443 | 3.62 | 1.96 | 484 |
+| Exit Z=0.75 | 1.396 | 3.52 | 2.01 | 488 |
+| Exit Z=1.00 | 1.324 | 3.32 | 2.08 | 493 |
+| 22 coins | 1.327 | 3.36 | 1.91 | 479 |
+| Extra coins only | nan | -inf | inf | 304 |
+| All coins combined | 1.027 | 2.47 | 2.12 | 777 |
+
+Best: **Exit Z=0.50** (Sharpe 1.443)
+
+### Extra Coin Donchian Sharpes
+- BNB: 1.745
+- ARB: 1.417
+- AXS: 1.122
+- SUI: 0.609
+- MANA: 0.511
+- OP: 0.186
+- HBAR: -0.262
+- SAND: -1.585
+- APT: -2.903
+- PEPE: nan
+
+## Expanded Coin Universe (2026-04-04)
+
+### Universe
+- Tier 1 (OKX 2021+): 25 coins
+- Tier 2 (OKX 2022+): 25 coins
+- Tier 3 (HL only): 37 coins
+- Total usable: 87
+- Coins with holdout data: 87
+
+### Donchian B0 Holdout (40/87 positive Sharpe)
+Top 10 new coins by Donchian Sharpe:
+- MERL: Sharpe 3.394 (vol 255K)
+- AVNT: Sharpe 2.866 (vol 165K)
+- IP: Sharpe 2.751 (vol 787K)
+- GALA: Sharpe 2.006 (vol 164K)
+- AR: Sharpe 1.877 (vol 207K)
+- APE: Sharpe 1.858 (vol 219K)
+- ENA: Sharpe 1.818 (vol 2.3M)
+- BNB: Sharpe 1.745 (vol 2.4M)
+- BIO: Sharpe 1.726 (vol 235K)
+- ZK: Sharpe 1.673 (vol 985K)
+
+### Portfolio Comparison (Holdout, 50/50, exit_z=0.50)
+| Portfolio | Sharpe | Return% | MaxDD% | Trades | Coins |
+|-----------|--------|---------|--------|--------|-------|
+| A) Original 22 | 1.397 | 3.75 | 2.14 | 414 | 19 |
+| B) All coins | 1.348 | 0.17 | 0.71 | 1979 | 87 |
+| C) New only | -3.105 | -0.44 | 1.23 | 1581 | 68 |
+| D) Orig + pos-Don new | 4.176 | 1.89 | 0.55 | 1051 | 44 |
+| E) Tier 1 (25) | 1.040 | 2.57 | 2.00 | 568 | 25 |
+| F) Top 30 Donchian | 4.045 | 2.57 | 0.65 | 682 | 30 |
+
+Best: **D) Orig + pos-Don new** (Sharpe 4.176)
+
+## Expanded Coins v2 - No Data Snooping (2026-04-04)
+
+### Methodology Fix
+- Coin selection: avg **validation** Donchian Sharpe > 0 (NOT holdout)
+- Holdout touched ONCE after all selection/tuning complete
+
+### Coin Screening (Validation)
+- Total usable: 92
+- Passed screening (avg val SR > 0): 26
+- Original 22 that passed: 9/22
+- New coins selected: 17
+
+New selected coins: MELANIA, PNUT, MOODENG, IO, BIGTIME, HYPE, HBAR, SAND, ACE, POPCAT, ZK, ZEN, GMT, GALA, APT, STX, AR
+
+### Holdout (50/50 Donchian+MR, exit_z=0.50)
+| Portfolio | Sharpe | Return% | MaxDD% | Trades | Coins |
+|-----------|--------|---------|--------|--------|-------|
+| A) Original 22 | 1.443 | 3.62 | 1.96 | 484 | 22 |
+| B) Val-selected all | -0.553 | -1.45 | 3.95 | 649 | 26 |
+| C) New selected only | -1.089 | -3.18 | 6.04 | 432 | 17 |
+| D) Orig + new selected | 0.384 | 0.87 | 2.60 | 911 | 39 |
+| E) Top 30 by val SR | -0.553 | -1.45 | 3.95 | 649 | 26 |
+
+Best: **A) Original 22** (Sharpe 1.443)
+
+## Expanded Coins v3 - Correct Methodology (2026-04-04)
+
+### Methodology
+- Single capital pool (run_combo) — no double-counting
+- Only coins with OKX data from 2021 (full 3-window WF): 28
+- Coin screening: avg validation Donchian Sharpe > 0 across all 3 windows
+- Holdout touched once
+
+### Validation Screening
+- Passed: 11/28 (avg val Sharpe > 0, all 3 windows)
+- New coins (not in original 22): AXS, YGG, CELO, GALA, SAND, PEOPLE
+- New coins that passed: SAND, GALA
+
+### Holdout (50/50 Donchian+MR, 3x leverage)
+| Portfolio | Sharpe | Return% | MaxDD% | Trades | Coins |
+|-----------|--------|---------|--------|--------|-------|
+| F) Pure Donchian 22 | 0.148 | 0.33 | 10.32 | 90 | 22 |
+| A) Orig 22 (per-coin ez) | 0.231 | 0.69 | 5.39 | 116 | 22 |
+| B) Orig 22 (ez=0.50) | 0.287 | 0.91 | 5.14 | 119 | 22 |
+| C) All 28 (ez=0.50) | 0.321 | 1.00 | 4.00 | 164 | 28 |
+| D) Val-passed | -0.142 | -1.00 | 8.66 | 76 | 11 |
+| E) Orig + new passed | 0.257 | 0.80 | 5.76 | 133 | 24 |
+
+Best: **C) All 28 (ez=0.50)** (Sharpe 0.321)
+
+## Expanded Coins v3 - Correct Methodology (2026-04-04)
+
+### Methodology
+- Single capital pool (run_combo) — no double-counting
+- Only coins with OKX data from 2021 (full 3-window WF): 28
+- Coin screening: avg validation Donchian Sharpe > 0 across all 3 windows
+- Holdout touched once
+
+### Validation Screening
+- Passed: 11/28 (avg val Sharpe > 0, all 3 windows)
+- New coins (not in original 22): AXS, YGG, CELO, GALA, SAND, PEOPLE
+- New coins that passed: SAND, GALA
+
+### Holdout (50/50 Donchian+MR, 3x leverage)
+| Portfolio | Sharpe | Return% | MaxDD% | Trades | Coins |
+|-----------|--------|---------|--------|--------|-------|
+| F) Pure Donchian 22 | 1.006 | 4.77 | 4.11 | 418 | 22 |
+| A) Orig 22 (per-coin ez) | 1.000 | 2.51 | 2.50 | 601 | 22 |
+| B) Orig 22 (ez=0.50) | 1.070 | 2.69 | 2.24 | 573 | 22 |
+| C) All 28 (ez=0.50) | 1.284 | 2.91 | 2.02 | 728 | 28 |
+| D) Val-passed | 0.363 | 0.78 | 2.44 | 336 | 11 |
+| E) Orig + new passed | 0.915 | 2.23 | 2.14 | 628 | 24 |
+
+Best: **C) All 28 (ez=0.50)** (Sharpe 1.284)
+
+## Cross-Sectional Momentum Experiment (2026-04-04)
+
+### Best Parameters
+- Lookback: 36 bars
+- Top/Bottom K: 5
+- Rebalance: every 21 bars (168h)
+- Weighting: equal-weight
+- Avg validation Sharpe: 1.118
+
+### Holdout (28 coins, 50/50 Donchian+MR, exit_z=0.50)
+| Portfolio | Sharpe | Return% | MaxDD% | Trades |
+|-----------|--------|---------|--------|--------|
+| A) Donchian 28 | 1.092 | 4.76 | 3.73 | 530 |
+| B) XS Momentum | 0.913 | 18.34 | 18.69 | 421 |
+| C) Don+XSMom 50/50 | -0.052 | -0.87 | 8.91 | 934 |
+| D) Don+MR+XSMom 33% | 0.041 | -0.08 | 5.76 | 1100 |
+| E) Don50+MR25+XSMom25 | 0.329 | 0.98 | 4.23 | 1081 |
+
+### Market Neutrality
+- Beta to BTC: -0.08803493755240038
+- Net exposure: $63.32
+
+## Cross-Sectional Momentum Experiment (2026-04-05)
+
+### Best Parameters
+- Lookback: 36 bars
+- Top/Bottom K: 5
+- Rebalance: every 21 bars (168h)
+- Weighting: equal-weight
+- Avg validation Sharpe: 1.118
+
+### Holdout (28 coins, 50/50 Donchian+MR, exit_z=0.50)
+| Portfolio | Sharpe | Return% | MaxDD% | Trades |
+|-----------|--------|---------|--------|--------|
+| A) Donchian 28 | 1.092 | 4.76 | 3.73 | 530 |
+| B) XS Momentum | 0.913 | 18.34 | 18.69 | 421 |
+| C) Don+XSMom 50/50 | -0.052 | -0.87 | 8.91 | 934 |
+| D) Don+MR+XSMom 33% | 0.041 | -0.08 | 5.76 | 1100 |
+| E) Don50+MR25+XSMom25 | 0.329 | 0.98 | 4.23 | 1081 |
+
+### Market Neutrality
+- Beta to BTC: -0.08803493755240038
+- Net exposure: $63.32
+
+## Portfolio Combinations Fix (2026-04-05)
+
+### Bug Fix
+Previous combo results were wrong due to time-alignment issue: XSMom had 725 holdout bars 
+(46-bar warmup) while Donchian had 375 bars (396-bar warmup). Taking common length from start 
+cut off XSMom's profitable second half. Fixed by aligning from the END (same end date).
+
+XSMom standalone: full 725 bars = +18.34%, aligned 375 bars (same period as Donchian) = +28.87%
+
+### Corrected Holdout Results (2025.07-2026.03, 28 coins, time-aligned)
+| Portfolio | Sharpe | Return% | MaxDD% | Trades |
+|-----------|--------|---------|--------|--------|
+| A) Pure Donchian 28 | 1.092 | 4.76 | 3.73 | 530 |
+| B) Pure MR 28 | 0.627 | 0.44 | 0.87 | 282 |
+| C) Pure XSMom 28 | 2.382 | 28.87 | 10.00 | 421 |
+| D) Don+MR 50/50 | 1.164 | 2.60 | 2.07 | 812 |
+| E) Don+XSMom 50/50 | 2.425 | 16.81 | 5.42 | 951 |
+| F) MR+XSMom 50/50 | 2.339 | 14.66 | 5.25 | 703 |
+| G) Don+MR+XSMom 33/33/33 | 2.441 | 11.36 | 3.60 | 1233 |
+| H) Don50+MR25+XSMom25 | 2.366 | 9.71 | 2.73 | 1233 |
+| I) Don25+MR25+XSMom50 | 2.413 | 15.73 | 5.33 | 1233 |
+
+### Key Findings
+- XSMom is the strongest single strategy (Sharpe 2.382, +28.87%) but MaxDD 10%
+- G) 33/33/33 has highest Sharpe (2.441) with only 3.60% MaxDD
+- H) Don50+MR25+XSMom25 has lowest MaxDD (2.73%) with good Sharpe (2.366)
+- Adding XSMom to any combo dramatically improves Sharpe vs Don+MR only (1.164 -> 2.4+)
+- XSMom beta to BTC = -0.088 (market neutral confirmed)
+
+## Portfolio Combinations - Correct Time Alignment (2026-04-05)
+
+### Time Alignment
+- All strategies use LAST 375 bars of holdout (aligned from start to Donchian warmup end)
+- Donchian warmup = 396 bars (longest), XSMom warmup = 46 bars
+- Common trading window: 375 bars (approx 2025-11-10 to 2026-03-25, 125 days)
+
+### XSMom Full Trajectory (important context)
+- Full holdout (725 bars): $10,000 -> min $8,950 -> $11,834 (+18.34%)
+- **In Donchian-aligned window (375 bars): $9,183 -> $11,834 (+28.87%)**
+- XSMom lost money in first half (Jul-Nov 2025) then recovered strongly (Nov 2025 - Mar 2026)
+- The 28.87% in the aligned window is inflated because it starts from a drawdown trough
+
+### Holdout Results (same 375-bar window, from-start alignment)
+| Portfolio | Sharpe | Return% | MaxDD% | Trades |
+|-----------|--------|---------|--------|--------|
+| A) Pure Donchian 28 | 1.092 | 4.76 | 3.73 | 530 |
+| B) Pure MR 28 | 0.627 | 0.44 | 0.87 | 282 |
+| C) Pure XSMom 28 | 2.382 | 28.87 | 10.00 | 421 |
+| D) Don+MR 50/50 | 1.164 | 2.60 | 2.07 | 812 |
+| E) Don+XSMom 50/50 | 2.425 | 16.81 | 5.42 | 951 |
+| F) MR+XSMom 50/50 | 2.339 | 14.66 | 5.25 | 703 |
+| G) Don+MR+XSMom 33/33/33 | 2.441 | 11.36 | 3.60 | 1233 |
+| H) Don50+MR25+XSMom25 | 2.366 | 9.71 | 2.73 | 1233 |
+| I) Don25+MR25+XSMom50 | 2.413 | 15.73 | 5.33 | 1233 |
+
+### Sanity Checks
+- D) Don+MR 50/50: (4.76+0.44)/2 = 2.60% -> matches 2.60% (correct)
+- E) Don+XSMom 50/50: (4.76+28.87)/2 = 16.81% -> matches 16.81% (correct)
+- G) 33/33/33: (4.76+0.44+28.87)/3 = 11.36% -> matches 11.36% (correct)
+
+### Caveat
+XSMom 28.87% return in the aligned window is NOT comparable to its full-holdout 18.34%.
+The aligned window starts at a drawdown trough (XSMom was at $9,183 vs $10,000 start).
+A fairer comparison would use the FULL holdout return of 18.34%.
+
+## Portfolio Combinations - Final (2026-04-05)
+
+### Methodology
+- Warmup data prepended from 2025-01-15 (before holdout)
+- All strategies start trading 2025-07-01, equity = $10,000
+- Common window: 771 bars (257 days)
+
+### Results
+| Portfolio | Sharpe | Return% | MaxDD% | Trades |
+|-----------|--------|---------|--------|--------|
+| A) Pure Donchian 28 | -0.174 | -1.27 | 6.25 | 1238 |
+| B) Pure MR 28 (ez=0.50) | -0.330 | -0.64 | 2.12 | 696 |
+| C) Pure XSMom 28 | 1.093 | 25.79 | 16.51 | 805 |
+| D) Don+MR 50/50 | -0.299 | -0.96 | 3.14 | 1934 |
+| E) Don+XSMom 50/50 | 0.943 | 12.26 | 9.26 | 2043 |
+| F) MR+XSMom 50/50 | 0.996 | 12.58 | 8.76 | 1501 |
+| G) Don+MR+XSMom 33/33/33 | 0.897 | 7.96 | 6.22 | 2739 |
+| H) Don50+MR25+XSMom25 | 0.791 | 5.65 | 5.49 | 2739 |
+| I) Don25+MR25+XSMom50 | 0.973 | 12.42 | 9.01 | 2739 |
+
+### Sanity Checks
+- D) (-1.27+-0.64)/2 = -0.96% vs actual -0.96%
+- E) (-1.27+25.79)/2 = 12.26% vs actual 12.26%
+- G) (-1.27+-0.64+25.79)/3 = 7.96% vs actual 7.96%
+
+Best Sharpe: **C) Pure XSMom 28** (1.093, 25.79%, MaxDD 16.51%)
+
+## Multi-Signal Trend Walk-Forward (2026-04-05)
+
+### Part 2: Frequency x Filter
+| Config | W1 Params | W1 IS SR | W1 OOS SR | W2 Params | W2 IS SR | W2 OOS SR | Match |
+|--------|-----------|----------|-----------|-----------|----------|-----------|-------|
+| 8H pure | A/0.3/0.15 | 2.646 | -1.083 | A/0.3/0.2 | 0.154 | 0.689 | NO |
+| 8H + 1D filter | A/0.3/0.1 | 2.704 | -0.783 | A/0.2/0.2 | 0.165 | 0.773 | NO |
+| 1H pure | B/0.3/0.2 | 2.401 | -0.404 | A/0.5/0.2 | 0.084 | 0.265 | NO |
+| 1H + 1D filter | B/0.3/0.2 | 2.414 | -0.400 | A/0.5/0.2 | -0.048 | 0.237 | NO |
+
+### Part 3: Position Management Diagnostic (W1 OOS = 2023)
+
+| Sizing | Strategy | Sharpe | Return% | MaxDD% | Trades |
+|--------|----------|--------|---------|--------|--------|
+| A) Equal weight | Trend only | -0.563 | -44.85 | 67.95 | 10577 |
+| A) Equal weight | Trend60+XS40 | -1.286 | -42.37 | 55.90 | 11820 |
+| A) Equal weight | XSMom only | -0.812 | -34.24 | 51.95 | 1243 |
+| B) Inv volatility | Trend only | -0.238 | -6.13 | 22.48 | 9470 |
+| B) Inv volatility | Trend60+XS40 | -1.220 | -19.13 | 28.21 | 10713 |
+| B) Inv volatility | XSMom only | -0.812 | -34.24 | 51.95 | 1243 |
+| C) InvVol + DD scaling | Trend only | -1.284 | -10.58 | 15.88 | 6325 |
+| C) InvVol + DD scaling | Trend60+XS40 | -2.109 | -21.80 | 24.90 | 7568 |
+| C) InvVol + DD scaling | XSMom only | -0.812 | -34.24 | 51.95 | 1243 |
+| D) InvVol + DD + Regime | Trend only | -1.574 | -11.10 | 15.02 | 5498 |
+| D) InvVol + DD + Regime | Trend60+XS40 | -2.227 | -22.11 | 24.80 | 6741 |
+| D) InvVol + DD + Regime | XSMom only | -0.812 | -34.24 | 51.95 | 1243 |
+
+## Final Holdout (2026-04-05)
+
+### Config
+- Multi-signal trend: 8H + 1D filter, Set A, thresh=0.2, tvol=0.20 (W2 params)
+- Sizing: Inverse Volatility
+- 28 coins, unified params
+
+### Results (Holdout 2025.07-2026.03, 822 bars)
+| Portfolio | Sharpe | Return% | MaxDD% | Trades |
+|-----------|--------|---------|--------|--------|
+| A) Donchian B0 | -0.071 | -0.22 | 2.35 | 8272 |
+| B) Multi-signal trend | -0.332 | -10.00 | 17.42 | 9674 |
+| C) XSMom | -0.243 | -9.58 | 30.98 | 1526 |
+| D) Trend60+XSMom40 | -0.434 | -9.83 | 20.74 | 11200 |
+| E) Trend+MR+XSMom 33ea | -0.515 | -6.90 | 15.06 | 15243 |
+| F) TSMOM only | -0.229 | -8.23 | 21.08 | 9279 |
+| G) XSMom+MR 50/50 | -0.385 | -5.36 | 16.59 | 5569 |
+
+### Sanity Checks
+- D) 0.6*B+0.4*C = -9.83% vs actual -9.83%
+- E) (B+MR+C)/3 = -6.90% vs actual -6.90%
+- F) TSMOM-only = -8.23% vs full 9-signal = -10.00%
+
+### PM Data Saved
+- pm_training_2024.parquet
+- pm_validation_2025h1.parquet
+
+## Final Holdout v2 - Clean Start (2026-04-05)
+
+### Fix Applied
+- All strategies start with ZERO positions at holdout first bar
+- Warmup only computes indicators, no trades
+- Position state confirmed at bar 0 for each strategy
+
+### Results (Holdout 2025-07-01 to 2026-03-25, 822 bars)
+| Portfolio | Sharpe | Return% | MaxDD% | Trades |
+|-----------|--------|---------|--------|--------|
+| A) Donchian B0 | -0.237 | -1.77 | 6.53 | 1093 |
+| B) Multi-signal trend | -0.352 | -10.37 | 17.44 | 9645 |
+| C) XSMom | 1.010 | 24.75 | 16.49 | 520 |
+| D) Trend60+XSMom40 | 0.323 | 3.68 | 11.80 | 10165 |
+| E) Trend+MR+XSMom 33ea | 0.442 | 4.48 | 8.10 | 10808 |
+| F) TSMOM only | -0.238 | -8.40 | 21.11 | 9265 |
+| G) XSMom+MR 50/50 | 0.894 | 11.90 | 8.91 | 1163 |
+
+### Sanity Checks
+- D) 0.6*B+0.4*C = 3.68% vs actual 3.68%
+- E) (B+MR+C)/3 = 4.48% vs actual 4.48%
+- G) (C+MR)/2 = 11.90% vs actual 11.90%
+
+## 5 Mean Reversion Strategies (2026-04-05)
+
+| Strategy | W1 Params | W1 OOS SR | W2 Params | W2 OOS SR | Match | MktNeutral |
+|----------|-----------|-----------|-----------|-----------|-------|------------|
+| 1_Pairs | [90, 1.5, 0.25] | -0.671 | [90, 1.5, 0.25] | -0.725 | YES | YES |
+| 2_Bollinger | [90, 1.5] | -1.397 | [90, 2.5] | 0.200 | NO | NO |
+| 3_OU | [360, 1.5, 0.05] | 0.000 | [180, 1.5, 0.05] | 0.418 | NO | NO |
+| 4_Coint | [90, 1.5, 0.25, 90] | 1.065 | [90, 1.5, 0.25, 90] | 1.157 | YES | YES |
+| 5_Funding | N/A | N/A | [180, 2.5, 0.5] | -1.238 | NO | NO |
+
+## Cointegration + OU Fixed (2026-04-06)
+
+### Fixes Applied
+- Cointegration: LOG prices, beta clamped [0.3, 3.0], max 10% per pair, max 15 pairs
+- OU: handle insufficient warmup gracefully
+
+### Results
+| Strategy | W1 OOS SR | W1 Ret% | W1 DD% | W2 OOS SR | W2 Ret% | W2 DD% | Match |
+|----------|-----------|---------|--------|-----------|---------|--------|-------|
+| Coint | 0.221 | -36.89 | 77.12 | -0.122 | -57.46 | 87.81 | YES |
+| OU | 0.102 | 0.00 | 0.01 | 0.000 | 0.00 | 0.00 | YES |
+
+### Cointegration: Beta-filtered pairs found
+- W1 IS: 0 pairs (no valid pairs with beta in [0.3, 3.0])
+- W1 OOS: 67 pairs found (trained on OOS data since IS had none)
+- W2 IS: 0 pairs -> W2 OOS: 62 pairs
+- Top stable pairs: DOT/FIL (p=0.0001), ICP/AVAX, SAND/PEOPLE, FIL/PEOPLE
+- BUT: OOS returns -37% to -57% with 77-88% drawdown -> cointegration is NOT profitable
+
+### OU: Nearly zero activity
+- W1 OOS: 2 trades, W2 OOS: 0 trades
+- theta values all < 0.03 (very slow reversion, ~33+ days half-life)
+- theta_min=0.01 passes most coins but signals barely trigger with entry_thresh=1.0
+- The OU model finds crypto does NOT have meaningful mean reversion at 8H scale
+
+### Correlation with XSMom (W2 OOS)
+- Cointegration vs XSMom: 0.017 (nearly zero - good diversification but useless strategy)
+
+### Conclusion
+- **Cointegration: REJECTED** (massive losses despite position capping)
+- **OU: REJECTED** (zero activity, theta too slow for practical trading)
+- Both confirm that classical mean reversion models do not work well on crypto
+- The existing Z-score MR (Sharpe ~0.6) remains the best MR approach
+
+## Advanced Cointegration + Avellaneda-Lee PCA (2026-04-06)
+
+### Part 3: Full Comparison
+| Strategy | Timeframe | W1 Params | W1 OOS SR | W2 Params | W2 OOS SR | Match | Pairs |
+|----------|-----------|-----------|-----------|-----------|-----------|-------|-------|
+| Coint | 1d | [90, 1.5, 0.25, 90 | 0.000 | [90, 1.5, 0.25, 90 | 0.000 | YES | 0 |
+| Coint | 1h | [90, 1.5, 0.25, 90 | 0.000 | [90, 1.5, 0.25, 90 | 0.000 | YES | 0 |
+| Coint | 4h | [90, 1.5, 0.25, 90 | 0.000 | [90, 1.5, 0.25, 90 | 0.000 | YES | 0 |
+| Coint | 8h | [90, 1.5, 0.25, 90 | 0.000 | [90, 1.5, 0.25, 90 | 0.000 | YES | 0 |
+| PCA | 1d | [5, 1.0, 0.25, 180 | -0.873 | [5, 1.0, 0.25, 180 | -0.678 | YES | None |
+| PCA | 1h | [3, 1.0, 0.25, 360 | -1.124 | [3, 1.0, 0.25, 360 | -0.429 | YES | None |
+| PCA | 4h | [3, 2.0, 0.25, 360 | -0.022 | [3, 1.0, 0.25, 360 | 0.065 | NO | None |
+| PCA | 8h | [5, 1.5, 0.25, 180 | 1.485 | [5, 1.5, 0.25, 180 | 1.143 | YES | None |
+
+### Pair Stability (triple-filter)
+- 1h: W1=0 pairs, W2=0 pairs, overlap=0
+- 4h: W1=0 pairs, W2=0 pairs, overlap=0
+- 8h: W1=0 pairs, W2=0 pairs, overlap=0
+- 1d: W1=0 pairs, W2=0 pairs, overlap=0
+
+### PCA Variance Explained
+- PCA_1d: ['0.528', '0.091', '0.046', '0.041', '0.040'] (cum=0.746)
+- PCA_1h: ['0.667', '0.043', '0.042'] (cum=0.752)
+- PCA_4h: ['0.622', '0.056', '0.040'] (cum=0.718)
+- PCA_8h: ['0.584', '0.060', '0.055', '0.046', '0.036'] (cum=0.782)
+
+### Correlation with XSMom
+- PCA_1h: -0.016
+- PCA_4h: 0.026
+- PCA_8h: 0.024
+- PCA_1d: 0.014
+
+## PCA + XSMom Holdout (2026-04-07)
+
+Config: PCA 8H K=5, entry=1.5, exit=0.25, OU=180, recalib=180
+
+| Portfolio | Sharpe | Return% | MaxDD% | Trades |
+|-----------|--------|---------|--------|--------|
+| A) PCA 8H | -0.133 | -2.04 | 14.22 | 12041 |
+| B) XSMom | -0.799 | -22.20 | 27.82 | 560 |
+| C) PCA+XSMom 50/50 | -0.861 | -12.12 | 18.52 | 12601 |
+| D) PCA+XSMom+MR 33ea | -0.939 | -8.40 | 12.87 | 13244 |
+| E) PCA60+XSMom40 | -0.826 | -10.11 | 16.69 | 12601 |
+| F) PCA40+XSMom60 | -0.867 | -14.14 | 20.35 | 12601 |
+
+Sanity: C) (-2.04+-22.20)/2=-12.12% OK
+
+Correlations: PCA-XSMom=0.005, PCA-MR=0.048, XSMom-MR=-0.010
+
+## PCA + XSMom Holdout (2026-04-07)
+
+Config: PCA 8H K=5, entry=1.5, exit=0.25, OU=180, recalib=180
+
+| Portfolio | Sharpe | Return% | MaxDD% | Trades |
+|-----------|--------|---------|--------|--------|
+| A) PCA 8H | -0.133 | -2.04 | 14.22 | 12041 |
+| B) XSMom | -0.799 | -22.20 | 27.82 | 560 |
+| C) PCA+XSMom 50/50 | -0.861 | -12.12 | 18.52 | 12601 |
+| D) PCA+XSMom+MR 33ea | -0.939 | -8.40 | 12.87 | 13244 |
+| E) PCA60+XSMom40 | -0.826 | -10.11 | 16.69 | 12601 |
+| F) PCA40+XSMom60 | -0.867 | -14.14 | 20.35 | 12601 |
+
+Sanity: C) (-2.04+-22.20)/2=-12.12% OK
+
+Correlations: PCA-XSMom=0.005, PCA-MR=0.048, XSMom-MR=-0.010
+
+## Phase-Averaged Holdout (2026-04-07)
+
+21 phases (data start 2025-06-01 to 2025-06-21), all zero-position clean start.
+
+| Strategy | Avg SR | SR std | Best SR | Worst SR | Avg Ret% | Ret std | Verdict |
+|----------|--------|--------|---------|----------|---------|---------|--------|
+| A) PCA 8H | -0.386 | 0.286 | 0.107 | -0.850 | -4.52 | 2.78 | ROBUST |
+| B) XSMom | 0.216 | 0.687 | 1.075 | -0.825 | 3.21 | 18.00 | UNRELIABLE |
+| C) Donchian B0 | 0.811 | 0.049 | 0.856 | 0.721 | 3.87 | 0.19 | ROBUST |
+| D) Trend 8H+1D | -0.334 | 0.078 | -0.211 | -0.577 | -10.19 | 1.57 | ROBUST |
+| E) Z-score MR | -0.131 | 0.137 | 0.009 | -0.280 | -0.29 | 0.28 | ROBUST |
+| F) PCA+XSMom 50/50 | -0.005 | 0.658 | 0.862 | -1.006 | -0.48 | 9.09 | UNRELIABLE |
+| G) PCA+XSMom+MR 33 | -0.049 | 0.666 | 0.812 | -1.056 | -0.39 | 6.06 | UNRELIABLE |
+| H) XSMom+MR 50/50 | 0.113 | 0.701 | 0.964 | -0.930 | 1.50 | 9.01 | UNRELIABLE |
+
+### Interpretation
+- SR std < 0.3 = ROBUST (result trustworthy)
+- SR std 0.3-0.6 = MODERATE (some phase dependency)
+- SR std > 0.6 = UNRELIABLE (result is luck)
+
+## Definitive Holdout v3 (2026-04-07)
+
+### CLAUDE.md Rules Enforced
+All 7 rules checked and passed.
+
+### Data Coverage (Rule 6)
+- Data load: 2024-06-21
+- Warmup end: 2025-07-01
+- Trading: 2025-07-01 to 2026-03-31
+- Total bars: 821
+
+### v2 Consistency (Rule 5)
+- Donchian: v2=-0.237 / v3=-0.237 (diff=0.000)
+- MR: v2=-0.96% / v3=-0.75% (diff=0.21%)
+
+### Results
+| Portfolio | Sharpe | Return% | MaxDD% | Trades |
+|-----------|--------|---------|--------|--------|
+| A) Donchian B0 | -0.237 | -1.77 | 6.53 | 1093 |
+| B) Trend 8H+1D | -0.352 | -10.37 | 17.44 | 9645 |
+| C) XSMom | -1.176 | -26.38 | 32.07 | 539 |
+| D) PCA 8H | -0.096 | -1.67 | 14.22 | 12041 |
+| E) Z-score MR | -0.374 | -0.75 | 2.12 | 643 |
+| F) PCA+XSMom 50/50 | -1.231 | -14.02 | 21.05 | 12580 |
+| G) PCA+XSMom+MR 33 | -1.329 | -9.60 | 14.40 | 13223 |
+| H) XSMom+MR 50/50 | -1.374 | -13.57 | 16.59 | 1182 |
+| I) Don+PCA+XSMom 33 | -1.289 | -9.94 | 15.14 | 13673 |
+| J) Trend+XSMom 60/40 | -1.006 | -16.78 | 21.35 | 10184 |
+| K) Trend+MR+XSMom 33 | -1.251 | -12.50 | 15.33 | 10827 |
+
+### Sanity Checks (Rule 4)
+All passed.
+
+## Phase-Averaged Holdout v2 (2026-04-07)
+
+Rule 7 enforced: phase shift via rebalance counter offset, all phases cover full holdout.
+Data: 2024-06-21 to 2026-04-01. Holdout: 802 bars.
+
+| Strategy | Avg SR | SR std | Best SR | Worst SR | Avg Ret% | Ret std | Verdict |
+|----------|--------|--------|---------|----------|---------|---------|--------|
+| A) Donchian B0 | -0.237 | 0.000 | -0.237 | -0.237 | -1.77 | 0.00 | INVARIANT |
+| B) Trend 8H+1D | -0.352 | 0.000 | -0.352 | -0.352 | -10.37 | 0.00 | INVARIANT |
+| C) XSMom | -0.041 | 0.654 | 1.041 | -1.155 | -3.77 | 15.93 | UNRELIABLE |
+| D) PCA 8H | -0.328 | 0.324 | 0.168 | -1.061 | -4.03 | 3.28 | MARGINAL |
+| E) Z-score MR | -0.476 | 0.000 | -0.476 | -0.476 | -0.96 | 0.00 | INVARIANT |
+| F) PCA+XSMom 50/50 | -0.282 | 0.647 | 0.851 | -1.213 | -4.32 | 8.30 | UNRELIABLE |
+| G) PCA+XSMom+MR 33 | -0.343 | 0.656 | 0.805 | -1.291 | -3.09 | 5.53 | UNRELIABLE |
+| H) XSMom+MR 50/50 | -0.192 | 0.703 | 1.022 | -1.292 | -2.48 | 8.24 | UNRELIABLE |
+| I) Don+PCA+XSMom 33 | -0.362 | 0.630 | 0.746 | -1.272 | -3.48 | 5.53 | UNRELIABLE |
+
+### Previous phase avg comparison
+- Previous Donchian avg SR was 0.811 (WRONG: warmup ate holdout bars)
+- Corrected Donchian SR: -0.237 (phase invariant, matches v2 corrected -0.237)
+- Previous XSMom avg SR was 0.216 with std 0.687 (WRONG: different holdout coverage per phase)

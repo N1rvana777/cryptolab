@@ -7,26 +7,122 @@ but sizes positions by how many timeframes agree, with vol-targeting and drawdow
 import math
 from typing import Dict
 
+import numpy as np
 import pandas as pd
 
 from cryptolab.config import Config
 from cryptolab.strategy.base import BaseStrategy, StrategySignal
 from cryptolab.indicators.donchian import compute_donchian
-from cryptolab.indicators.core import compute_atr, compute_tsmom
+from cryptolab.indicators.core import compute_atr, compute_tsmom, compute_volume_ratio, compute_rsi
 from cryptolab.backtest.metrics import PERIODS_PER_YEAR
 
 
-class DonchianMTF(BaseStrategy):
-    """Donchian breakout with multi-timeframe agreement sizing and dynamic risk scaling.
+def _compute_adx(highs, lows, closes, period=20):
+    """Compute ADX for regime detection. Returns (adx_value, dx_series)."""
+    n = len(highs)
+    if n < period * 2 + 1:
+        return None
 
-    Entry: medium-TF Donchian breakout (same as DonchianBreakout).
-    Sizing: position scaled by how many TFs agree (0-100%), vol target, and drawdown.
-    Exit: ATR trailing stop or opposite breakout on medium TF.
+    tr = [0.0] * n
+    plus_dm = [0.0] * n
+    minus_dm = [0.0] * n
+    for i in range(1, n):
+        h_diff = highs[i] - highs[i - 1]
+        l_diff = lows[i - 1] - lows[i]
+        tr[i] = max(highs[i] - lows[i], abs(highs[i] - closes[i - 1]), abs(lows[i] - closes[i - 1]))
+        plus_dm[i] = h_diff if (h_diff > l_diff and h_diff > 0) else 0
+        minus_dm[i] = l_diff if (l_diff > h_diff and l_diff > 0) else 0
+
+    # Wilder smoothing
+    atr_s = sum(tr[1:period + 1])
+    pdm_s = sum(plus_dm[1:period + 1])
+    mdm_s = sum(minus_dm[1:period + 1])
+    for i in range(period + 1, n):
+        atr_s = atr_s - atr_s / period + tr[i]
+        pdm_s = pdm_s - pdm_s / period + plus_dm[i]
+        mdm_s = mdm_s - mdm_s / period + minus_dm[i]
+
+    # Final DX and ADX
+    dx_vals = []
+    cur_atr = sum(tr[1:period + 1])
+    cur_pdm = sum(plus_dm[1:period + 1])
+    cur_mdm = sum(minus_dm[1:period + 1])
+    for i in range(period + 1, n):
+        cur_atr = cur_atr - cur_atr / period + tr[i]
+        cur_pdm = cur_pdm - cur_pdm / period + plus_dm[i]
+        cur_mdm = cur_mdm - cur_mdm / period + minus_dm[i]
+        if cur_atr > 0:
+            pdi = 100 * cur_pdm / cur_atr
+            mdi = 100 * cur_mdm / cur_atr
+            if pdi + mdi > 0:
+                dx_vals.append(100 * abs(pdi - mdi) / (pdi + mdi))
+            else:
+                dx_vals.append(0)
+        else:
+            dx_vals.append(0)
+
+    if len(dx_vals) < period:
+        return None
+
+    adx = sum(dx_vals[:period]) / period
+    for dx in dx_vals[period:]:
+        adx = (adx * (period - 1) + dx) / period
+
+    return adx
+
+
+def _compute_regime_scale(highs, lows, closes, adx_period=20):
+    """Compute regime_scale for the latest bar.
+
+    Returns (regime_scale, adx_value, vol_10d, vol_30d).
+    regime_scale: 1.0 (trending), 0.5 (gray zone), 0.0 (choppy)
+    """
+    # ADX
+    adx_val = _compute_adx(highs, lows, closes, adx_period)
+    if adx_val is None:
+        return 1.0, None, None, None
+
+    # ADX thresholds
+    if adx_val >= 25:
+        regime_scale = 1.0
+    elif adx_val >= 20:
+        regime_scale = 0.5
+    else:
+        regime_scale = 0.0
+
+    # Vol contraction (OR with ADX — can only lower regime_scale)
+    n = len(closes)
+    if n >= 90:
+        rets = [closes[i] / closes[i - 1] - 1 for i in range(max(1, n - 90), n)]
+        vol_30d = float(np.std(rets)) if len(rets) >= 90 else None
+        vol_10d = float(np.std(rets[-30:])) if len(rets) >= 30 else None
+
+        if vol_10d is not None and vol_30d is not None and vol_30d > 0:
+            if vol_10d < vol_30d * 0.7:
+                regime_scale = 0.0
+    else:
+        vol_10d = None
+        vol_30d = None
+
+    return regime_scale, adx_val, vol_10d, vol_30d
+
+
+class DonchianMTF(BaseStrategy):
+    """多时间框架Donchian突破策略（v1规则型策略，也是v2 ML模型的对比基准）。
+
+    入场: 中等TF（默认72bar）的Donchian通道突破——收盘价突破N bar最高/最低价
+    仓位大小 = 基础仓位 × MTF共识 × 波动率定标 × 回撤缩放
+      - MTF共识: 3个TF(24/72/168)中有多少个同方向（0~100%）
+      - 波动率定标: 目标年化波动率(15%) / 实际年化波动率，限制在0.5~2.0x
+      - 回撤缩放: 回撤越大仓位越小，最多缩到floor(25%)
+    出场: ATR追踪止损 或 反方向Donchian突破
+    可选: 金字塔加仓（默认关闭）、动量混合（默认关闭）
     """
 
     def __init__(self, cfg: Config):
         super().__init__(cfg, name="DonchianMTF")
         self._state: Dict[str, dict] = {}
+        self._cs_lookup: dict = {}  # {timestamp: multiplier} for cross-sectional signal
 
     def _get_state(self, symbol: str) -> dict:
         if symbol not in self._state:
@@ -57,7 +153,13 @@ class DonchianMTF(BaseStrategy):
         st["unit_size"] = None
 
     def _compute_tf_agreement(self, highs, lows, close, st):
-        """Compute per-TF breakout states and combined agreement score."""
+        """计算各TF的突破状态，返回加权共识分数。
+
+        对每个lookback(24/72/168)检查收盘价是否突破通道上/下沿。
+        突破上沿=+1(看多)，突破下沿=-1(看空)，通道内=保持上次状态。
+        返回: (combined_score, metadata_dict)
+        combined_score范围[-1,1]，绝对值越大=越多TF同方向。
+        """
         cfg = self.cfg
         tf_signals = list(st["tf_trends"])
         tf_meta = {}
@@ -79,7 +181,11 @@ class DonchianMTF(BaseStrategy):
         return combined, tf_meta
 
     def _compute_scalars(self, close, atr, equity, st):
-        """Compute vol_scalar and dd_scalar for position sizing."""
+        """计算波动率定标和回撤缩放系数。
+
+        vol_scalar: 目标年化波动率 / 实际年化波动率（限制在0.5~2.0x）
+        dd_scalar: 当前回撤越深，仓位越小。回撤=0时为1.0，回撤=dd_max时为dd_floor
+        """
         cfg = self.cfg
 
         # Vol targeting
@@ -106,6 +212,13 @@ class DonchianMTF(BaseStrategy):
         return vol_scalar, dd_scalar, ann_vol, current_dd
 
     def generate_signal(self, symbol: str, df: pd.DataFrame, equity: float, **kwargs) -> StrategySignal:
+        """生成交易信号（核心策略逻辑）。
+
+        输入: 币种、截至当前bar的OHLCV历史、当前权益
+        输出: StrategySignal（目标仓位、信号类型、止损价、元数据）
+
+        逻辑顺序: 检查出场条件(持仓时) -> 检查入场条件(空仓时) -> 检查加仓条件(持仓时)
+        """
         cfg = self.cfg
         st = self._get_state(symbol)
 
@@ -118,8 +231,11 @@ class DonchianMTF(BaseStrategy):
         closes = df["close"].tolist()
         close = closes[-1]
         candles = [
-            {"h": row["high"], "l": row["low"], "c": row["close"], "v": row["volume"]}
-            for _, row in df.iterrows()
+            {"h": h, "l": l, "c": c, "v": v}
+            for h, l, c, v in zip(
+                df["high"].values, df["low"].values,
+                df["close"].values, df["volume"].values,
+            )
         ]
 
         # Medium TF Donchian (primary signal, same as DonchianBreakout)
@@ -137,8 +253,27 @@ class DonchianMTF(BaseStrategy):
         # MTF agreement score
         combined, tf_meta = self._compute_tf_agreement(highs, lows, close, st)
 
+        # Volume-weighted momentum: amplify/dampen agreement by volume ratio
+        if cfg.vw_weight > 0:
+            vol_ratio = compute_volume_ratio(candles, cfg.vw_lookback)
+            vol_factor = max(0.5, min(2.0, 1.0 + cfg.vw_weight * (vol_ratio - 1.0)))
+            combined = combined * vol_factor
+        else:
+            vol_ratio = None
+            vol_factor = None
+
         # Dynamic scalars
         vol_scalar, dd_scalar, ann_vol, current_dd = self._compute_scalars(close, atr, equity, st)
+
+        # Regime filter (B0: ADX + vol contraction)
+        regime_scale = 1.0
+        adx_val = None
+        vol_10d = None
+        vol_30d = None
+        if cfg.mtf_regime_filter:
+            regime_scale, adx_val, vol_10d, vol_30d = _compute_regime_scale(
+                highs, lows, closes, cfg.mtf_adx_period
+            )
 
         # Momentum score
         mom_score = compute_tsmom(closes, cfg.mom_lookback) if cfg.mom_weight > 0 else 0.0
@@ -155,8 +290,13 @@ class DonchianMTF(BaseStrategy):
             "mom_score": mom_score, "final_combined": final_combined,
             "vol_scalar": vol_scalar, "dd_scalar": dd_scalar,
             "current_dd_pct": current_dd * 100, "ann_vol": ann_vol,
+            "regime_scale": regime_scale, "adx": adx_val,
+            "vol_10d": vol_10d, "vol_30d": vol_30d,
             **tf_meta,
         }
+        if vol_ratio is not None:
+            meta["vol_ratio"] = vol_ratio
+            meta["vol_factor"] = vol_factor
 
         # --- EXIT LOGIC (if in position) ---
         if st["side"] == "long":
@@ -210,8 +350,30 @@ class DonchianMTF(BaseStrategy):
             if agreement < cfg.mtf_signal_deadzone:
                 agreement = 0.0
 
-            position_usd = base_position * agreement * vol_scalar * dd_scalar
+            position_usd = base_position * agreement * vol_scalar * dd_scalar * regime_scale
             position_usd = min(position_usd, max_position)
+
+            # Mean-reversion RSI filter: penalize entries at extreme RSI
+            if cfg.mr_weight > 0:
+                rsi = compute_rsi(closes, cfg.mr_rsi_period)
+                if rsi is not None:
+                    if final_combined > 0:  # long — penalize overbought
+                        penalty = 1.0 - cfg.mr_weight * max(0.0, (rsi - 60.0) / 40.0)
+                    elif final_combined < 0:  # short — penalize oversold
+                        penalty = 1.0 - cfg.mr_weight * max(0.0, (30.0 - rsi) / 30.0)
+                    else:
+                        penalty = 1.0
+                    penalty = max(0.0, penalty)
+                    position_usd *= penalty
+                    meta["rsi"] = rsi
+                    meta["mr_penalty"] = penalty
+
+            # Cross-sectional momentum: scale by relative strength rank
+            if cfg.cs_weight > 0 and self._cs_lookup:
+                ts = df.iloc[-1].get("timestamp") if "timestamp" in df.columns else df.index[-1]
+                cs_mult = self._cs_lookup.get(ts, 1.0)
+                position_usd *= cs_mult
+                meta["cs_multiplier"] = cs_mult
 
             # Entry triggers: breakout OR strong momentum
             breakout_long = close > upper

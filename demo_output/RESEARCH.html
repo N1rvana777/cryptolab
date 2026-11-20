@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CryptoLab: Multi-Timeframe Donchian Breakout System</title>
+<script>
+  // Load MathJax for LaTeX rendering
+  window.MathJax = {
+    tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 0 20px;
+    line-height: 1.7;
+    color: #1a1a1a;
+    font-size: 15px;
+  }
+  h1 {
+    font-size: 1.8em;
+    border-bottom: 3px solid #2563eb;
+    padding-bottom: 10px;
+    color: #1e3a5f;
+  }
+  h2 {
+    font-size: 1.4em;
+    color: #2563eb;
+    margin-top: 2em;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 5px;
+  }
+  h3 {
+    font-size: 1.15em;
+    color: #374151;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1em 0;
+    font-size: 0.9em;
+  }
+  th, td {
+    border: 1px solid #d1d5db;
+    padding: 8px 12px;
+    text-align: center;
+  }
+  th {
+    background: #eff6ff;
+    font-weight: 600;
+    color: #1e3a5f;
+  }
+  tr:nth-child(even) {
+    background: #f9fafb;
+  }
+  code {
+    background: #f3f4f6;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+  }
+  pre {
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+  }
+  strong {
+    color: #1e3a5f;
+  }
+  hr {
+    border: none;
+    border-top: 2px solid #e5e7eb;
+    margin: 2em 0;
+  }
+  blockquote {
+    border-left: 4px solid #2563eb;
+    margin: 1em 0;
+    padding: 0.5em 1em;
+    background: #eff6ff;
+    color: #374151;
+  }
+  @media print {
+    body { font-size: 12px; margin: 0; }
+    pre { font-size: 10px; }
+    h1 { font-size: 1.5em; }
+    h2 { break-before: auto; }
+  }
+</style>
+</head>
+<body>
+<h1>CryptoLab: A Multi-Timeframe Donchian Breakout System for Cryptocurrency Futures</h1>
+<p><strong>Author</strong>: Xinyu Wang, UC Irvine
+<strong>Date</strong>: March 2026
+<strong>Tools</strong>: Python 3.12, Claude Code (AI pair-programmer), Hyperliquid DEX</p>
+<hr />
+<h2>1. Introduction</h2>
+<p>This document describes the design, backtest methodology, and production engineering of <strong>CryptoLab</strong> — a systematic trend-following strategy for cryptocurrency perpetual futures. The system trades 4-hour candles on a portfolio of BTC, SOL, ADA, and XRP via the Hyperliquid decentralized exchange.</p>
+<p>The strategy is a <strong>multi-timeframe Donchian channel breakout</strong> with dynamic position sizing governed by volatility targeting and drawdown scaling. The system was developed iteratively using Claude Code (Anthropic's AI coding agent) as a pair-programmer running in a WSL tmux session, which I monitored and directed from my phone via SSH — enabling a rapid research-to-code feedback loop.</p>
+<p>This report is structured in two halves: <strong>quantitative methodology</strong> and <strong>production engineering</strong>, reflecting the reality that in live trading, robust infrastructure is as critical as a good signal.</p>
+<hr />
+<h2>2. Strategy: Multi-Timeframe Donchian Breakout (DonchianMTF)</h2>
+<h3>2.1 Signal Generation</h3>
+<p>The core signal is a Donchian channel breakout evaluated across three timeframes simultaneously. For each timeframe $i$ with lookback period $L_i$, the Donchian channel at bar $T$ is computed using data up to bar $T-1$ (strict shift(1) to prevent look-ahead bias):</p>
+<p>$$
+\text{Upper}<em>i(T) = \max</em>{t \in [T-L_i, T-1]} H_t, \quad \text{Lower}<em>i(T) = \min</em>{t \in [T-L_i, T-1]} L_t
+$$</p>
+<p>Each timeframe maintains a <strong>persistent trend state</strong> $s_i \in {-1, 0, +1}$:</p>
+<p>$$
+s_i = \begin{cases} +1 &amp; \text{if } C_T &gt; \text{Upper}_i \ -1 &amp; \text{if } C_T &lt; \text{Lower}_i \ s_i^{\text{prev}} &amp; \text{otherwise} \end{cases}
+$$</p>
+<p>The combined agreement score is a weighted sum:</p>
+<p>$$
+\text{combined} = \sum_{i=1}^{3} w_i \cdot s_i
+$$</p>
+<p>For our portfolio, we use two lookback configurations:
+- <strong>Combo G</strong>: $L = [24, 72, 168]$ (4-day, 12-day, 28-day) — for BTC, SOL, ADA
+- <strong>Combo F</strong>: $L = [48, 168, 504]$ (8-day, 28-day, 84-day) — for XRP</p>
+<p>With equal weights $w = [0.33, 0.34, 0.33]$.</p>
+<h3>2.2 Entry and Exit Rules</h3>
+<p><strong>Entry</strong>: A long (short) position is opened when the close price breaks above (below) the medium-timeframe Donchian upper (lower) band AND the combined score is positive (negative) AND exceeds a deadzone threshold of 0.05.</p>
+<p><strong>Exit</strong>: Positions are closed when either:
+1. <strong>ATR trailing stop</strong> is hit: the stop ratchets in the direction of profit, initialized at $C - 2 \times \text{ATR}_{14}$ for longs.
+2. <strong>Opposite breakout</strong>: close crosses the opposite Donchian band on the medium timeframe.</p>
+<p><strong>Execution</strong>: All signals generated at bar $T$ are executed at bar $T+1$'s open price plus simulated slippage (15 bps), using taker fees of 3.5 bps.</p>
+<h3>2.3 Position Sizing</h3>
+<p>Position size is determined by three multiplicative factors:</p>
+<p><strong>Base position</strong> from risk budgeting:</p>
+<p>$$
+\text{base} = \frac{\text{equity} \times r}{\text{ATR} / C} \times \text{leverage}
+$$</p>
+<p>where $r = 0.02$ (2% risk per trade), leverage = 3x.</p>
+<p><strong>Volatility scalar</strong> (vol-targeting):</p>
+<p>$$
+\sigma_{\text{ann}} = \frac{\text{ATR}}{C} \times \sqrt{2190}, \quad v_s = \text{clip}\left(\frac{0.15}{\sigma_{\text{ann}}}, \ 0.5, \ 2.0\right)
+$$</p>
+<p>This scales position size inversely with realized volatility, targeting 15% annualized.</p>
+<p><strong>Drawdown scalar</strong> (risk reduction during drawdowns):</p>
+<p>$$
+d_s = \begin{cases} 0.25 &amp; \text{if } \text{DD} \geq 30\% \ 1 - 0.75 \times \frac{\text{DD}}{0.30} &amp; \text{otherwise} \end{cases}
+$$</p>
+<p><strong>Final position</strong>:</p>
+<p>$$
+\text{position} = \min\left(\text{base} \times |\text{combined}| \times v_s \times d_s, \ \text{equity} \times \text{leverage}\right)
+$$</p>
+<hr />
+<h2>3. Backtest Methodology</h2>
+<h3>3.1 Data and Periods</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>In-Sample (IS)</th>
+<th>Out-of-Sample (OOS)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Period</strong></td>
+<td>2021-01-01 to 2023-12-31</td>
+<td>2024-01-01 to 2026-02-28</td>
+</tr>
+<tr>
+<td><strong>Purpose</strong></td>
+<td>Parameter selection</td>
+<td>Validation</td>
+</tr>
+<tr>
+<td><strong>4H bars per symbol</strong></td>
+<td>~6,500</td>
+<td>~4,740</td>
+</tr>
+</tbody>
+</table>
+<p>Data source: OKX historical candles, cached locally for reproducibility.</p>
+<h3>3.2 Fill Model</h3>
+<p>The backtest engine enforces a strict <strong>next-bar-open fill</strong> model:</p>
+<ol>
+<li>Signal is generated at bar $T$ using all data $\leq T$ (strategy sees close of bar $T$).</li>
+<li>Signal is executed at bar $T+1$'s open price $\pm$ 15 bps slippage.</li>
+<li>Gap stops: if bar $T+1$ opens beyond the stop level, the position is closed at the open price (worst-case fill on gaps).</li>
+</ol>
+<p>This eliminates close-price execution bias, which is the most common source of inflated backtest returns.</p>
+<h3>3.3 Look-Ahead Bias Prevention</h3>
+<p>Three layers of protection:</p>
+<ol>
+<li><strong>Indicator level</strong>: <code>compute_donchian(highs[:-1], lows[:-1], period)</code> — the <code>[:-1]</code> slice explicitly excludes the current bar from channel computation, equivalent to <code>shift(1)</code>.</li>
+<li><strong>Engine level</strong>: the signal-then-execute loop guarantees one bar of delay between signal generation and order fill.</li>
+<li><strong>Automated audit</strong> (<code>bias_audit.py</code>): a post-backtest check that verifies every trade's fill price is consistent with the bar's open (not close), catching any future regressions.</li>
+</ol>
+<h3>3.4 Overfitting Controls</h3>
+<ul>
+<li><strong>Bootstrap Sharpe CI</strong>: Resample returns 2,000 times to compute 95% confidence interval on Sharpe ratio.</li>
+<li><strong>Deflated Sharpe Ratio</strong> (Bailey &amp; López de Prado, 2014): accounts for multiple testing across 16 parameter combinations (8 lookback combos × 2 weight sets).</li>
+<li><strong>Regime-split Sharpe</strong>: separate Sharpe in bull (close &gt; SMA200) vs bear regimes to detect regime dependence.</li>
+<li><strong>IS/OOS separation</strong>: parameters were chosen on IS data; OOS was never touched during development.</li>
+</ul>
+<hr />
+<h2>4. Results</h2>
+<h3>4.1 Portfolio Performance</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th style="text-align: center;">In-Sample (2021–2023)</th>
+<th style="text-align: center;">Out-of-Sample (2024–2026)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Total Return</strong></td>
+<td style="text-align: center;">+70.05%</td>
+<td style="text-align: center;">+21.12%</td>
+</tr>
+<tr>
+<td><strong>Max Drawdown</strong></td>
+<td style="text-align: center;">9.76%</td>
+<td style="text-align: center;">10.85%</td>
+</tr>
+<tr>
+<td><strong>Sharpe</strong></td>
+<td style="text-align: center;">1.40</td>
+<td style="text-align: center;">0.82</td>
+</tr>
+<tr>
+<td><strong>Sortino</strong></td>
+<td style="text-align: center;">1.45</td>
+<td style="text-align: center;">0.73</td>
+</tr>
+<tr>
+<td><strong>Calmar</strong></td>
+<td style="text-align: center;">1.99</td>
+<td style="text-align: center;">0.85</td>
+</tr>
+<tr>
+<td><strong>Bootstrap Sharpe 95% CI</strong></td>
+<td style="text-align: center;">[0.29, 2.52]</td>
+<td style="text-align: center;">[-0.45, 2.22]</td>
+</tr>
+</tbody>
+</table>
+<p>The IS-to-OOS Sharpe degradation from 1.40 to 0.82 (41% drop) is within the typical range for trend-following strategies, and the portfolio maintains positive returns with controlled drawdowns.</p>
+<h3>4.2 Per-Symbol Breakdown</h3>
+<p><strong>In-Sample (2021–2023)</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Combo</th>
+<th>Return</th>
+<th>Max DD</th>
+<th>Sharpe</th>
+<th>Sortino</th>
+<th>Calmar</th>
+<th>Trades</th>
+<th>Win Rate</th>
+<th>PF</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BTC</td>
+<td>G</td>
+<td>+87.92%</td>
+<td>19.95%</td>
+<td>1.10</td>
+<td>0.94</td>
+<td>1.17</td>
+<td>154</td>
+<td>20.1%</td>
+<td>1.77</td>
+</tr>
+<tr>
+<td>SOL</td>
+<td>G</td>
+<td>+123.42%</td>
+<td>18.54%</td>
+<td>1.26</td>
+<td>1.15</td>
+<td>1.70</td>
+<td>184</td>
+<td>21.2%</td>
+<td>2.04</td>
+</tr>
+<tr>
+<td>ADA</td>
+<td>G</td>
+<td>+47.04%</td>
+<td>27.87%</td>
+<td>0.77</td>
+<td>0.64</td>
+<td>0.49</td>
+<td>188</td>
+<td>16.0%</td>
+<td>1.47</td>
+</tr>
+<tr>
+<td>XRP</td>
+<td>F</td>
+<td>+21.82%</td>
+<td>15.36%</td>
+<td>0.48</td>
+<td>0.26</td>
+<td>0.44</td>
+<td>84</td>
+<td>17.9%</td>
+<td>1.47</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Out-of-Sample (2024–2026)</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Combo</th>
+<th>Return</th>
+<th>Max DD</th>
+<th>Sharpe</th>
+<th>Sortino</th>
+<th>Calmar</th>
+<th>Trades</th>
+<th>Win Rate</th>
+<th>PF</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BTC</td>
+<td>G</td>
+<td>+11.58%</td>
+<td>26.32%</td>
+<td>0.42</td>
+<td>0.28</td>
+<td>0.20</td>
+<td>140</td>
+<td>17.1%</td>
+<td>1.18</td>
+</tr>
+<tr>
+<td>SOL</td>
+<td>G</td>
+<td>+9.12%</td>
+<td>16.33%</td>
+<td>0.31</td>
+<td>0.24</td>
+<td>0.25</td>
+<td>126</td>
+<td>20.6%</td>
+<td>1.17</td>
+</tr>
+<tr>
+<td>ADA</td>
+<td>G</td>
+<td>+18.28%</td>
+<td>15.45%</td>
+<td>0.50</td>
+<td>0.38</td>
+<td>0.52</td>
+<td>128</td>
+<td>25.0%</td>
+<td>1.33</td>
+</tr>
+<tr>
+<td>XRP</td>
+<td>F</td>
+<td>+45.50%</td>
+<td>15.37%</td>
+<td>1.16</td>
+<td>0.61</td>
+<td>1.23</td>
+<td>58</td>
+<td>15.5%</td>
+<td>2.40</td>
+</tr>
+</tbody>
+</table>
+<h3>4.3 Key Observations</h3>
+<ol>
+<li>
+<p><strong>Win rate is consistently 15–25%</strong> — this is characteristic of trend-following: most trades are small losses during choppy periods, while a few large winners during sustained trends drive profitability. Profit factors of 1.2–2.4x confirm the fat-tailed win distribution.</p>
+</li>
+<li>
+<p><strong>Regime dependence</strong>: IS data shows clear bull-regime bias (BTC bull Sharpe 2.12 vs bear -0.39). However, OOS data is more balanced — XRP in particular shows positive Sharpe in both regimes, which is why it's the strongest OOS contributor.</p>
+</li>
+<li>
+<p><strong>Portfolio diversification works</strong>: individual symbol max drawdowns are 15–28%, but portfolio max DD is only 10–11% in both IS and OOS, demonstrating meaningful decorrelation across the four assets.</p>
+</li>
+<li>
+<p><strong>OOS Sharpe CI includes zero</strong> [-0.45, 2.22] — the strategy is profitable but we cannot reject the null hypothesis of zero skill at 95% confidence with this sample size. This is the honest reality of a ~2-year OOS window.</p>
+</li>
+</ol>
+<hr />
+<h2>5. Production Engineering</h2>
+<h3>5.1 System Architecture</h3>
+<pre><code>┌────────────────────────────────────────────────────────┐
+│                    CryptoLab System                     │
+├──────────────┬──────────────┬──────────────────────────┤
+│  Data Layer  │  Strategy    │  Execution Layer          │
+│  ───────────│  ──────────  │  ──────────────────────── │
+│  OKX/Binance │  DonchianMTF │  Hyperliquid SDK          │
+│  HL fetchers │  BaseStrategy│  PositionManager          │
+│  Cache/Valid.│  Config      │  KillSwitch               │
+├──────────────┴──────────────┴──────────────────────────┤
+│                 Observability Layer                      │
+│  Decision Telemetry │ Bias Audit │ Regime Monitor       │
+│  Worst-Offender     │ Visualizer │ JSONL Logging        │
+└────────────────────────────────────────────────────────┘
+</code></pre>
+<h3>5.2 Decision Telemetry</h3>
+<p>Every bar during backtesting (and planned for live trading) generates a <strong>complete decision snapshot</strong> serialized as JSONL. Each snapshot contains ~29 fields:</p>
+<ul>
+<li>Bar context: timestamp, OHLCV, bar index</li>
+<li>Account state: equity, current position USD</li>
+<li>Signal output: signal type, target position, confidence, stop price</li>
+<li>Strategy internals: <code>combined_score</code>, <code>vol_scalar</code>, <code>dd_scalar</code>, <code>ann_vol</code>, <code>current_dd_pct</code></li>
+<li>Per-TF state: trend direction, upper/lower bands for each of the 3 timeframes</li>
+<li>ATR, momentum score, exit reason (if applicable)</li>
+</ul>
+<p>Two output files are generated:
+- <code>telemetry_*.jsonl</code> — every bar (full decision chain reconstruction)
+- <code>actions_*.jsonl</code> — entries, exits, and pyramid adds only (quick review)</p>
+<p><strong>Why this matters for live trading</strong>: When a trade goes wrong at 3 AM, I need to reconstruct exactly what the system "saw" at the moment it made the decision. A simple "bought BTC at $X" log is useless. The telemetry captures the complete internal state, making it possible to distinguish between "the signal was correct but the market reversed" vs "the volatility scalar was miscalculated because ATR was stale."</p>
+<h3>5.3 Interactive Visualizer</h3>
+<p>A Plotly-based tool (<code>scripts/visualize_backtest.py</code>) renders:
+- Candlestick chart with all 3 TF Donchian channels overlaid
+- Trade markers (entry/exit arrows)
+- <strong>Tooltip on hover</strong>: displays the full decision snapshot JSON from telemetry</p>
+<p>This provides a rapid visual debugging workflow — I can scan the chart for suspicious entries and immediately see the exact internal state without digging through log files.</p>
+<h3>5.4 Worst-Offender Analysis</h3>
+<p>Post-backtest diagnostic module that automatically identifies:
+1. <strong>Worst N trades by absolute loss</strong> — where did the most capital go?
+2. <strong>Maximum Adverse Excursion (MAE) survivors</strong> — trades that experienced deep drawdown but weren't stopped out. These reveal whether the trailing stop is set too loose.
+3. <strong>Missed moves</strong> — periods where price moved significantly but <code>combined_score</code> was in the deadzone. These reveal structural blind spots in the signal model.</p>
+<h3>5.5 Look-Ahead Bias Audit</h3>
+<p>An automated post-backtest check (<code>bias_audit.py</code>) that verifies:
+- Every trade's fill price is consistent with the execution bar's open price (not close)
+- No signal references future bar data</p>
+<p>This runs as part of the test suite (83 tests, all passing), ensuring that future code changes cannot silently introduce look-ahead bias.</p>
+<h3>5.6 Regime &amp; Drift Monitor</h3>
+<p>Continuously monitors two indicators:
+- <strong>Rolling 14-day ADX</strong>: when ADX drops below 20, the market is in a choppy/ranging regime where trend-following strategies are expected to underperform.
+- <strong>Rolling 14-day Sharpe</strong>: when this turns negative, the strategy is actively losing money in recent history.</p>
+<p>Warnings are emitted on <strong>state transitions</strong> (entering a bad regime), not every bar, to avoid log flooding. These warnings are cross-referenced with the <code>dd_scalar</code> values in telemetry to verify that the drawdown scaling mechanism is actually engaging when it should.</p>
+<h3>5.7 Kill Switch &amp; Graceful Degradation</h3>
+<p>The most critical production component. A state machine with three modes:</p>
+<pre><code>NORMAL ──[3x API failure / NaN data / sentinel file]──&gt; REDUCE_ONLY
+REDUCE_ONLY ──[30min cooldown + success]──&gt; NORMAL
+NORMAL ──[sentinel file]──&gt; HALTED (manual reset required)
+</code></pre>
+<p><strong>Trigger conditions</strong>:
+1. <strong>3 consecutive API timeouts or 5xx errors</strong> from Hyperliquid
+2. <strong>NaN values detected in fetched candle data</strong> (data corruption)
+3. <strong>Sentinel file</strong> (<code>KILL_SWITCH</code> file in project root) — manual emergency stop</p>
+<p><strong>Emergency procedure</strong> (when triggered):
+1. Cancel all open orders
+2. Market-close all positions (emergency flatten)
+3. Enter <code>REDUCE_ONLY</code> mode — can close existing positions but cannot open new ones
+4. Auto-recover after 30-minute cooldown if API health is restored</p>
+<p><strong>Why not just retry?</strong> In crypto markets, silent failures are more dangerous than loud crashes. If the exchange API is returning errors, the correct response is NOT to keep retrying and hoping — it's to reduce exposure immediately and figure out what's wrong. The <code>hl_info_post()</code> function now raises typed <code>APIError</code> exceptions that distinguish between timeouts, connection errors, and 5xx server errors, giving the kill switch precise information about the failure mode.</p>
+<hr />
+<h2>6. Development Workflow</h2>
+<p>This project was built using <strong>Claude Code</strong> (Anthropic's AI coding agent) as a pair-programmer. The workflow:</p>
+<ol>
+<li>
+<p>I run Claude Code inside a <strong>tmux session on WSL</strong>, which I connect to via <strong>SSH from my phone</strong>. This means I can review Claude's progress, approve tool calls, and steer the conversation from anywhere — the session never drops.</p>
+</li>
+<li>
+<p>I describe what I want in natural language (often in Chinese); Claude reads the relevant source files, writes code, runs the backtest on Windows Python (via <code>cmd.exe</code> from WSL), and iterates until tests pass.</p>
+</li>
+<li>
+<p><strong>Quality control</strong>: Claude runs the full test suite (83 tests) after every change and does not proceed if any test fails. The look-ahead bias audit is part of this suite, so it's impossible to accidentally introduce future data leaks.</p>
+</li>
+<li>
+<p>The entire observability + defensive guardrails layer (6 modules, ~800 lines of code, 22 dedicated tests) was implemented in a single session with zero regressions to the existing 61 tests.</p>
+</li>
+</ol>
+<p>This is not "AI wrote my code and I didn't understand it." I specify the architecture, review every module, question design decisions, and direct the implementation. Claude is a force multiplier — it handles the boilerplate and catches edge cases while I focus on strategy logic and system design.</p>
+<hr />
+<h2>7. Known Limitations &amp; Open Questions</h2>
+<ol>
+<li>
+<p><strong>Regime dependence</strong>: The strategy has a clear trend-following bias. In-sample bull regime Sharpe is 2x the bear regime Sharpe. The <code>dd_scalar</code> mechanism mitigates losses during drawdowns but does not avoid them. <strong>Question: Beyond drawdown scaling, are there regime-switching overlays (e.g., hidden Markov models, or simpler ADX-based gating) that you've seen work in practice for crypto?</strong></p>
+</li>
+<li>
+<p><strong>Statistical significance</strong>: The OOS portfolio Sharpe 95% CI includes zero [-0.45, 2.22]. With ~2 years of OOS data at 4H frequency, we have ~4,700 observations, yet the CI is wide. <strong>Question: For a strategy with this profile (~20% win rate, high profit factor), is there a more appropriate statistical test than bootstrap Sharpe CI? Perhaps something that accounts for the non-normality of trend-following returns?</strong></p>
+</li>
+<li>
+<p><strong>Volatility scalar bounds</strong>: The vol-targeting scalar is clamped to [0.5, 2.0]. The upper bound was chosen heuristically. <strong>Question: Is there a theoretically grounded way to set these bounds, perhaps based on Kelly criterion or drawdown constraints?</strong></p>
+</li>
+<li>
+<p><strong>Portfolio construction</strong>: Currently using equal-weight capital allocation with per-symbol lookback combo selection. <strong>Question: Would a risk-parity allocation (equalizing marginal risk contribution) materially improve portfolio Sharpe, or is the added complexity not worth it for a 4-asset portfolio?</strong></p>
+</li>
+<li>
+<p><strong>Kill switch recovery</strong>: The current auto-recovery is time-based (30-minute cooldown). <strong>Question: In your industry experience, what additional conditions should gate recovery beyond "the API is responding again"? I'm concerned about scenarios like exchange partial outages where the API returns data but it's stale or incorrect.</strong></p>
+</li>
+<li>
+<p><strong>Live execution gap</strong>: The backtest assumes IOC fills at open + slippage. In practice, Hyperliquid's orderbook may have liquidity gaps, especially for altcoins during volatile periods. <strong>Question: What's a realistic approach to modeling execution quality beyond constant slippage — should I simulate orderbook impact?</strong></p>
+</li>
+</ol>
+<hr />
+<h2>8. Repository Structure</h2>
+<pre><code>cryptolab/
+├── backtest/
+│   ├── engine.py          # Next-bar-open backtest engine
+│   ├── metrics.py         # Performance metrics + worst-offender analysis
+│   ├── telemetry.py       # Decision snapshot JSONL recorder
+│   ├── bias_audit.py      # Look-ahead bias verification
+│   └── regime_monitor.py  # ADX/Sharpe drift detection
+├── strategy/
+│   ├── base.py            # BaseStrategy ABC
+│   ├── donchian.py        # Single-TF Donchian (baseline)
+│   └── donchian_mtf.py    # Multi-TF Donchian (production)
+├── indicators/
+│   ├── core.py            # ATR, RSI, ADX, EMA, TSMOM, etc.
+│   └── donchian.py        # Donchian channel computation
+├── execution/
+│   ├── hl_client.py       # Hyperliquid API wrapper + typed errors
+│   ├── position_manager.py# Order execution + CSV logging
+│   └── kill_switch.py     # Emergency flatten + mode state machine
+├── data/                  # Fetchers (OKX/Binance/HL), cache, validation
+├── config.py              # All parameters in one Config dataclass
+└── scripts/
+    ├── run_backtest.py    # CLI: single/multi/portfolio/sweep backtests
+    └── visualize_backtest.py  # Plotly interactive chart
+</code></pre>
+<p><strong>Test coverage</strong>: 83 tests covering strategy logic, backtest engine, indicators, telemetry, bias audit, regime monitor, and kill switch. All passing.</p>
+</body>
+</html>

@@ -1,4 +1,11 @@
-"""Hyperliquid SDK wrapper and API helpers. All env loading happens here."""
+"""Hyperliquid API封装。所有HL相关的网络请求都经过这里。
+
+提供两层接口:
+1. SDK层: init_hl_sdk() 初始化官方SDK，用于下单和账户查询
+2. 裸API层: hl_info_post() 直接POST到/info端点，用于获取K线、funding rate等公开数据
+
+凭证从.env文件加载: HL_PRIVATE_KEY（私钥）和HL_MAIN_ADDR（账户地址）。
+"""
 
 import os
 import time
@@ -54,8 +61,24 @@ def init_hl_sdk():
 
 # --- Raw API helpers (no SDK dependency) ---
 
+class APIError(Exception):
+    """Raised when HL API returns a retriable error (5xx, timeout)."""
+    def __init__(self, message: str, status_code: int = 0):
+        super().__init__(message)
+        self.status_code = status_code
+
+
 def hl_info_post(base_url: str, payload: dict, timeout: int = 10) -> Any:
-    r = requests.post(f"{base_url}/info", json=payload, timeout=timeout)
+    try:
+        r = requests.post(f"{base_url}/info", json=payload, timeout=timeout)
+    except requests.exceptions.Timeout:
+        raise APIError(f"Timeout after {timeout}s: {payload.get('type', '')}", status_code=0)
+    except requests.exceptions.ConnectionError as e:
+        raise APIError(f"Connection error: {e}", status_code=0)
+
+    if r.status_code >= 500:
+        raise APIError(f"Server error {r.status_code}: {r.text[:200]}", status_code=r.status_code)
+
     r.raise_for_status()
     return r.json()
 

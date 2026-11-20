@@ -1,0 +1,52 @@
+{
+  "period": "2024-01-01 to 2026-02-28",
+  "portfolio": {
+    "return_pct": 21.12,
+    "max_dd_pct": 10.85,
+    "sharpe": 0.82,
+    "sortino": 0.73,
+    "calmar": 0.85,
+    "sharpe_ci_95": [
+      -0.52,
+      2.16
+    ]
+  },
+  "per_symbol": {
+    "BTC": {
+      "combo": "G",
+      "return_pct": 11.58,
+      "max_dd_pct": 26.32,
+      "sharpe": 0.42,
+      "trades": 140,
+      "win_rate": 17.1,
+      "profit_factor": 1.18
+    },
+    "SOL": {
+      "combo": "G",
+      "return_pct": 9.12,
+      "max_dd_pct": 16.33,
+      "sharpe": 0.31,
+      "trades": 126,
+      "win_rate": 20.6,
+      "profit_factor": 1.17
+    },
+    "ADA": {
+      "combo": "G",
+      "return_pct": 18.28,
+      "max_dd_pct": 15.45,
+      "sharpe": 0.5,
+      "trades": 128,
+      "win_rate": 25.0,
+      "profit_factor": 1.33
+    },
+    "XRP": {
+      "combo": "F",
+      "return_pct": 45.5,
+      "max_dd_pct": 15.37,
+      "sharpe": 1.16,
+      "trades": 58,
+      "win_rate": 15.5,
+      "profit_factor": 2.4
+    }
+  }
+}

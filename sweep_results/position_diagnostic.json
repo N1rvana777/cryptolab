@@ -1,0 +1,74 @@
+{
+  "A) Equal weight | Trend only": {
+    "sharpe": -0.5634702742066984,
+    "return_pct": -44.85359878602012,
+    "max_dd_pct": 67.9494922167661,
+    "n_trades": 10577
+  },
+  "A) Equal weight | XSMom only": {
+    "sharpe": -0.8121318307087948,
+    "return_pct": -34.23589048004255,
+    "max_dd_pct": 51.94638788861905,
+    "n_trades": 1243
+  },
+  "A) Equal weight | Trend60+XS40": {
+    "sharpe": -1.2864826027739449,
+    "return_pct": -42.36800646407165,
+    "max_dd_pct": 55.89889530016493,
+    "n_trades": 11820
+  },
+  "B) Inv volatility | Trend only": {
+    "sharpe": -0.23768444969001204,
+    "return_pct": -6.130335464194358,
+    "max_dd_pct": 22.47641391940637,
+    "n_trades": 9470
+  },
+  "B) Inv volatility | XSMom only": {
+    "sharpe": -0.8121318307087948,
+    "return_pct": -34.23589048004255,
+    "max_dd_pct": 51.94638788861905,
+    "n_trades": 1243
+  },
+  "B) Inv volatility | Trend60+XS40": {
+    "sharpe": -1.220027141706987,
+    "return_pct": -19.134048470976197,
+    "max_dd_pct": 28.205105276830928,
+    "n_trades": 10713
+  },
+  "C) InvVol + DD scaling | Trend only": {
+    "sharpe": -1.284155873637011,
+    "return_pct": -10.581266113161124,
+    "max_dd_pct": 15.879757440989833,
+    "n_trades": 6325
+  },
+  "C) InvVol + DD scaling | XSMom only": {
+    "sharpe": -0.8121318307087948,
+    "return_pct": -34.23589048004255,
+    "max_dd_pct": 51.94638788861905,
+    "n_trades": 1243
+  },
+  "C) InvVol + DD scaling | Trend60+XS40": {
+    "sharpe": -2.108908258443761,
+    "return_pct": -21.80460686035626,
+    "max_dd_pct": 24.902730973092847,
+    "n_trades": 7568
+  },
+  "D) InvVol + DD + Regime | Trend only": {
+    "sharpe": -1.5741153246439434,
+    "return_pct": -11.096537190301826,
+    "max_dd_pct": 15.021709605768683,
+    "n_trades": 5498
+  },
+  "D) InvVol + DD + Regime | XSMom only": {
+    "sharpe": -0.8121318307087948,
+    "return_pct": -34.23589048004255,
+    "max_dd_pct": 51.94638788861905,
+    "n_trades": 1243
+  },
+  "D) InvVol + DD + Regime | Trend60+XS40": {
+    "sharpe": -2.227048501530398,
+    "return_pct": -22.11376950664068,
+    "max_dd_pct": 24.801799506328358,
+    "n_trades": 6741
+  }
+}

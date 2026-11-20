@@ -1,4 +1,4 @@
-"""Pure metric computation functions for backtest results."""
+"""回测绩效指标计算。所有函数都是纯函数（无副作用），输入权益曲线/交易列表，输出指标。"""
 
 from __future__ import annotations
 
@@ -154,7 +154,9 @@ def monthly_returns(equity_curve: pd.DataFrame) -> pd.DataFrame:
 # Map interval string -> number of bars per year
 PERIODS_PER_YEAR = {
     "1h": 8766,
+    "2h": 4383,
     "4h": 2190,
+    "8h": 1096,
     "1d": 365,
     "1w": 52,
 }
@@ -332,6 +334,179 @@ def deflated_sharpe(
         "expected_max_sharpe": float(expected_max),
         "n_trials": n_trials,
     }
+
+
+# ---------------------------------------------------------------------------
+# Worst-Offender Analysis
+# ---------------------------------------------------------------------------
+
+def worst_trades(trades: List[Trade], n: int = 10) -> List[dict]:
+    """Return the N trades with the largest absolute losses."""
+    realized = [t for t in trades if t.realized_pnl < 0]
+    realized.sort(key=lambda t: t.realized_pnl)
+    results = []
+    for t in realized[:n]:
+        results.append({
+            "bar_idx": t.bar_idx,
+            "timestamp": str(t.timestamp),
+            "symbol": t.symbol,
+            "side": t.side,
+            "signal": t.signal,
+            "size_usd": t.size_usd,
+            "realized_pnl": t.realized_pnl,
+            "fill_px": t.fill_px,
+            "metadata": t.metadata,
+        })
+    return results
+
+
+def mae_analysis(
+    trades: List[Trade],
+    ohlcv_df: pd.DataFrame,
+    n: int = 10,
+) -> List[dict]:
+    """Compute Maximum Adverse Excursion (MAE) for each round-trip trade.
+
+    MAE = the deepest drawdown during a trade's holding period.
+    Returns the N trades with the deepest MAE that did NOT hit the stop loss
+    (i.e. survived and closed for other reasons).
+    """
+    # Build round trips: open -> close
+    round_trips = []
+    open_trade = None
+    for t in trades:
+        if t.old_position == 0.0 and t.new_position != 0.0:
+            open_trade = t
+        elif t.old_position != 0.0 and t.new_position == 0.0:
+            if open_trade is not None:
+                round_trips.append((open_trade, t))
+            open_trade = None
+
+    results = []
+    for entry, exit_t in round_trips:
+        # Skip stop-triggered exits (we want trades that survived)
+        if exit_t.signal == "STOP_GAP":
+            continue
+        exit_reason = exit_t.metadata.get("exit_reason", "")
+        if exit_reason == "trail_stop":
+            continue
+
+        # Get bars during holding period
+        mask = (ohlcv_df.index >= entry.bar_idx) & (ohlcv_df.index <= exit_t.bar_idx)
+        if not mask.any():
+            # Try with bar_idx column if index doesn't match
+            if "bar_idx" not in ohlcv_df.columns:
+                holding = ohlcv_df.iloc[entry.bar_idx:exit_t.bar_idx + 1]
+            else:
+                continue
+        else:
+            holding = ohlcv_df.loc[mask]
+
+        if holding.empty:
+            continue
+
+        is_long = entry.new_position > 0
+        entry_px = entry.fill_px
+
+        if is_long:
+            worst_px = holding["low"].min()
+            mae_pct = (entry_px - worst_px) / entry_px * 100.0
+        else:
+            worst_px = holding["high"].max()
+            mae_pct = (worst_px - entry_px) / entry_px * 100.0
+
+        results.append({
+            "entry_bar": entry.bar_idx,
+            "exit_bar": exit_t.bar_idx,
+            "entry_timestamp": str(entry.timestamp),
+            "exit_timestamp": str(exit_t.timestamp),
+            "symbol": entry.symbol,
+            "side": "LONG" if is_long else "SHORT",
+            "entry_px": entry_px,
+            "worst_px": worst_px,
+            "mae_pct": mae_pct,
+            "exit_pnl": exit_t.realized_pnl,
+            "exit_reason": exit_reason,
+            "holding_bars": exit_t.bar_idx - entry.bar_idx,
+        })
+
+    results.sort(key=lambda x: x["mae_pct"], reverse=True)
+    return results[:n]
+
+
+def missed_moves(
+    ohlcv_df: pd.DataFrame,
+    telemetry_df: "pd.DataFrame",
+    top_n: int = 10,
+    window: int = 6,
+) -> List[dict]:
+    """Identify large price moves where combined_score was below entry threshold.
+
+    Scans for windows of `window` bars where price moved significantly
+    but the strategy's combined score was in the deadzone.
+
+    Args:
+        ohlcv_df: OHLCV DataFrame with columns: timestamp, open, high, low, close.
+        telemetry_df: Telemetry DataFrame with columns: timestamp, close,
+                      final_combined (or combined), signal.
+        top_n: Number of biggest missed moves to return.
+        window: Rolling window in bars to measure price change.
+    """
+    if telemetry_df is None or telemetry_df.empty:
+        return []
+
+    df = telemetry_df.copy()
+    if "final_combined" not in df.columns and "combined" not in df.columns:
+        return []
+
+    score_col = "final_combined" if "final_combined" in df.columns else "combined"
+
+    # Rolling absolute return over `window` bars
+    df["fwd_return_pct"] = df["close"].pct_change(window).shift(-window).abs() * 100.0
+
+    # Filter: signal was HOLD (no entry) and score was weak
+    hold_mask = df["signal"] == "HOLD"
+    weak_mask = df[score_col].abs() < 0.3  # below typical entry threshold
+    candidates = df[hold_mask & weak_mask].copy()
+
+    if candidates.empty:
+        return []
+
+    candidates = candidates.dropna(subset=["fwd_return_pct"])
+    candidates = candidates.sort_values("fwd_return_pct", ascending=False)
+
+    results = []
+    for _, row in candidates.head(top_n).iterrows():
+        results.append({
+            "timestamp": str(row.get("timestamp", "")),
+            "close": row.get("close"),
+            "fwd_return_pct": row["fwd_return_pct"],
+            score_col: row[score_col],
+            "signal": row["signal"],
+            "bar_idx": row.get("bar_idx"),
+        })
+    return results
+
+
+def worst_offender_report(
+    trades: List[Trade],
+    ohlcv_df: pd.DataFrame,
+    telemetry_df: "pd.DataFrame" = None,
+    n: int = 10,
+) -> dict:
+    """Generate a comprehensive worst-offender report.
+
+    Returns dict with keys: worst_trades, mae_survivors, missed_moves.
+    """
+    report = {
+        "worst_trades": worst_trades(trades, n),
+        "mae_survivors": mae_analysis(trades, ohlcv_df, n),
+    }
+    if telemetry_df is not None:
+        report["missed_moves"] = missed_moves(ohlcv_df, telemetry_df, n)
+    else:
+        report["missed_moves"] = []
+    return report
 
 
 def regime_split_sharpe(

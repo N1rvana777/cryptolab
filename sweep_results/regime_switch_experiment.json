@@ -1,0 +1,212 @@
+{
+  "portfolio_comparison": {
+    "A) Donchian B0 only": {
+      "sharpe": 1.0060994718391423,
+      "max_dd": 4.113843784928699,
+      "return_pct": 4.768298466826515,
+      "n_trades": 418
+    },
+    "B) MeanRev only": {
+      "sharpe": 1.2185089535618734,
+      "max_dd": 1.1546931139708467,
+      "return_pct": 1.4010837231994921,
+      "n_trades": 60
+    },
+    "D) Regime Switch": {
+      "sharpe": 0.17664917626892326,
+      "max_dd": 21.073154504038037,
+      "return_pct": -0.03805883892464834,
+      "n_trades": 2050
+    },
+    "D-fix) Hysteresis": {
+      "sharpe": 0.4150698654023534,
+      "max_dd": 10.964748763686655,
+      "return_pct": 2.5998153415883074,
+      "n_trades": 101
+    },
+    "C) 50/50 Equal Weight": {
+      "sharpe": 1.2315673878489837,
+      "max_dd": 1.9263024724365339,
+      "return_pct": 3.0846910950129924,
+      "n_trades": 478
+    }
+  },
+  "per_coin_d_fixed": {
+    "BTC": {
+      "sharpe": 0.6535124198724377,
+      "return_pct": 7.353957628282591,
+      "max_dd_pct": 17.095420457156855,
+      "n_trades": 6,
+      "win_rate": 66.66666666666666,
+      "n_switches": 7
+    },
+    "ETH": {
+      "sharpe": -1.2796090639940139,
+      "return_pct": -20.91061693301531,
+      "max_dd_pct": 30.91593240154877,
+      "n_trades": 5,
+      "win_rate": 33.33333333333333,
+      "n_switches": 5
+    },
+    "LTC": {
+      "sharpe": 1.0250059455990457,
+      "return_pct": 8.14614940620534,
+      "max_dd_pct": 7.482884454966267,
+      "n_trades": 3,
+      "win_rate": 50.0,
+      "n_switches": 3
+    },
+    "TRX": {
+      "sharpe": -2.644153716904361,
+      "return_pct": -21.87741505791627,
+      "max_dd_pct": 22.296170551515722,
+      "n_trades": 10,
+      "win_rate": 16.666666666666664,
+      "n_switches": 6
+    },
+    "BCH": {
+      "sharpe": 1.536090715020436,
+      "return_pct": 24.132866054752437,
+      "max_dd_pct": 24.024551296994133,
+      "n_trades": 4,
+      "win_rate": 100.0,
+      "n_switches": 5
+    },
+    "DOT": {
+      "sharpe": 0.2834879097699948,
+      "return_pct": -0.007998211257561252,
+      "max_dd_pct": 21.347956423553057,
+      "n_trades": 4,
+      "win_rate": 100.0,
+      "n_switches": 7
+    },
+    "ADA": {
+      "sharpe": 1.783246486147483,
+      "return_pct": 32.74256605172059,
+      "max_dd_pct": 17.400677464512917,
+      "n_trades": 3,
+      "win_rate": 100.0,
+      "n_switches": 3
+    },
+    "LINK": {
+      "sharpe": -0.20695330873724338,
+      "return_pct": -8.505164509102643,
+      "max_dd_pct": 25.303628885415165,
+      "n_trades": 7,
+      "win_rate": 40.0,
+      "n_switches": 3
+    },
+    "XLM": {
+      "sharpe": 0.7968171872021932,
+      "return_pct": 11.299491166915836,
+      "max_dd_pct": 17.765143648591373,
+      "n_trades": 4,
+      "win_rate": 100.0,
+      "n_switches": 4
+    },
+    "XRP": {
+      "sharpe": -2.1192679602301285,
+      "return_pct": -25.806457664839293,
+      "max_dd_pct": 30.3814234723497,
+      "n_trades": 8,
+      "win_rate": 16.666666666666664,
+      "n_switches": 6
+    },
+    "ETC": {
+      "sharpe": 1.6853015739707202,
+      "return_pct": 18.730462401925813,
+      "max_dd_pct": 8.571141299044179,
+      "n_trades": 2,
+      "win_rate": 0.0,
+      "n_switches": 3
+    },
+    "ALGO": {
+      "sharpe": 0.47816183135749885,
+      "return_pct": 2.1265428323271385,
+      "max_dd_pct": 39.112024649463294,
+      "n_trades": 10,
+      "win_rate": 37.5,
+      "n_switches": 9
+    },
+    "ATOM": {
+      "sharpe": -2.5771196255742375,
+      "return_pct": -27.36345328086871,
+      "max_dd_pct": 36.17382829326341,
+      "n_trades": 6,
+      "win_rate": 0.0,
+      "n_switches": 5
+    },
+    "AAVE": {
+      "sharpe": 1.3143261234722836,
+      "return_pct": 23.50357552643295,
+      "max_dd_pct": 21.952721415677207,
+      "n_trades": 3,
+      "win_rate": 0.0,
+      "n_switches": 5
+    },
+    "SOL": {
+      "sharpe": 0.09125852977814802,
+      "return_pct": -2.3436025235926934,
+      "max_dd_pct": 27.303695114738645,
+      "n_trades": 5,
+      "win_rate": 66.66666666666666,
+      "n_switches": 5
+    },
+    "ICP": {
+      "sharpe": -4.221217733165955,
+      "return_pct": -41.94245416239209,
+      "max_dd_pct": 41.94245416239209,
+      "n_trades": 5,
+      "win_rate": 0.0,
+      "n_switches": 5
+    },
+    "UNI": {
+      "sharpe": -0.22398007717045704,
+      "return_pct": -18.236161953100947,
+      "max_dd_pct": 44.460806230659564,
+      "n_trades": 3,
+      "win_rate": 0.0,
+      "n_switches": 3
+    },
+    "FIL": {
+      "sharpe": -1.1159873823984294,
+      "return_pct": -12.536378056915076,
+      "max_dd_pct": 23.96580408326291,
+      "n_trades": 3,
+      "win_rate": 100.0,
+      "n_switches": 3
+    },
+    "AVAX": {
+      "sharpe": 1.421748332087745,
+      "return_pct": 21.77123116497956,
+      "max_dd_pct": 15.310799606791592,
+      "n_trades": 3,
+      "win_rate": 100.0,
+      "n_switches": 5
+    },
+    "NEAR": {
+      "sharpe": 2.1171166888771387,
+      "return_pct": 30.43056441030572,
+      "max_dd_pct": 19.678598040423083,
+      "n_trades": 2,
+      "win_rate": 100.0,
+      "n_switches": 2
+    },
+    "CRV": {
+      "sharpe": 2.766538286926215,
+      "return_pct": 42.61318933556266,
+      "max_dd_pct": 11.639405015675711,
+      "n_trades": 1,
+      "win_rate": 0,
+      "n_switches": 3
+    },
+    "DOGE": {
+      "sharpe": 1.417180174153537,
+      "return_pct": 17.833025827333785,
+      "max_dd_pct": 17.668551482934227,
+      "n_trades": 4,
+      "win_rate": 66.66666666666666,
+      "n_switches": 3
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "best_params": {
+    "lookback": 36,
+    "top_k": 5,
+    "rebal_bars": 21,
+    "weighted": false
+  },
+  "validation_sharpes": [
+    0.3996399356749339,
+    0.7830764364169011,
+    2.1706373325996586
+  ],
+  "portfolios": {
+    "A) Donchian 28": {
+      "sharpe": 1.0920155034391572,
+      "return_pct": 4.758544961106059,
+      "max_dd_pct": 3.7271320347846713,
+      "n_trades": 530
+    },
+    "B) XS Momentum": {
+      "sharpe": 0.9127252742271151,
+      "return_pct": 18.34127180367195,
+      "max_dd_pct": 18.689017469733535,
+      "n_trades": 421,
+      "win_rate": 52.30125523012552,
+      "net_exposure": 63.31619218009064,
+      "beta_btc": -0.08803493755240038
+    },
+    "C) Don+XSMom 50/50": {
+      "sharpe": -0.051590459244017485,
+      "return_pct": -0.874456557846226,
+      "max_dd_pct": 8.90783896991717,
+      "n_trades": 934
+    },
+    "D) Don+MR+XSMom 33%": {
+      "sharpe": 0.04130445796272076,
+      "return_pct": -0.07991714869675093,
+      "max_dd_pct": 5.761732581219951,
+      "n_trades": 1100
+    },
+    "E) Don50+MR25+XSMom25": {
+      "sharpe": 0.3290315911866638,
+      "return_pct": 0.9835691170255512,
+      "max_dd_pct": 4.234752810544164,
+      "n_trades": 1081
+    }
+  },
+  "xsmom_details": {
+    "sharpe": 0.9127252742271151,
+    "return_pct": 18.34127180367195,
+    "max_dd_pct": 18.689017469733535,
+    "n_trades": 421,
+    "win_rate": 52.30125523012552,
+    "net_exposure": 63.31619218009064,
+    "beta_btc": -0.08803493755240038
+  }
+}

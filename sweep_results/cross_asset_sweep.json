@@ -1,0 +1,106 @@
+{
+  "asset_results": {
+    "SI=F": {
+      "category": "Commodities",
+      "param": {
+        "combo": [
+          36,
+          120,
+          168
+        ],
+        "weight_name": "med-heavy"
+      },
+      "val_sharpes": [
+        0.65242721389436,
+        0,
+        0,
+        -3.017165891925897,
+        -1.9924651662697421
+      ],
+      "avg_val_sharpe": -0.8714407688602559,
+      "std_val_sharpe": 1.3929697526845652,
+      "n_positive": 1,
+      "avg_val_return": -1.9461949468898054
+    },
+    "BZ=F": {
+      "category": "Commodities",
+      "param": {
+        "combo": [
+          12,
+          48,
+          168
+        ],
+        "weight_name": "equal"
+      },
+      "val_sharpes": [
+        -0.9102565484622245,
+        -0.9516249850745048,
+        -1.3530734368606119,
+        0,
+        0
+      ],
+      "avg_val_sharpe": -0.6429909940794682,
+      "std_val_sharpe": 0.5473166778817703,
+      "n_positive": 0,
+      "avg_val_return": -3.4308018550091655
+    },
+    "HG=F": {
+      "category": "Commodities",
+      "param": {
+        "combo": [
+          36,
+          48,
+          168
+        ],
+        "weight_name": "equal"
+      },
+      "val_sharpes": [
+        0.0,
+        0,
+        0,
+        0.988731069476352,
+        0.3495167900497554
+      ],
+      "avg_val_sharpe": 0.2676495719052215,
+      "std_val_sharpe": 0.38511547555747333,
+      "n_positive": 2,
+      "avg_val_return": 0.42146474646463317
+    },
+    "AMZN": {
+      "category": "Stocks",
+      "param": {
+        "combo": [
+          12,
+          48,
+          168
+        ],
+        "weight_name": "med-heavy"
+      },
+      "val_sharpes": [
+        0,
+        -2.9175744160790242,
+        -1.5307649429397958,
+        -1.5440465947442576,
+        0
+      ],
+      "avg_val_sharpe": -1.1984771907526155,
+      "std_val_sharpe": 1.100711023553618,
+      "n_positive": 0,
+      "avg_val_return": -1.323186594477109
+    }
+  },
+  "holdout_results": {
+    "HG=F": {
+      "sharpe": -0.9701422504996896,
+      "return_pct": -19.919216576469196,
+      "max_dd_pct": 20.49929230247388,
+      "n_trades": 116,
+      "win_rate": 42.42424242424242,
+      "final_equity": 8008.07834235308,
+      "category": "Commodities",
+      "val_avg_sharpe": 0.2676495719052215
+    }
+  },
+  "n_params": 230,
+  "n_windows": 5
+}

@@ -1,0 +1,82 @@
+{
+  "A) PCA 8H": {
+    "avg_sharpe": -0.38552082590241227,
+    "std_sharpe": 0.28551701054444334,
+    "best_sharpe": 0.10722115894785628,
+    "worst_sharpe": -0.8495493819545172,
+    "avg_return": -4.523361979850447,
+    "std_return": 2.783188694999223,
+    "verdict": "ROBUST",
+    "n_valid": 21
+  },
+  "B) XSMom": {
+    "avg_sharpe": 0.2161876184363384,
+    "std_sharpe": 0.6867198647418502,
+    "best_sharpe": 1.0751204897841662,
+    "worst_sharpe": -0.8249715666591286,
+    "avg_return": 3.2053466922414136,
+    "std_return": 18.00176054444043,
+    "verdict": "UNRELIABLE",
+    "n_valid": 21
+  },
+  "C) Donchian B0": {
+    "avg_sharpe": 0.8110029975572617,
+    "std_sharpe": 0.04879499049911839,
+    "best_sharpe": 0.8562352029836553,
+    "worst_sharpe": 0.7206651208192518,
+    "avg_return": 3.8738204762142447,
+    "std_return": 0.1902704090899203,
+    "verdict": "ROBUST",
+    "n_valid": 21
+  },
+  "D) Trend 8H+1D": {
+    "avg_sharpe": -0.33429143991229726,
+    "std_sharpe": 0.07783325935008396,
+    "best_sharpe": -0.21084099500428508,
+    "worst_sharpe": -0.577218881153456,
+    "avg_return": -10.193185333300471,
+    "std_return": 1.5672066492654386,
+    "verdict": "ROBUST",
+    "n_valid": 21
+  },
+  "E) Z-score MR": {
+    "avg_sharpe": -0.13134337741426563,
+    "std_sharpe": 0.1368279950508983,
+    "best_sharpe": 0.009173071621424885,
+    "worst_sharpe": -0.2803989191156219,
+    "avg_return": -0.2917298516044487,
+    "std_return": 0.27560090344441573,
+    "verdict": "ROBUST",
+    "n_valid": 21
+  },
+  "F) PCA+XSMom 50/50": {
+    "avg_sharpe": -0.0048740880244227,
+    "std_sharpe": 0.6583670117480607,
+    "best_sharpe": 0.8617215129893245,
+    "worst_sharpe": -1.0055631772230307,
+    "avg_return": -0.48404277484850666,
+    "std_return": 9.085859367864225,
+    "verdict": "UNRELIABLE",
+    "n_valid": 21
+  },
+  "G) PCA+XSMom+MR 33": {
+    "avg_sharpe": -0.048801641732508456,
+    "std_sharpe": 0.6657278254410643,
+    "best_sharpe": 0.8120926697516491,
+    "worst_sharpe": -1.0555784749945314,
+    "avg_return": -0.39129179212808485,
+    "std_return": 6.059063720307506,
+    "verdict": "UNRELIABLE",
+    "n_valid": 21
+  },
+  "H) XSMom+MR 50/50": {
+    "avg_sharpe": 0.11265214468376897,
+    "std_sharpe": 0.7009750923041753,
+    "best_sharpe": 0.9640851149970351,
+    "worst_sharpe": -0.93000484326143,
+    "avg_return": 1.4997784327770947,
+    "std_return": 9.006125661148571,
+    "verdict": "UNRELIABLE",
+    "n_valid": 21
+  }
+}

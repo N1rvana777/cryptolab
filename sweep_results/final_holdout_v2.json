@@ -1,0 +1,51 @@
+[
+  {
+    "label": "A) Donchian B0",
+    "sharpe": -0.23687493277366253,
+    "return_pct": -1.7663314260550345,
+    "max_dd_pct": 6.53371298530727,
+    "n_trades": 1093
+  },
+  {
+    "label": "B) Multi-signal trend",
+    "sharpe": -0.3519477056619045,
+    "return_pct": -10.371563976820653,
+    "max_dd_pct": 17.440863937416854,
+    "n_trades": 9645
+  },
+  {
+    "label": "C) XSMom",
+    "sharpe": 1.0100851763997083,
+    "return_pct": 24.754954530640294,
+    "max_dd_pct": 16.493482022264374,
+    "n_trades": 520
+  },
+  {
+    "label": "D) Trend60+XSMom40",
+    "sharpe": 0.32343377733019657,
+    "return_pct": 3.6790434261637195,
+    "max_dd_pct": 11.795674425548427,
+    "n_trades": 10165
+  },
+  {
+    "label": "E) Trend+MR+XSMom 33ea",
+    "sharpe": 0.44157448544897787,
+    "return_pct": 4.47570378019273,
+    "max_dd_pct": 8.104880742247488,
+    "n_trades": 10808
+  },
+  {
+    "label": "F) TSMOM only",
+    "sharpe": -0.23777447748814895,
+    "return_pct": -8.400244418702062,
+    "max_dd_pct": 21.111972028822176,
+    "n_trades": 9265
+  },
+  {
+    "label": "G) XSMom+MR 50/50",
+    "sharpe": 0.894117413630529,
+    "return_pct": 11.899337658699437,
+    "max_dd_pct": 8.905060472339311,
+    "n_trades": 1163
+  }
+]

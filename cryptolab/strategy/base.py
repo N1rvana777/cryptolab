@@ -9,7 +9,11 @@ import pandas as pd
 
 @dataclass
 class StrategySignal:
-    """Unified output from any strategy."""
+    """策略的统一输出格式。BacktestEngine和PositionManager都只认这个接口。
+
+    target_position: 目标仓位（USD名义值），正数=做多，负数=做空，0=空仓
+    signal: 信号类型标签（用于日志和分析，不影响执行逻辑）
+    """
     target_position: float = 0.0  # USD notional: positive=long, negative=short, 0=flat
     signal: str = "HOLD"  # "LONG", "SHORT", "HOLD", "FLAT", "CLOSE"
     confidence: float = 0.5
@@ -21,7 +25,11 @@ class StrategySignal:
 
 
 class BaseStrategy(ABC):
-    """All strategies must inherit this and implement generate_signal()."""
+    """策略基类。所有策略必须继承并实现generate_signal()。
+
+    DonchianMTF(规则型)和MLStrategy(ML型)都继承自此类，
+    因此BacktestEngine和PositionManager不需要区分策略类型。
+    """
 
     def __init__(self, cfg, name: str = "BaseStrategy"):
         self.cfg = cfg

@@ -174,6 +174,12 @@ def save_results(r: BacktestResult, run_dir: str):
     with open(os.path.join(run_dir, "config.json"), "w", encoding="utf-8") as f:
         json.dump(cfg_dict, f, indent=2)
 
+    # Telemetry logs
+    if r.telemetry is not None:
+        telemetry_dir = os.path.join(run_dir, "telemetry_logs")
+        r.telemetry.save_jsonl(telemetry_dir, r.symbol, r.start_date, r.end_date)
+        r.telemetry.save_actions_jsonl(telemetry_dir, r.symbol, r.start_date, r.end_date)
+
     # summary.json
     summary = {
         "symbol": r.symbol,

@@ -2,6 +2,12 @@
 
 Quantitative trading research and execution for crypto perpetual swaps.
 
+> **Public snapshot.** This repository is a copy of a private working repository.
+> Not included: API keys and wallet credentials (`.env`), market data and the local
+> collection database (`data/`), trained model binaries (`models/**/*.joblib`),
+> live-trading logs, large interactive chart exports, and a separate course project.
+> To run it, copy `.env.example` to `.env` and download data with `scripts/seed_cache.py`.
+
 ## Setup
 
 ```bash

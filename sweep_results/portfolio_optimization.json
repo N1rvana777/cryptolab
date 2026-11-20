@@ -1,0 +1,114 @@
+{
+  "50/50 3x": {
+    "sharpe": 0.23134689315261636,
+    "return_pct": 0.6910725820744368,
+    "max_dd_pct": 5.393262580173949,
+    "max_daily_loss_pct": -2.0736867257096003,
+    "n_trades": 116,
+    "n_coins": 22
+  },
+  "50/50 5x": {
+    "sharpe": 0.21293715356054316,
+    "return_pct": 0.7472913487266197,
+    "max_dd_pct": 8.437896958341033,
+    "max_daily_loss_pct": -2.827116401201346,
+    "n_trades": 116,
+    "n_coins": 22
+  },
+  "50/50 7x": {
+    "sharpe": 0.1898102538044698,
+    "return_pct": 0.6077731086746363,
+    "max_dd_pct": 11.13253105598993,
+    "max_daily_loss_pct": -3.2915748454326987,
+    "n_trades": 116,
+    "n_coins": 22
+  },
+  "50/50 10x": {
+    "sharpe": 0.15397518597146634,
+    "return_pct": 0.1744290750016031,
+    "max_dd_pct": 14.655961498623228,
+    "max_daily_loss_pct": -3.6920726825167116,
+    "n_trades": 116,
+    "n_coins": 22
+  },
+  "50/50 Fixed": {
+    "sharpe": 0.23134689315261636,
+    "return_pct": 0.6910725820744368,
+    "max_dd_pct": 5.393262580173949,
+    "max_daily_loss_pct": -2.0736867257096003,
+    "n_trades": 116,
+    "n_coins": 22
+  },
+  "MR Priority": {
+    "sharpe": 0.14828101486573347,
+    "return_pct": 0.33211395932832843,
+    "max_dd_pct": 10.321121230979466,
+    "max_daily_loss_pct": -3.385207724286221,
+    "n_trades": 90,
+    "n_coins": 22
+  },
+  "Signal Weighted": {
+    "sharpe": 0.14828101486573347,
+    "return_pct": 0.33211395932832843,
+    "max_dd_pct": 10.321121230979466,
+    "max_daily_loss_pct": -3.385207724286221,
+    "n_trades": 90,
+    "n_coins": 22
+  },
+  "70/30 Don/MR": {
+    "sharpe": 0.20737414750900052,
+    "return_pct": 0.6854593458360148,
+    "max_dd_pct": 7.455024380214733,
+    "max_daily_loss_pct": -2.6672667243277437,
+    "n_trades": 114,
+    "n_coins": 22
+  },
+  "Original Z": {
+    "sharpe": 0.23134689315261636,
+    "return_pct": 0.6910725820744368,
+    "max_dd_pct": 5.393262580173949,
+    "max_daily_loss_pct": -2.0736867257096003,
+    "n_trades": 116,
+    "n_coins": 22
+  },
+  "Z - 0.5": {
+    "sharpe": 0.04198087437615573,
+    "return_pct": -0.05587847963797188,
+    "max_dd_pct": 4.928554723811722,
+    "max_daily_loss_pct": -2.1512215309602345,
+    "n_trades": 183,
+    "n_coins": 22
+  },
+  "Z - 1.0": {
+    "sharpe": -0.39390878458509937,
+    "return_pct": -1.6557357080466129,
+    "max_dd_pct": 6.009644333015848,
+    "max_daily_loss_pct": -2.106775792251858,
+    "n_trades": 268,
+    "n_coins": 22
+  },
+  "3x + 50/50 Fixed + Original Z": {
+    "sharpe": 0.23134689315261636,
+    "return_pct": 0.6910725820744368,
+    "max_dd_pct": 5.393262580173949,
+    "max_daily_loss_pct": -2.0736867257096003,
+    "n_trades": 116,
+    "n_coins": 22
+  },
+  "5x + 50/50 Fixed + Original Z": {
+    "sharpe": 0.21293715356054316,
+    "return_pct": 0.7472913487266197,
+    "max_dd_pct": 8.437896958341033,
+    "max_daily_loss_pct": -2.827116401201346,
+    "n_trades": 116,
+    "n_coins": 22
+  },
+  "3x + 70/30 + Original Z": {
+    "sharpe": 0.20737414750900052,
+    "return_pct": 0.6854593458360148,
+    "max_dd_pct": 7.455024380214733,
+    "max_daily_loss_pct": -2.6672667243277437,
+    "n_trades": 114,
+    "n_coins": 22
+  }
+}

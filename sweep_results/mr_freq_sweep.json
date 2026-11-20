@@ -1,0 +1,50 @@
+{
+  "1h": {
+    "best_param": [
+      336,
+      3.0,
+      0.5,
+      4.0
+    ],
+    "avg_val_sharpe": -0.0468653981926793,
+    "holdout_sharpe": -0.022312923634853207,
+    "holdout_trades": 153,
+    "n_valid_windows": 3
+  },
+  "2h": {
+    "best_param": [
+      72,
+      3.0,
+      0.25,
+      4.0
+    ],
+    "avg_val_sharpe": -0.10267731714178946,
+    "holdout_sharpe": -0.3383743373308304,
+    "holdout_trades": 633,
+    "n_valid_windows": 3
+  },
+  "4h": {
+    "best_param": [
+      672,
+      2.0,
+      0.25,
+      3.0
+    ],
+    "avg_val_sharpe": 0.034709432966987176,
+    "holdout_sharpe": -0.7805871056047757,
+    "holdout_trades": 52,
+    "n_valid_windows": 3
+  },
+  "8h": {
+    "best_param": [
+      504,
+      2.0,
+      0.0,
+      3.0
+    ],
+    "avg_val_sharpe": 0.5956922649324583,
+    "holdout_sharpe": 0.0895455790828496,
+    "holdout_trades": 3,
+    "n_valid_windows": 3
+  }
+}
